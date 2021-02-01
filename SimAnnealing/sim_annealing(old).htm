@@ -1,0 +1,173 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/BuildWebGL.json", {onProgress: UnityProgress});
+    </script>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+p.stylehead, li.stylehead, div.stylehead
+	{mso-style-name:style_head;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:20.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+p.styletext, li.styletext, div.styletext
+	{mso-style-name:style_text;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:107%;
+	font-size:14.0pt;
+	color:#EDEDED;
+	font-family:"Calibri",sans-serif;}
+p.stylemhead, li.stylemhead, div.stylemhead
+	{mso-style-name:style_mhead;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:16.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+-->
+</style>
+
+</head>
+
+<body lang=RU style='word-wrap:break-word' bgcolor="black">
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="15%" valign="top" align="left"><a href="index.html"><p class=stylehead style='text-align:left;'>Сайт AI</p></a></td>
+<td width="40%" valign="top" align="center"><p class=stylehead >Метод отжига</p></td>
+<td width="15%"></td>
+<td width="15%"></td>
+</tr>
+</table>
+
+<table width="100%" bgcolor="black">
+
+<td width="15%"></td>
+<td width="70%">
+<p class=styletext>Метод оптимизации, который называется отжигом или симуляцией
+восстановления (Simulated annealing), моделирует процесс восстановления.
+Восстановление – это физический процесс, который заключается в нагреве и
+последующем контролируемом охлаждении субстанции. В результате получается
+прочная кристаллическая структура, которая отличается от структуры с дефектами,
+образующейся при быстром беспорядочном охлаждении. Структура здесь представляет
+собой кодированное решение, а температура используется для того, чтобы указать,
+когда и как будут приниматься новые решения. После нагрева субстанции до точки
+плавления свойства структуры зависят от коэффициента охлаждения. Если структура
+охлаждается медленно, будут формироваться крупные кристаллы, что очень полезно
+для строения субстанции. Если субстанция охлаждается скачкообразно, образуется
+слабая структура. Чтобы расплавить материал, требуется большое количество
+энергии. При понижении температуры уменьшается и количество энергии.</p>
+
+<p class=styletext>Алгоритм отжига может быть разделен на пять основных этапов
+(рис.1).</p>
+
+<p class=stylemhead><img width=624 height=398 id="Рисунок 1"
+src="sim_annealing.files/image001.jpg"></p>
+
+<p class=stylemhead>Создание начального решения</p>
+
+<p class=styletext>Для большинства проблем начальное решение будет случайным.
+На первом шаге оно помещается в текущее решение (Current solution). Другая
+возможность заключается в том, чтобы загрузить в качестве начального решения
+уже существующее, возможно найденное во время предыдущего поиска. </p>
+
+<p class=stylemhead>Оценка решения </p>
+
+<p class=styletext>Оценка решения состоит из декодировки текущего решения и
+выполнения нужного действия, позволяющего понять его целесообразность для
+решения данной проблемы. Такое решение может просто состоять из набора
+переменных, а эффективность решения будет оценена на основании того, насколько
+успешно удалось решить данную задачу.</p>
+
+<p class=stylemhead>Случайный поиск решения </p>
+
+<p class=styletext>Поиск решения начинается с копирования текущего решения в
+рабочее решение (Working solution). Затем рабочее решение произвольно
+модифицируется. Способ модификации зависит от способа кодирования. Например,
+при решении задачи коммивояжера, в которой каждый элемент представляет собой
+город, можно просто переставить местами два элемента. Это позволяет сохранить
+целостность решения, и при этом не происходит повторения или пропуска города.
+После выполнения поиска рабочего решения производится его оценка. Поиск нового
+решения основан на методе Монте-Карло (случайным образом).</p>
+
+<p class=stylemhead>Определение критерия допуска </p>
+
+<p class=styletext>На этом этапе алгоритма имеется два решения. Первое –
+оригинальное решение, которое называется текущим, второе – найденное решение,
+называемое рабочим. С каждым решением связана определенная энергия,
+представляющая собой его эффективность (например, чем ниже энергия, тем более
+эффективно решение). Затем рабочее решение сравнивается с текущим решением.
+Если рабочее решение имеет меньшую энергию, чем текущее (то есть является более
+предпочтительным), то рабочее решение копируется в текущее решение и происходит
+переход к этапу снижения температуры. Если рабочее решение хуже, чем текущее
+решение, определяется критерий допуска, чтобы выяснить, что следует сделать с
+текущим рабочим решением. Вероятность допуска основывается на уравнении
+(базируется на законе термодинамики) </p>
+
+<p class=styletext>P(&#948;E) = exp(–&#948;E / T).</p>
+
+<p class=styletext>Значение этой формулы визуально представлено на графике
+(рис. 2). При высокой температуре (свыше 60 C) плохие решения принимаются чаще,
+чем отбрасываются. Если энергия меньше, вероятность принятия решения выше. При
+снижении температуры вероятность принятия худшего решения также снижается. При
+этом более высокий уровень энергии также способствует уменьшению вероятности
+принятия худшего решения.</p>
+
+<p class=styletext align=center style='text-align:center'><img width=399
+height=414 id="Рисунок 2" src="sim_annealing.files/image002.jpg"></p>
+<p class=styletext>Значение этой формулы визуально представлено на графике
+(рис. 2). При высокой температуре (свыше 60 C) плохие решения принимаются чаще,
+чем отбрасываются. Если энергия меньше, вероятность принятия решения выше. При
+снижении температуры вероятность принятия худшего решения также снижается. При
+этом более высокий уровень энергии также способствует уменьшению вероятности
+принятия худшего решения.</p>
+<div class="webgl-content">
+  <div class="footer">
+    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+  </div>
+	<center><div id="unityContainer" style="width: 960px; height: 600px"></div></center>
+</div>
+</td>
+<td width="15%" bgcolor="black"></td>
+
+</table>
+
+
+
+</center>
+
+</body>
+
+</html>

@@ -1,0 +1,745 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/BuildWebGL.json", {onProgress: UnityProgress});
+    </script>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+p.stylehead, li.stylehead, div.stylehead
+	{mso-style-name:style_head;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:20.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+p.styletext, li.styletext, div.styletext
+	{mso-style-name:style_text;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:107%;
+	font-size:14.0pt;
+	color:#EDEDED;
+	font-family:"Calibri",sans-serif;}
+p.stylemhead, li.stylemhead, div.stylemhead
+	{mso-style-name:style_mhead;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:16.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+-->
+</style>
+
+</head>
+
+<body lang=RU style='word-wrap:break-word' bgcolor="black">
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="15%" valign="top" align="left"><a href="/index.html"><p class=stylehead style='text-align:left;'>Сайт AI</p></a></td>
+<td width="40%" valign="top" align="center"><p class=stylehead >Алгоритм Имитации Отжига</p></td>
+<td width="15%"></td>
+<td width="15%"></td>
+</tr>
+</table>
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="70%">
+
+<p class=styletext>Метод оптимизации, который называется отжигом или симуляцией
+восстановления (Simulated annealing), моделирует процесс восстановления. Восстановление<span
+style='letter-spacing:-.6pt'> </span>–<span style='letter-spacing:-.6pt'> </span>это<span
+style='letter-spacing:-.6pt'> </span>физический<span style='letter-spacing:
+-.6pt'> </span>процесс, который заключается в нагреве и последующем
+контролируемом охлаждении субстанции. В результате получается прочная
+кристаллическая структура, которая отличается от структуры с дефектами,
+образующейся при быстром <span style='letter-spacing:-.15pt'>бес</span>порядочном
+охлаждении. Структура здесь представляет собой кодированное решение, а
+температура используется для того, чтобы указать, как и когда будут приниматься
+новые<span style='letter-spacing:.9pt'> </span>решения.</p>
+
+<p class=stylehead><a name="_TOC_250228"></a>Естественная мотивация</p>
+
+<p class=styletext>Свойства структуры зависят от коэффициента охлаждения после
+того, как субстанция была нагрета до точки плавления. Если структура
+охлаждалась медленно,<span style='letter-spacing:-.75pt'> </span>будут<span
+style='letter-spacing:-.7pt'> </span>сформированы<span style='letter-spacing:
+-.75pt'> </span>крупные<span style='letter-spacing:-.7pt'> </span>кристаллы,<span
+style='letter-spacing:-.75pt'> </span>что<span style='letter-spacing:-.7pt'> </span>очень<span
+style='letter-spacing:-.7pt'> </span>полезно<span style='letter-spacing:-.75pt'>
+</span>для<span style='letter-spacing:-.7pt'> </span>строения субстанции. Если
+субстанция охлаждается скачкообразно, образуется <span style='letter-spacing:
+.1pt'>слабая </span>структура.</p>
+
+<p class=styletext>Чтобы<span style='letter-spacing:-.45pt'> </span>расплавить<span
+style='letter-spacing:-.45pt'> </span>материал,<span style='letter-spacing:
+-.45pt'> </span>требуется<span style='letter-spacing:-.45pt'> </span>большое<span
+style='letter-spacing:-.45pt'> </span>количество<span style='letter-spacing:
+-.45pt'> </span>энергии.<span style='letter-spacing:-.45pt'> </span>При<span
+style='letter-spacing:-.45pt'> </span>понижении<span style='letter-spacing:
+-.55pt'> </span>температуры<span style='letter-spacing:-.5pt'> </span>уменьшается<span
+style='letter-spacing:-.5pt'> </span>и<span style='letter-spacing:-.5pt'> </span>количество<span
+style='letter-spacing:-.5pt'> </span>энергии.<span style='letter-spacing:-.5pt'>
+</span>Чтобы<span style='letter-spacing:-.5pt'> </span>яснее<span
+style='letter-spacing:-.5pt'> </span>представить процесс восстановления,
+рассмотрим следующий пример. «Взбалтывание» при высокой температуре
+сопровождается высокой молекулярной активностью в<span style='letter-spacing:
+-.4pt'> </span>физической<span style='letter-spacing:-.5pt'> </span>системе.<span
+style='letter-spacing:-.45pt'> </span>Представьте<span style='letter-spacing:
+-.5pt'> </span>себе,<span style='letter-spacing:-.5pt'> </span>что<span
+style='letter-spacing:-.5pt'> </span>вы<span style='letter-spacing:-.5pt'> </span>взбалтываете<span
+style='letter-spacing:-.5pt'> </span>емкость,<span style='letter-spacing:-.5pt'>
+</span>в<span style='letter-spacing:-.5pt'> </span>которой находится<span
+style='letter-spacing:-.4pt'> </span>какая-то<span style='letter-spacing:-.4pt'>
+</span>поверхность<span style='letter-spacing:-.4pt'> </span>сложной<span
+style='letter-spacing:-.4pt'> </span>формы.<span style='letter-spacing:-.35pt'>
+</span>Внутри<span style='letter-spacing:-.4pt'> </span>емкости<span
+style='letter-spacing:-.4pt'> </span>также<span style='letter-spacing:-.4pt'> </span>имеется
+шарик, который пытается найти точку равновесия. При высокой температуре шарик<span
+style='letter-spacing:-.35pt'> </span>может<span style='letter-spacing:-.3pt'> </span>свободно<span
+style='letter-spacing:-.3pt'> </span>перемещаться<span style='letter-spacing:
+-.3pt'> </span>по<span style='letter-spacing:-.3pt'> </span>поверхности,<span
+style='letter-spacing:-.3pt'> </span>а<span style='letter-spacing:-.3pt'> </span>при<span
+style='letter-spacing:-.3pt'> </span>низкой<span style='letter-spacing:-.3pt'> </span>температуре</p>
+
+<p class=styletext>«взбалтывание» становится менее интенсивным и передвижения
+шарика сокращаются. Задача заключается в том, чтобы найти точку минимального<span
+style='letter-spacing:-1.5pt'> </span>перемещения при сильном «взбалтывании».
+При снижении температуры уменьшается вероятность того, что шарик выйдет из
+точки равновесия. Именно в таком виде процесс поиска заимствуется из<span
+style='letter-spacing:1.55pt'> </span>восстановления.</p>
+
+<p class=stylehead><a name="_TOC_250227">Алгоритм<span style='letter-spacing:
+-1.5pt'> </span></a><span style='letter-spacing:-.1pt'>отжига</span></p>
+
+<p class=styletext><span style='letter-spacing:-.15pt'>Давайте</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>рассмотрим,</span><span
+style='letter-spacing:-1.05pt'> </span>как<span style='letter-spacing:-1.0pt'> </span><span
+style='letter-spacing:-.15pt'>метафора</span><span style='letter-spacing:-1.05pt'>
+</span><span style='letter-spacing:-.15pt'>охлаждения</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>растаявшей</span><span
+style='letter-spacing:-1.0pt'> </span><span style='letter-spacing:-.15pt'>субстанции</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>используется</span><span
+style='letter-spacing:-.7pt'> </span>для<span style='letter-spacing:-.65pt'> </span>решения<span
+style='letter-spacing:-.7pt'> </span>проблемы.<span style='letter-spacing:-.65pt'>
+</span>Алгоритм<span style='letter-spacing:-.7pt'> </span>отжига<span
+style='letter-spacing:-.65pt'> </span>очень<span style='letter-spacing:-.65pt'>
+</span>прост<span style='letter-spacing:-.7pt'> </span>и<span style='letter-spacing:
+-.65pt'> </span>может<span style='letter-spacing:-.7pt'> </span>быть<span
+style='letter-spacing:-.65pt'> </span>разделен на пять этапов (рис.<span
+style='letter-spacing:1.9pt'> </span>1).</p>
+
+<p class=styletext align=center style='text-align:center;page-break-after:avoid'><img
+width=615 height=692 id="Рисунок 1" src="sim_annealing.files/image001.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 1</p>
+
+<p class=styletext>Оценка решения состоит из декодировки текущего решения и
+выполнения нужного<span style='letter-spacing:-.75pt'> </span>действия,<span
+style='letter-spacing:-.7pt'> </span>позволяющего<span style='letter-spacing:
+-.75pt'> </span>понять<span style='letter-spacing:-.7pt'> </span>его<span
+style='letter-spacing:-.7pt'> </span>целесообразность<span style='letter-spacing:
+-.75pt'> </span>для<span style='letter-spacing:-.7pt'> </span>решения<span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.15pt'>дан</span>ной
+проблемы. Обратите внимание, что закодированное решение может просто состоять
+из набора переменных. Они будут декодированы из существующего<span
+style='letter-spacing:-.85pt'> </span><span style='letter-spacing:-.2pt'>ре</span>шения,<span
+style='letter-spacing:-1.35pt'> </span>а<span style='letter-spacing:-1.35pt'> </span>затем<span
+style='letter-spacing:-1.35pt'> </span>эффективность<span style='letter-spacing:
+-1.3pt'> </span>решения<span style='letter-spacing:-1.35pt'> </span>будет<span
+style='letter-spacing:-1.35pt'> </span>оценена<span style='letter-spacing:-1.35pt'>
+</span>на<span style='letter-spacing:-1.3pt'> </span>основании<span
+style='letter-spacing:-1.35pt'> </span>того,<span style='letter-spacing:-1.35pt'>
+</span>насколько успешно удалось решить данную<span style='letter-spacing:2.0pt'>
+</span>задачу.</p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:107%;letter-spacing:
+-.2pt'>Поиск решения начинается </span><span style='font-size:10.0pt;
+line-height:107%'>с <span style='letter-spacing:-.2pt'>копирования текущего
+решения </span>в <i><span style='letter-spacing:-.2pt'>рабочее</span><span
+style='letter-spacing:-1.5pt'> </span><span style='letter-spacing:-.2pt'>решение
+</span></i></span><span style='letter-spacing:-.3pt'>(Working  </span>solution).
+Затем мы произвольно модифицируем рабочее решение. <span style='letter-spacing:
+.8pt'> </span><span style='letter-spacing:-.1pt'>Как </span><span
+style='letter-spacing:-.2pt'>именно</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>модифицируется</span><span style='letter-spacing:
+-.75pt'> </span><span style='letter-spacing:-.2pt'>рабочее</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>решение,</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>зависит</span><span
+style='letter-spacing:-.75pt'> </span>от<span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.2pt'>того,</span><span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.2pt'>каким</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>образом</span><span style='letter-spacing:-.75pt'>
+</span><span style='letter-spacing:-.15pt'>оно</span><span style='letter-spacing:
+-.75pt'> </span><span style='letter-spacing:-.35pt'>пред</span><span
+style='letter-spacing:-.2pt'>ставляется</span><span style='letter-spacing:-.65pt'>
+</span><span style='letter-spacing:-.2pt'>(кодируется).</span><span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.2pt'>Представьте</span><span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.15pt'>себе</span><span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.2pt'>кодировку</span><span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.2pt'>задачи</span><span
+style='letter-spacing:-.6pt'> </span><span style='letter-spacing:-.2pt'>коммивояжера,</span><span
+style='letter-spacing:-.65pt'> </span>в<span style='letter-spacing:-.65pt'> </span><span
+style='letter-spacing:-.2pt'>кото</span><span style='letter-spacing:-.15pt'>рой</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>каждый</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>элемент</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>представляет</span><span
+style='letter-spacing:-1.0pt'> </span><span style='letter-spacing:-.2pt'>собой</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>город.</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>Чтобы</span><span
+style='letter-spacing:-1.0pt'> </span><span style='letter-spacing:-.2pt'>выполнить</span><span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.2pt'>поиск</span><span
+style='letter-spacing:-1.05pt'> </span>по<span style='letter-spacing:-1.05pt'> </span><span
+style='letter-spacing:-.2pt'>рабочему решению,</span><span style='letter-spacing:
+-.85pt'> </span>мы<span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>берем</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.15pt'>два</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>элемента</span><span style='letter-spacing:-.8pt'>
+</span>и<span style='letter-spacing:-.85pt'> </span><span style='letter-spacing:
+-.2pt'>переставляем</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.15pt'>их.</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.15pt'>Это</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>позволяет</span><span style='letter-spacing:-.8pt'>
+</span><span style='letter-spacing:-.2pt'>сохранить</span><span
+style='letter-spacing:-.85pt'> </span><span style='letter-spacing:-.35pt'>целос</span><span
+style='letter-spacing:-.2pt'>тность</span><span style='letter-spacing:-.45pt'> </span><span
+style='letter-spacing:-.2pt'>решения,</span><span style='letter-spacing:-.4pt'>
+</span><span style='letter-spacing:-.15pt'>так</span><span style='letter-spacing:
+-.4pt'> </span><span style='letter-spacing:-.15pt'>как</span><span
+style='letter-spacing:-.45pt'> </span><span style='letter-spacing:-.15pt'>при</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.15pt'>этом</span><span
+style='letter-spacing:-.4pt'> </span>не<span style='letter-spacing:-.45pt'> </span><span
+style='letter-spacing:-.2pt'>происходит</span><span style='letter-spacing:-.4pt'>
+</span><span style='letter-spacing:-.2pt'>повторения</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.15pt'>или</span><span
+style='letter-spacing:-.45pt'> </span><span style='letter-spacing:-.2pt'>пропуска</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.2pt'>города.
+</span>После<span style='letter-spacing:-1.25pt'> </span>выполнения<span
+style='letter-spacing:-1.25pt'> </span>поиска<span style='letter-spacing:-1.25pt'>
+</span>рабочего<span style='letter-spacing:-1.25pt'> </span>решения<span
+style='letter-spacing:-1.25pt'> </span>мы<span style='letter-spacing:-1.2pt'> </span>оцениваем<span
+style='letter-spacing:-1.25pt'> </span>решение,<span style='letter-spacing:
+-1.25pt'> </span>как<span style='letter-spacing:-1.25pt'> </span>было описано
+ранее. Поиск нового решения основан на методе Монте-Карло (то есть случайным<span
+style='letter-spacing:.4pt'> </span>образом).</p>
+
+<p class=stylemhead>Критерий допуска</p>
+
+<p class=styletext>На<span style='letter-spacing:-1.05pt'> </span>этом<span
+style='letter-spacing:-1.05pt'> </span>этапе<span style='letter-spacing:-1.05pt'>
+</span>алгоритма<span style='letter-spacing:-1.05pt'> </span>у<span
+style='letter-spacing:-1.05pt'> </span>нас<span style='letter-spacing:-1.05pt'>
+</span>имеется<span style='letter-spacing:-1.0pt'> </span>два<span
+style='letter-spacing:-1.05pt'> </span>решения.<span style='letter-spacing:
+-1.05pt'> </span>Первое<span style='letter-spacing:-1.05pt'> </span>–<span
+style='letter-spacing:-1.05pt'> </span>это<span style='letter-spacing:-1.05pt'>
+</span>наше<span style='letter-spacing:-1.0pt'> </span><span style='letter-spacing:
+-.15pt'>ори</span>гинальное решение, которое называется текущим решением, а
+второе – найденное<span style='letter-spacing:-.85pt'> </span>решение,<span
+style='letter-spacing:-.8pt'> </span>которое<span style='letter-spacing:-.8pt'>
+</span>именуется<span style='letter-spacing:-.85pt'> </span>рабочим<span
+style='letter-spacing:-.8pt'> </span>решением.<span style='letter-spacing:-.8pt'>
+</span>С<span style='letter-spacing:-.8pt'> </span>каждым<span
+style='letter-spacing:-.85pt'> </span>решением<span style='letter-spacing:-.8pt'>
+</span>связана определенная<span style='letter-spacing:-.7pt'> </span>энергия,<span
+style='letter-spacing:-.7pt'> </span>представляющая<span style='letter-spacing:
+-.7pt'> </span>собой<span style='letter-spacing:-.7pt'> </span>его<span
+style='letter-spacing:-.7pt'> </span>эффективность<span style='letter-spacing:
+-.7pt'> </span>(допустим,<span style='letter-spacing:-.7pt'> </span><span
+style='letter-spacing:-.25pt'>что </span>чем ниже энергия, тем более эффективно<span
+style='letter-spacing:.1pt'> </span>решение). Затем рабочее решение
+сравнивается с текущим решением. Если рабочее решение имеет меньшую энергию,
+чем текущее решение (то есть является более предпочтительным),<span
+style='letter-spacing:-.85pt'> </span>то<span style='letter-spacing:-.85pt'> </span>мы<span
+style='letter-spacing:-.8pt'> </span>копируем<span style='letter-spacing:-.85pt'>
+</span>рабочее<span style='letter-spacing:-.85pt'> </span>решение<span
+style='letter-spacing:-.8pt'> </span>в<span style='letter-spacing:-.85pt'> </span>текущее<span
+style='letter-spacing:-.85pt'> </span>решение<span style='letter-spacing:-.8pt'>
+</span>и<span style='letter-spacing:-.85pt'> </span>переходим к этапу снижения<span
+style='letter-spacing:1.6pt'> </span>температуры. Однако<span style='letter-spacing:
+-1.15pt'> </span>если<span style='letter-spacing:-1.1pt'> </span>рабочее<span
+style='letter-spacing:-1.15pt'> </span>решение<span style='letter-spacing:-1.1pt'>
+</span>хуже,<span style='letter-spacing:-1.1pt'> </span>чем<span
+style='letter-spacing:-1.15pt'> </span>текущее<span style='letter-spacing:-1.1pt'>
+</span>решение,<span style='letter-spacing:-1.15pt'> </span>мы<span
+style='letter-spacing:-1.1pt'> </span>определяем<span style='letter-spacing:
+-1.1pt'> </span>критерий<span style='letter-spacing:-.5pt'> </span>допуска,<span
+style='letter-spacing:-.45pt'> </span>чтобы<span style='letter-spacing:-.45pt'>
+</span>выяснить,<span style='letter-spacing:-.5pt'> </span>что<span
+style='letter-spacing:-.45pt'> </span>следует<span style='letter-spacing:-.45pt'>
+</span>сделать<span style='letter-spacing:-.45pt'> </span>с<span
+style='letter-spacing:-.5pt'> </span>текущим<span style='letter-spacing:-.45pt'>
+</span>рабочим<span style='letter-spacing:-.45pt'> </span>решением.<span
+style='letter-spacing:-.8pt'> </span>Вероятность<span style='letter-spacing:
+-.75pt'> </span>допуска<span style='letter-spacing:-.75pt'> </span>основывается<span
+style='letter-spacing:-.8pt'> </span>на<span style='letter-spacing:-.75pt'> </span>уравнении<span
+style='letter-spacing:-.75pt'> </span>1<span style='letter-spacing:-.8pt'> </span>(которое,<span
+style='letter-spacing:-.75pt'> </span>в<span style='letter-spacing:-.8pt'> </span>свою<span
+style='letter-spacing:-.75pt'> </span>очередь, базируется на законе<span
+style='letter-spacing:1.45pt'> </span>термодинамики):</p>
+
+<p class=styletext>P(<span style='font-family:Symbol'>d</span>E)<span
+style='letter-spacing:.1pt'> </span>=<span style='letter-spacing:.1pt'> </span>exp(–<span
+style='font-family:Symbol'>d</span>E/T) (1)</p>
+
+<p class=styletext><span style='letter-spacing:-.2pt'>Значение</span><span
+style='letter-spacing:-.8pt'> </span><span style='letter-spacing:-.15pt'>этой</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>формулы</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>визуально</span><span
+style='letter-spacing:-.8pt'> </span><span style='letter-spacing:-.2pt'>показано</span><span
+style='letter-spacing:-.75pt'> </span>на<span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.15pt'>рис.</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.15pt'>2.</span><span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.15pt'>При</span><span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.2pt'>высокой</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>температу</span>ре<span style='letter-spacing:
+-.85pt'> </span><span style='letter-spacing:-.2pt'>(свыше</span><span
+style='letter-spacing:-.8pt'> </span>60<span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.15pt'>°С)</span><span style='letter-spacing:-.85pt'> </span><span
+style='letter-spacing:-.2pt'>плохие</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>решения</span><span style='letter-spacing:-.8pt'> </span><span
+style='letter-spacing:-.2pt'>принимаются</span><span style='letter-spacing:
+-.8pt'> </span><span style='letter-spacing:-.2pt'>чаще,</span><span
+style='letter-spacing:-.85pt'> </span><span style='letter-spacing:-.15pt'>чем</span><span
+style='letter-spacing:-.8pt'> </span><span style='letter-spacing:-.2pt'>отбрасываются.</span><span
+style='letter-spacing:-.8pt'> </span><span style='letter-spacing:-.15pt'>Если</span><span
+style='letter-spacing:-.85pt'> </span><span style='letter-spacing:-.2pt'>энер</span><span
+style='letter-spacing:-.15pt'>гия </span>меньше, вероятность принятия решения
+выше. При снижении температуры <span style='letter-spacing:-.3pt'>вероятность</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.4pt'>принятия</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.35pt'>худшего</span><span
+style='letter-spacing:-1.2pt'> </span><span style='letter-spacing:-.35pt'>решения</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.35pt'>также</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.4pt'>снижается.</span><span
+style='letter-spacing:-1.2pt'> </span><span style='letter-spacing:-.3pt'>При</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.3pt'>этом</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.35pt'>более</span><span
+style='letter-spacing:-1.2pt'> </span><span style='letter-spacing:-.35pt'>высокий</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.4pt'>уро</span><span
+style='letter-spacing:-.3pt'>вень</span><span style='letter-spacing:-1.55pt'> </span><span
+style='letter-spacing:-.35pt'>энергии также</span><span style='letter-spacing:
+-1.55pt'> </span><span style='letter-spacing:-.4pt'>способствует</span><span
+style='letter-spacing:-1.55pt'> </span><span style='letter-spacing:-.4pt'>уменьшению</span><span
+style='letter-spacing:-1.55pt'> </span><span style='letter-spacing:-.4pt'>вероятности</span><span
+style='letter-spacing:-1.55pt'> </span><span style='letter-spacing:-.35pt'>принятия</span><span
+style='letter-spacing:-1.5pt'> </span><span style='letter-spacing:-.35pt'>худшего</span><span
+style='letter-spacing:-1.55pt'> </span><span style='letter-spacing:-.4pt'>решения.
+</span>При высоких температурах симулированное восстановление<span
+style='letter-spacing:.95pt'> </span>позволяет<span style='letter-spacing:.2pt'>
+</span>принимать худшие решения для того, чтобы произвести более полный<span
+style='letter-spacing:.1pt'> </span>поиск<span style='letter-spacing:.25pt'> </span>решений.<span
+style='letter-spacing:.65pt'> </span>При<span style='letter-spacing:.7pt'> </span>снижении<span
+style='letter-spacing:.7pt'> </span>температуры<span style='letter-spacing:
+.7pt'> </span>диапазон<span style='letter-spacing:.7pt'> </span>поиска<span
+style='letter-spacing:.7pt'> </span>также<span style='letter-spacing:.7pt'> </span>уменьшается,<span
+style='letter-spacing:.7pt'> </span>пока<span style='letter-spacing:.7pt'> </span>не
+достигается равенство при температуре 0°.</p>
+
+<p class=styletext align=center style='text-align:center;page-break-after:avoid'><img
+width=452 height=394 id="Рисунок 17" src="sim_annealing.files/image002.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 2</p>
+
+<p class=stylemhead>Снижение температуры</p>
+
+<p class=styletext>После<span style='letter-spacing:-.35pt'> </span><span
+style='letter-spacing:-.15pt'>ряда</span><span style='letter-spacing:-.3pt'> </span>итераций<span
+style='letter-spacing:-.35pt'> </span>по<span style='letter-spacing:-.3pt'> </span>алгоритму<span
+style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.15pt'>при</span><span
+style='letter-spacing:-.3pt'> </span>данной<span style='letter-spacing:-.35pt'>
+</span>температуре<span style='letter-spacing:-.3pt'> </span>мы<span
+style='letter-spacing:-.3pt'> </span>ненамного<span style='letter-spacing:-.35pt'>
+</span>сни<span style='letter-spacing:-.15pt'>жаем</span><span
+style='letter-spacing:-.75pt'> </span>ее.<span style='letter-spacing:-.75pt'> </span>Существует<span
+style='letter-spacing:-.7pt'> </span>множество<span style='letter-spacing:-.75pt'>
+</span>вариантов<span style='letter-spacing:-.7pt'> </span>снижения<span
+style='letter-spacing:-.75pt'> </span>температуры.<span style='letter-spacing:
+-.7pt'> </span>В<span style='letter-spacing:-.75pt'> </span>данном<span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.3pt'>приме</span>ре
+используется простая геометрическая функция <span style='letter-spacing:-.15pt'>(см.
+</span>уравнение<span style='letter-spacing:.6pt'> </span>2):</p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:107%'>T</span><span
+style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>i+1<span
+style='letter-spacing:.75pt'> </span></span><span style='font-size:10.0pt;
+line-height:107%'>=<span style='letter-spacing:-.25pt'> </span></span><span
+style='font-size:10.0pt;line-height:107%;font-family:Symbol'>a</span><span
+style='font-size:10.0pt;line-height:107%'>T</span><span style='font-size:5.5pt;
+line-height:107%;position:relative;top:3.0pt'>i  </span><span style='font-size:
+10.0pt;line-height:107%'>(2)</span></p>
+
+<p class=styletext>Константа <span style='font-family:Symbol'>a</span><span
+style='font-family:"Times New Roman",serif'> </span>меньше единицы. Возможны и
+другие стратегии снижения температуры, включая линейные и нелинейные функции.</p>
+
+<p class=stylemhead><a name="_TOC_250221"></a>Повтор</p>
+
+<p class=styletext>При<span style='letter-spacing:-.6pt'> </span>одной<span
+style='letter-spacing:-.55pt'> </span>температуре<span style='letter-spacing:
+-.6pt'> </span>выполняется<span style='letter-spacing:-.55pt'> </span>несколько<span
+style='letter-spacing:-.6pt'> </span>итераций.<span style='letter-spacing:-.55pt'>
+</span>После<span style='letter-spacing:-.6pt'> </span>завершения итераций<span
+style='letter-spacing:-.4pt'> </span>температура<span style='letter-spacing:
+-.35pt'> </span>будет<span style='letter-spacing:-.35pt'> </span>понижена.<span
+style='letter-spacing:-.35pt'> </span>Процесс<span style='letter-spacing:-.35pt'>
+</span>продолжится,<span style='letter-spacing:-.4pt'> </span>пока<span
+style='letter-spacing:-.35pt'> </span>температура не достигнет<span
+style='letter-spacing:.85pt'> </span>нуля.</p>
+
+<p class=stylehead><a name="_TOC_250220"></a>Пример итерации</p>
+
+<p class=styletext>Чтобы проиллюстрировать алгоритм, проследим несколько
+итераций. Обратите<span style='letter-spacing:-1.45pt'> </span>внимание,<span
+style='letter-spacing:-1.4pt'> </span>что<span style='letter-spacing:-1.45pt'> </span>если<span
+style='letter-spacing:-1.4pt'> </span>рабочее<span style='letter-spacing:-1.45pt'>
+</span>решение<span style='letter-spacing:-1.4pt'> </span>имеет<span
+style='letter-spacing:-1.45pt'> </span>меньший<span style='letter-spacing:-1.4pt'>
+</span>уровень<span style='letter-spacing:-1.4pt'> </span>энергии<span
+style='letter-spacing:-1.45pt'> </span>(то<span style='letter-spacing:-1.4pt'> </span>есть
+является<span style='letter-spacing:-1.15pt'> </span>лучшим<span
+style='letter-spacing:-1.15pt'> </span>решением)<span style='letter-spacing:
+-1.15pt'> </span>по<span style='letter-spacing:-1.15pt'> </span>сравнению<span
+style='letter-spacing:-1.15pt'> </span>с<span style='letter-spacing:-1.15pt'> </span>текущим<span
+style='letter-spacing:-1.15pt'> </span>решением,<span style='letter-spacing:
+-1.15pt'> </span>то<span style='letter-spacing:-1.15pt'> </span>всегда<span
+style='letter-spacing:-1.15pt'> </span><span style='letter-spacing:-.2pt'>исполь</span>зуется<span
+style='letter-spacing:-.6pt'> </span>именно<span style='letter-spacing:-.55pt'>
+</span>оно.<span style='letter-spacing:-.55pt'> </span>Критерий<span
+style='letter-spacing:-.55pt'> </span>допуска<span style='letter-spacing:-.55pt'>
+</span>вступает<span style='letter-spacing:-.6pt'> </span>в<span
+style='letter-spacing:-.55pt'> </span>силу<span style='letter-spacing:-.55pt'> </span>только<span
+style='letter-spacing:-.55pt'> </span>при<span style='letter-spacing:-.55pt'> </span>условии,<span
+style='letter-spacing:-.55pt'> </span>что<span style='letter-spacing:-.6pt'> </span><span
+style='letter-spacing:-.1pt'>ра</span>бочее решение хуже, чем<span
+style='letter-spacing:1.45pt'> </span>текущее.</p>
+
+<p class=styletext>Предположим,<span style='letter-spacing:-.65pt'> </span>что<span
+style='letter-spacing:-.6pt'> </span>температура<span style='letter-spacing:
+-.6pt'> </span>окружающей<span style='letter-spacing:-.65pt'> </span>среды<span
+style='letter-spacing:-.6pt'> </span>равна<span style='letter-spacing:-.6pt'> </span>50°,<span
+style='letter-spacing:-.65pt'> </span>а<span style='letter-spacing:-.6pt'> </span>энергия<span
+style='letter-spacing:-.6pt'> </span>текущего решения составляет 10. Мы
+копируем текущее решение в рабочее решение и<span style='letter-spacing:-.65pt'>
+</span>выполняем<span style='letter-spacing:-.6pt'> </span>поиск.<span
+style='letter-spacing:-.65pt'> </span>После<span style='letter-spacing:-.6pt'> </span>оценки<span
+style='letter-spacing:-.65pt'> </span>энергии<span style='letter-spacing:-.6pt'>
+</span>устанавливаем,<span style='letter-spacing:-.65pt'> </span>что<span
+style='letter-spacing:-.6pt'> </span>энергия<span style='letter-spacing:-.6pt'>
+</span>нового<span style='letter-spacing:-.65pt'> </span>рабочего решения равна
+20. В этом случае энергия рабочего решения выше, чем энергия начального
+решения. Поэтому мы используем критерий<span style='letter-spacing:1.1pt'> </span>допуска:</p>
+
+<p class=styletext>Энергия текущего решения равна <span style='letter-spacing:
+-.25pt'>10. </span>Энергия рабочего решения равна 20.</p>
+
+<p class=styletext>Дельта<span style='letter-spacing:-.65pt'> </span>энергии<span
+style='letter-spacing:-.6pt'> </span>для<span style='letter-spacing:-.6pt'> </span>этого<span
+style='letter-spacing:-.65pt'> </span>примера<span style='letter-spacing:-.6pt'>
+</span>(энергия<span style='letter-spacing:-.6pt'> </span>рабочего<span
+style='letter-spacing:-.65pt'> </span>решения<span style='letter-spacing:-.6pt'>
+</span>минус<span style='letter-spacing:-.6pt'> </span>энергия текущего<span
+style='letter-spacing:-.4pt'> </span>решения)<span style='letter-spacing:-.4pt'>
+</span>равна<span style='letter-spacing:-.4pt'> </span>10.<span
+style='letter-spacing:-.4pt'> </span>Подставив<span style='letter-spacing:-.4pt'>
+</span>это<span style='letter-spacing:-.4pt'> </span>значение<span
+style='letter-spacing:-.35pt'> </span>и<span style='letter-spacing:-.4pt'> </span>температуру<span
+style='letter-spacing:-.4pt'> </span>50<span style='letter-spacing:-.4pt'> </span>в<span
+style='letter-spacing:-.4pt'> </span>уравнение 1, получаем<span
+style='letter-spacing:1.2pt'> </span>вероятность:</p>
+
+<p class=styletext>P = exp(–10/50) = 0,818731.</p>
+
+<p class=styletext><span style='letter-spacing:-.25pt'>Таким </span><span
+style='letter-spacing:-.3pt'>образом, </span><span style='letter-spacing:-.15pt'>на
+</span><span style='letter-spacing:-.25pt'>этом </span><span style='letter-spacing:
+-.3pt'>примере </span><span style='letter-spacing:-.15pt'>мы </span><span
+style='letter-spacing:-.25pt'>видим, </span><span style='letter-spacing:-.2pt'>что
+</span><span style='letter-spacing:-.3pt'>вероятность принятия худшего решения</span><span
+style='letter-spacing:-1.15pt'> </span><span style='letter-spacing:-.3pt'>достаточно</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.3pt'>велика.</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>Теперь</span><span
+style='letter-spacing:-1.15pt'> </span><span style='letter-spacing:-.3pt'>рассмотрим</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>пример</span><span
+style='letter-spacing:-1.1pt'> </span>с<span style='letter-spacing:-1.1pt'> </span><span
+style='letter-spacing:-.25pt'>более</span><span style='letter-spacing:-1.15pt'>
+</span><span style='letter-spacing:-.25pt'>низкой</span><span style='letter-spacing:
+-1.1pt'> </span><span style='letter-spacing:-.25pt'>температурой. </span>Предположим,<span
+style='letter-spacing:-.85pt'> </span>что<span style='letter-spacing:-.8pt'> </span>температура<span
+style='letter-spacing:-.8pt'> </span>равна<span style='letter-spacing:-.8pt'> </span>2,<span
+style='letter-spacing:-.85pt'> </span>а<span style='letter-spacing:-.8pt'> </span>энергия<span
+style='letter-spacing:-.8pt'> </span>имеет<span style='letter-spacing:-.8pt'> </span>следующие<span
+style='letter-spacing:-.85pt'> </span>показатели:</p>
+
+<p class=styletext>Энергия текущего решения равна <span style='letter-spacing:
+-.35pt'>3. </span>Энергия рабочего решения равна 7.</p>
+
+</div>
+
+<span style='font-size:14.0pt;line-height:107%;font-family:"Calibri",sans-serif;
+color:#EDEDED'><br clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<p class=styletext>Дельта<span style='letter-spacing:-.55pt'> </span>энергии<span
+style='letter-spacing:-.5pt'> </span>в<span style='letter-spacing:-.5pt'> </span>этом<span
+style='letter-spacing:-.55pt'> </span>примере<span style='letter-spacing:-.5pt'>
+</span>равна<span style='letter-spacing:-.5pt'> </span>4.<span
+style='letter-spacing:-.5pt'> </span>Подставив<span style='letter-spacing:-.55pt'>
+</span>это<span style='letter-spacing:-.5pt'> </span>значение<span
+style='letter-spacing:-.5pt'> </span>и<span style='letter-spacing:-.5pt'> </span>температуру
+в уравнение 1, получаем<span style='letter-spacing:1.7pt'> </span>вероятность:</p>
+
+<p class=styletext>P = exp(–4/2) = 0,135335.</p>
+
+<p class=styletext>Данный пример показывает, что вероятность выбора рабочего
+решения для <span style='letter-spacing:-.15pt'>по</span>следующих<span
+style='letter-spacing:-1.4pt'> </span>итераций<span style='letter-spacing:-1.35pt'>
+</span>очень<span style='letter-spacing:-1.35pt'> </span>невелика.<span
+style='letter-spacing:-1.35pt'> </span>Это<span style='letter-spacing:-1.4pt'> </span>базовая<span
+style='letter-spacing:-1.35pt'> </span>форма<span style='letter-spacing:-1.35pt'>
+</span>алгоритма.<span style='letter-spacing:-1.35pt'> </span>Далее<span
+style='letter-spacing:-1.35pt'> </span>мы<span style='letter-spacing:-1.4pt'> </span>применим<span
+style='letter-spacing:-.85pt'> </span>этот<span style='letter-spacing:-.85pt'> </span>метод<span
+style='letter-spacing:-.85pt'> </span>к<span style='letter-spacing:-.85pt'> </span>реальной<span
+style='letter-spacing:-.85pt'> </span>задаче<span style='letter-spacing:-.85pt'>
+</span>и<span style='letter-spacing:-.8pt'> </span>посмотрим,<span
+style='letter-spacing:-.85pt'> </span>как<span style='letter-spacing:-.85pt'> </span>работает<span
+style='letter-spacing:-.85pt'> </span>данный<span style='letter-spacing:-.85pt'>
+</span>алгоритм.</p>
+
+<p class=stylemhead><a name="_TOC_250219"></a>Пример задачи</p>
+
+<p class=styletext>Для демонстрации этого алгоритма используется широко
+известная задача, <span style='letter-spacing:-.1pt'>ре</span>шить<span
+style='letter-spacing:-.6pt'> </span>которую<span style='letter-spacing:-.6pt'>
+</span>пытались<span style='letter-spacing:-.6pt'> </span>с<span
+style='letter-spacing:-.55pt'> </span>помощью<span style='letter-spacing:-.6pt'>
+</span>множества<span style='letter-spacing:-.6pt'> </span>алгоритмов<span
+style='letter-spacing:-.6pt'> </span>поиска.<span style='letter-spacing:-.55pt'>
+</span>Задача<span style='letter-spacing:-.6pt'> </span>N<span
+style='letter-spacing:-.6pt'> </span>шахматных<span style='letter-spacing:-.4pt'>
+</span>ферзей<span style='letter-spacing:-.35pt'> </span>(или<span
+style='letter-spacing:-.35pt'> </span>NQP)<span style='letter-spacing:-.35pt'> </span>–<span
+style='letter-spacing:-.35pt'> </span>это<span style='letter-spacing:-.35pt'> </span>задача<span
+style='letter-spacing:-.35pt'> </span>размещения<span style='letter-spacing:
+-.35pt'> </span>N<span style='letter-spacing:-.35pt'> </span>ферзей<span
+style='letter-spacing:-.35pt'> </span>на<span style='letter-spacing:-.4pt'> </span>шахматной<span
+style='letter-spacing:-.35pt'> </span>доске размером<span style='letter-spacing:
+-.65pt'> </span>N<span style='font-family:Symbol'>&acute;</span>N<span
+style='letter-spacing:-.55pt'> </span>таким<span style='letter-spacing:-.55pt'>
+</span>образом,<span style='letter-spacing:-.6pt'> </span>чтобы<span
+style='letter-spacing:-.55pt'> </span>ни<span style='letter-spacing:-.55pt'> </span>один<span
+style='letter-spacing:-.6pt'> </span>ферзь<span style='letter-spacing:-.55pt'> </span>не<span
+style='letter-spacing:-.55pt'> </span>угрожал<span style='letter-spacing:-.6pt'>
+</span>другому<span style='letter-spacing:-.55pt'> </span>(рис.<span
+style='letter-spacing:-.55pt'> </span>3).</p>
+
+<p class=styletext align=center style='text-align:center;page-break-after:avoid'><img
+width=829 height=829 id="Рисунок 18" src="sim_annealing.files/image003.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 3</p>
+
+<p class=styletext>Задача 8 ферзей впервые была решена в 1850 г. Карлом
+Фридрихом Гаубом (Carl Friedrich Gaub). Алгоритм поиска (как видно из даты
+решения) представлял собой метод проб и ошибок. Затем задача ферзей решалась с
+помощью метода поиска в глубину (1987), метода «разделяй и властвуй» (1989),
+генетических алгоритмов (1992) и многими другими способами. В 1990 г. Рок Сосик
+(Rok Sosic) и Цзюн Гу (Jun Gu) решили проблему для 3000000 ферзей с использованием
+метода локального поиска и минимизации конфликтов.</p>
+
+<p class=stylemhead><a name="_TOC_250218"></a>Представление решения</p>
+
+<p class=styletext>Представление решения (кодировка) задачи о N ферзях
+стандартна: для сужения области поиска используется конечное решение. Обратите
+внимание (рис. 3), что в каждой строке и каждом столбце может располагаться
+только один ферзь. Это ограничение намного упрощает создание кодировки, которая
+управляется алгоритмом отжига.</p>
+
+<p class=styletext>Так<span style='letter-spacing:-.35pt'> </span>как<span
+style='letter-spacing:-.3pt'> </span>каждый<span style='letter-spacing:-.35pt'>
+</span>столбец<span style='letter-spacing:-.3pt'> </span>содержит<span
+style='letter-spacing:-.35pt'> </span>только<span style='letter-spacing:-.3pt'>
+</span>одного<span style='letter-spacing:-.3pt'> </span>ферзя,<span
+style='letter-spacing:-.35pt'> </span>для<span style='letter-spacing:-.3pt'> </span>отображения<span
+style='letter-spacing:-.35pt'> </span>решения будет использоваться массив из N
+элементов (рис. 4). В элементах этого массива хранятся строчные индексы
+положения ферзя. Например, на рис. <span style='letter-spacing:.1pt'>4 </span>столбец
+1 содержит значение 5, соответствующее строке, в которую будет <span
+style='letter-spacing:-.15pt'>поме</span>щен<span style='letter-spacing:.4pt'> </span>ферзь.</p>
+<p class=styletext align=center style='text-align:center;page-break-after:avoid'><img
+width=826 height=1029 id="Рисунок 23" src="sim_annealing.files/image004.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 4</p>
+
+<p class=styletext>Создать произвольное решение очень просто. Сначала нужно<span
+style='letter-spacing:-1.45pt'> </span>инициализировать решение, позволив
+каждому ферзю занять строку, соответствующую<span style='letter-spacing:-.75pt'>
+</span>столбцу.<span style='letter-spacing:-.6pt'> </span>Затем<span
+style='letter-spacing:-.55pt'> </span>необходимо<span style='letter-spacing:
+-.55pt'> </span>пройти<span style='letter-spacing:-.55pt'> </span>по<span
+style='letter-spacing:-.55pt'> </span>каждому<span style='letter-spacing:-.55pt'>
+</span>столбцу<span style='letter-spacing:-.55pt'> </span>и<span
+style='letter-spacing:-.55pt'> </span>выбрать<span style='letter-spacing:-.55pt'>
+</span>произвольное<span style='letter-spacing:-.6pt'> </span>число от<span
+style='letter-spacing:-.5pt'> </span>1<span style='letter-spacing:-.45pt'> </span>до<span
+style='letter-spacing:-.5pt'> </span>N<span style='letter-spacing:-.45pt'> </span>для<span
+style='letter-spacing:-.5pt'> </span>каждого<span style='letter-spacing:-.45pt'>
+</span>столбца.<span style='letter-spacing:-.5pt'> </span>Затем<span
+style='letter-spacing:-.45pt'> </span>два<span style='letter-spacing:-.5pt'> </span>элемента<span
+style='letter-spacing:-.45pt'> </span>перемещаются<span style='letter-spacing:
+-.5pt'> </span>(текущий<span style='letter-spacing:-.45pt'> </span><span
+style='letter-spacing:-.15pt'>стол</span>бец<span style='letter-spacing:-1.1pt'>
+</span>и<span style='letter-spacing:-1.05pt'> </span>произвольно<span
+style='letter-spacing:-1.05pt'> </span>выбранный<span style='letter-spacing:
+-1.1pt'> </span>столбец).<span style='letter-spacing:-1.05pt'> </span>Когда<span
+style='letter-spacing:-1.05pt'> </span>алгоритм<span style='letter-spacing:
+-1.1pt'> </span>достигает<span style='letter-spacing:-1.05pt'> </span>конца,<span
+style='letter-spacing:-1.05pt'> </span>автоматически формируется<span
+style='letter-spacing:.9pt'> </span>решение.</p>
+
+<p class=styletext>Наконец, получив кодировку, мы видим, что на доске нет
+конфликтов по <span style='letter-spacing:-.2pt'>го</span>ризонтали<span
+style='letter-spacing:-.2pt'> </span>или<span style='letter-spacing:-.2pt'> </span>диагонали.<span
+style='letter-spacing:-.2pt'> </span>При<span style='letter-spacing:-.2pt'> </span>оценке<span
+style='letter-spacing:-.2pt'> </span>решения<span style='letter-spacing:-.2pt'>
+</span>следует<span style='letter-spacing:-.2pt'> </span>учитывать<span
+style='letter-spacing:-.2pt'> </span>только<span style='letter-spacing:-.2pt'> </span><span
+style='letter-spacing:-.15pt'>конф</span>ликты по<span style='letter-spacing:
+.95pt'> </span>диагонали.</p>
+
+<p class=stylemhead><a name="_TOC_250217"></a>Энергия</p>
+
+<p class=styletext>Энергия решения определяется как количество конфликтов,
+которые возникают в кодировке. Задача заключается в том, чтобы найти кодировку,
+при которой энергия равна нулю (то есть на доске нет конфликтов).</p>
+
+<p class=stylemhead><a name="_TOC_250216"></a>Температура</p>
+
+<p class=styletext>Для данной проблемы мы начнем поиск решения с температуры
+30° и постепенно будем снижать ее до нуля, используя геометрическую формулу
+(уравнение 2). При этом значение <span style='font-family:Symbol'>a</span><span
+style='font-family:"Times New Roman",serif'> </span>будет равно 0,98. Как будет
+видно далее, график температуры<span style='letter-spacing:-.35pt'> </span>показывает<span
+style='letter-spacing:-.35pt'> </span>сначала<span style='letter-spacing:-.35pt'>
+</span>быстрое<span style='letter-spacing:-.3pt'> </span>снижение,<span
+style='letter-spacing:-.35pt'> </span>а<span style='letter-spacing:-.35pt'> </span>потом<span
+style='letter-spacing:-.3pt'> </span>медленное<span style='letter-spacing:-.35pt'>
+</span>схождение к конечной температуре –<span style='letter-spacing:.05pt'> </span>нулю.</p>
+
+<p class=styletext>При<span style='letter-spacing:-.4pt'> </span>каждом<span
+style='letter-spacing:-.4pt'> </span>изменении<span style='letter-spacing:-.35pt'>
+</span>температуры<span style='letter-spacing:-.4pt'> </span>мы<span
+style='letter-spacing:-.35pt'> </span>выполним<span style='letter-spacing:-.4pt'>
+</span>100<span style='letter-spacing:-.35pt'> </span>итераций.<span
+style='letter-spacing:-.4pt'> </span>Это<span style='letter-spacing:-.4pt'> </span>позволит
+алгоритму осуществить несколько операций поиска на каждом<span
+style='letter-spacing:.85pt'> </span>уровне.</p>
+<p class=stylehead>Другие области применения</p>
+
+<p class=styletext>Метод отжига может быть эффективным при решении задач
+различных <span style='letter-spacing:-.15pt'>клас</span>сов, требующих
+оптимизации. Ниже приводится их краткий список:</p>
+
+<p class=styletext> &nbsp-создание<span style='letter-spacing:.55pt'> </span>пути;</p>
+
+<p class=styletext> &nbsp-реконструкция<span style='letter-spacing:.6pt'> </span>изображения;</p>
+
+<p class=styletext> &nbsp-назначение задач и<span style='letter-spacing:1.15pt'> </span>планирование;</p>
+
+<p class=styletext> &nbsp-размещение<span style='letter-spacing:.55pt'> </span>сети;</p>
+
+<p class=styletext> &nbsp-глобальная<span style='letter-spacing:.6pt'> </span>маршрутизация;</p>
+
+<p class=styletext> &nbsp-обнаружение и распознавание визуальных<span
+style='letter-spacing:1.35pt'> </span>объектов;</p>
+
+<p class=styletext> &nbsp-разработка специальных цифровых<span style='letter-spacing:
+1.3pt'> </span>фильтров.</p>
+
+<p class=styletext>Поскольку метод отжига представляет собой процесс генерации
+случайных чисел,<span style='letter-spacing:-.3pt'> </span>поиск<span
+style='letter-spacing:-.3pt'> </span>решения<span style='letter-spacing:-.25pt'>
+</span>с<span style='letter-spacing:-.3pt'> </span>использованием<span
+style='letter-spacing:-.3pt'> </span>данного<span style='letter-spacing:-.25pt'>
+</span>алгоритма<span style='letter-spacing:-.3pt'> </span>может<span
+style='letter-spacing:-.25pt'> </span>занять<span style='letter-spacing:-.3pt'>
+</span>значительное время. В некоторых случаях алгоритм вообще не находит
+решение или выбирает не самое<span style='letter-spacing:1.15pt'> </span>оптимальное.</p>
+
+<p class=stylehead><a name="_TOC_250207"></a>Итоги</p>
+
+<p class=styletext>В<span style='letter-spacing:-.45pt'> </span>этой<span
+style='letter-spacing:-.45pt'> </span>главе<span style='letter-spacing:-.45pt'>
+</span>рассматривался<span style='letter-spacing:-.45pt'> </span>алгоритм<span
+style='letter-spacing:-.45pt'> </span>отжига<span style='letter-spacing:-.45pt'>
+</span>как<span style='letter-spacing:-.45pt'> </span>способ<span
+style='letter-spacing:-.45pt'> </span>выполнения<span style='letter-spacing:
+-.45pt'> </span>процедур поиска и оптимизации. Данный метод является аналогом
+процесса нагревания<span style='letter-spacing:-1.05pt'> </span>тела<span
+style='letter-spacing:-1.05pt'> </span>до<span style='letter-spacing:-1.05pt'> </span>состояния<span
+style='letter-spacing:-1.05pt'> </span>плавления<span style='letter-spacing:
+-1.05pt'> </span>с<span style='letter-spacing:-1.05pt'> </span>последующим<span
+style='letter-spacing:-1.05pt'> </span>постепенным<span style='letter-spacing:
+-1.05pt'> </span>охлаждением.<span style='letter-spacing:-1.05pt'> </span>При
+высоких температурах поиск ведется по всему диапазону. При снижении температуры<span
+style='letter-spacing:-.7pt'> </span>диапазон<span style='letter-spacing:-.7pt'>
+</span>поиска<span style='letter-spacing:-.65pt'> </span>уменьшается<span
+style='letter-spacing:-.7pt'> </span>до<span style='letter-spacing:-.65pt'> </span>небольшой<span
+style='letter-spacing:-.7pt'> </span>области<span style='letter-spacing:-.65pt'>
+</span>вокруг<span style='letter-spacing:-.7pt'> </span>текущего<span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.2pt'>ре</span>шения.
+Алгоритм проиллюстрирован с помощью классической задачи размещения N ферзей на
+шахматной доске. Наконец, вы изучили параметры алгоритма, а также узнали о
+возможностях их изменения для решения более сложных или аналогичных задач, но с
+более высокой скоростью<span style='letter-spacing:2.05pt'> </span>поиска.</p>
+<div class="webgl-content">
+  <div class="footer">
+    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+  </div>
+	<center><div id="unityContainer" style="width: 960px; height: 600px"></div></center>
+</div>
+</td>
+<p class=styletext><span style='color:red'>&nbsp;</span></p>
+</td>
+<td width="15%" bgcolor="black"></td>
+</tr>
+
+</table>
+
+</center>
+
+</body>
+
+</html>

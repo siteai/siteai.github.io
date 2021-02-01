@@ -1,0 +1,806 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/antAlg.json", {onProgress: UnityProgress});
+    </script>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+p.stylehead, li.stylehead, div.stylehead
+	{mso-style-name:style_head;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:20.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+p.styletext, li.styletext, div.styletext
+	{mso-style-name:style_text;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:107%;
+	font-size:14.0pt;
+	color:#EDEDED;
+	font-family:"Calibri",sans-serif;}
+p.stylemhead, li.stylemhead, div.stylemhead
+	{mso-style-name:style_mhead;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:16.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+-->
+</style>
+
+</head>
+
+<body lang=RU style='word-wrap:break-word' bgcolor="black">
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="15%" valign="top" align="left"><a href="/index.html"><p class=stylehead style='text-align:left;'>Сайт AI</p></a></td>
+<td width="40%" valign="top" align="center"><p class=stylehead >Алгоритмы муравья</p></td>
+<td width="15%"></td>
+<td width="15%"></td>
+</tr>
+</table>
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="70%">
+
+<p class=styletext><i>Алгоритмы муравья </i><span style='letter-spacing:-.3pt'>(Ant
+</span>algorithms), или оптимизация по принципу муравьиной<span
+style='letter-spacing:-.75pt'> </span>колонии<span style='letter-spacing:-.75pt'>
+</span>(это<span style='letter-spacing:-.75pt'> </span>название<span
+style='letter-spacing:-.75pt'> </span>было<span style='letter-spacing:-.7pt'> </span>придумано<span
+style='letter-spacing:-.75pt'> </span>изобретателем<span style='letter-spacing:
+-.75pt'> </span>алгоритма,<span style='letter-spacing:-.75pt'> </span>Марко
+Дориго (Marco Dorigo)), обладают специфическими свойствами, присущими муравьям,
+и используют их для ориентации в физическом пространстве. Природа <span
+style='letter-spacing:.1pt'>предлагает различные методики </span>для <span
+style='letter-spacing:.1pt'>оптимизации некоторых процессов. </span>Алгоритмы<span
+style='letter-spacing:-1.5pt'> </span>муравья особенно интересны потому,<span
+style='letter-spacing:-1.5pt'> </span>что их можно использовать для решения не
+только статичных, но и динамических проблем, например, проблем маршрутизации в
+меняющихся<span style='letter-spacing:2.15pt'> </span>сетях.</p>
+
+<p class=stylemhead>Естественная мотивация</p>
+
+<p class=styletext>Хотя<span style='letter-spacing:-.35pt'> </span>муравьи<span
+style='letter-spacing:-.35pt'> </span>и<span style='letter-spacing:-.35pt'> </span>слепы,<span
+style='letter-spacing:-.3pt'> </span>они<span style='letter-spacing:-.35pt'> </span>умеют<span
+style='letter-spacing:-.35pt'> </span>перемещаться<span style='letter-spacing:
+-.35pt'> </span>по<span style='letter-spacing:-.3pt'> </span>сложной<span
+style='letter-spacing:-.35pt'> </span>местности,<span style='letter-spacing:
+-.35pt'> </span>находить пищу на большом расстоянии от муравейника и успешно
+возвращаться домой.<span style='letter-spacing:-.8pt'> </span>Выделяя<span
+style='letter-spacing:-.75pt'> </span>ферменты<span style='letter-spacing:-.8pt'>
+</span>во<span style='letter-spacing:-.75pt'> </span>время<span
+style='letter-spacing:-.8pt'> </span>перемещения,<span style='letter-spacing:
+-.75pt'> </span>муравьи<span style='letter-spacing:-.8pt'> </span>изменяют<span
+style='letter-spacing:-.75pt'> </span>окружающую среду,<span style='letter-spacing:
+-.3pt'> </span>обеспечивают<span style='letter-spacing:-.3pt'> </span>коммуникацию,<span
+style='letter-spacing:-.3pt'> </span>а<span style='letter-spacing:-.25pt'> </span>также<span
+style='letter-spacing:-.3pt'> </span>отыскивают<span style='letter-spacing:
+-.3pt'> </span>обратный<span style='letter-spacing:-.25pt'> </span>путь<span
+style='letter-spacing:-.3pt'> </span>в<span style='letter-spacing:-.3pt'> </span>муравейник.</p>
+
+<p class=styletext>Самое<span style='letter-spacing:-.4pt'> </span>удивительное<span
+style='letter-spacing:-.4pt'> </span>в<span style='letter-spacing:-.4pt'> </span>данном<span
+style='letter-spacing:-.4pt'> </span>процессе<span style='letter-spacing:-.35pt'>
+</span>–<span style='letter-spacing:-.4pt'> </span>это<span style='letter-spacing:
+-.4pt'> </span>то,<span style='letter-spacing:-.4pt'> </span>что<span
+style='letter-spacing:-.4pt'> </span>муравьи<span style='letter-spacing:-.35pt'>
+</span>умеют<span style='letter-spacing:-.4pt'> </span>находить самый
+оптимальный путь между муравейником и внешними точками. Чем больше<span
+style='letter-spacing:-.35pt'> </span>муравьев<span style='letter-spacing:-.3pt'>
+</span>используют<span style='letter-spacing:-.35pt'> </span>один<span
+style='letter-spacing:-.3pt'> </span>и<span style='letter-spacing:-.3pt'> </span>тот<span
+style='letter-spacing:-.35pt'> </span>же<span style='letter-spacing:-.3pt'> </span>путь,<span
+style='letter-spacing:-.3pt'> </span>тем<span style='letter-spacing:-.35pt'> </span>выше<span
+style='letter-spacing:-.3pt'> </span>концентрация<span style='letter-spacing:
+-.3pt'> </span>ферментов на<span style='letter-spacing:-.2pt'> </span>этом<span
+style='letter-spacing:-.2pt'> </span>пути.<span style='letter-spacing:-.15pt'> </span>Чем<span
+style='letter-spacing:-.2pt'> </span>ближе<span style='letter-spacing:-.2pt'> </span>внешняя<span
+style='letter-spacing:-.15pt'> </span>точка<span style='letter-spacing:-.2pt'> </span>к<span
+style='letter-spacing:-.2pt'> </span>муравейнику,<span style='letter-spacing:
+-.15pt'> </span>тем<span style='letter-spacing:-.2pt'> </span>больше<span
+style='letter-spacing:-.2pt'> </span>раз<span style='letter-spacing:-.15pt'> </span>к<span
+style='letter-spacing:-.2pt'> </span>ней<span style='letter-spacing:-.2pt'> </span>перемещались<span
+style='letter-spacing:-.85pt'> </span>муравьи.<span style='letter-spacing:-.8pt'>
+</span>Что<span style='letter-spacing:-.8pt'> </span>касается<span
+style='letter-spacing:-.8pt'> </span>более<span style='letter-spacing:-.8pt'> </span>удаленной<span
+style='letter-spacing:-.8pt'> </span>точки,<span style='letter-spacing:-.85pt'>
+</span>то<span style='letter-spacing:-.8pt'> </span>ее<span style='letter-spacing:
+-.8pt'> </span>муравьи<span style='letter-spacing:-.8pt'> </span>достигают
+реже, поэтому по дороге к ней они применяют более сильные ферменты. <span
+style='letter-spacing:-.2pt'>Чем </span>выше концентрация ферментов на пути,
+тем предпочтительнее он для муравьев по<span style='letter-spacing:-.3pt'> </span>сравнению<span
+style='letter-spacing:-.25pt'> </span>с<span style='letter-spacing:-.25pt'> </span>другими<span
+style='letter-spacing:-.25pt'> </span>доступными.<span style='letter-spacing:
+-.3pt'> </span>Так<span style='letter-spacing:-.25pt'> </span>муравьиная<span
+style='letter-spacing:-.25pt'> </span>«логика»<span style='letter-spacing:-.25pt'>
+</span>позволяет<span style='letter-spacing:-.25pt'> </span>выбирать более
+короткий путь между конечными<span style='letter-spacing:2.0pt'> </span>точками.</p>
+
+<p class=styletext>Алгоритмы муравья интересны, поскольку отражают ряд
+специфических свойств, присущих самим муравьям. Муравьи легко вступают в
+сотрудничество и работают вместе для достижения общей цели. Алгоритмы муравья
+работают так же, как муравьи. Это выражается в том, что смоделированные муравьи
+совместно решают проблему и помогают другим муравьям в дальнейшей оптимизации
+решения.</p>
+
+</div>
+
+<span style='font-size:11.0pt;line-height:101%;font-family:"Calibri",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<p class=styletext>Рассмотрим пример, представленный на рис. 1. Два муравья из
+муравейника<span style='letter-spacing:-.15pt'> </span>должны<span
+style='letter-spacing:-.15pt'> </span>добраться<span style='letter-spacing:
+-.15pt'> </span>до<span style='letter-spacing:-.15pt'> </span>пищи,<span
+style='letter-spacing:-.15pt'> </span>которая<span style='letter-spacing:-.15pt'>
+</span>находится<span style='letter-spacing:-.15pt'> </span>за<span
+style='letter-spacing:-.15pt'> </span>препятствием.<span style='letter-spacing:
+-.15pt'> </span>Во<span style='letter-spacing:-.15pt'> </span>время<span
+style='letter-spacing:-.15pt'> </span>перемещения каждый муравей выделяет
+немного фермента, используя его в качестве<span style='letter-spacing:.35pt'> </span>маркера.</p>
+
+<p class=MsoBodyText style='margin-top:5.95pt;margin-right:30.9pt;margin-bottom:
+0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:justify;line-height:
+101%'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=436 height=479 id="Рисунок 1" src="ant.files/image001.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 1</p>
+
+<p class=styletext>При<span style='letter-spacing:-.3pt'> </span>прочих<span
+style='letter-spacing:-.3pt'> </span>равных<span style='letter-spacing:-.3pt'> </span>каждый<span
+style='letter-spacing:-.25pt'> </span>муравей<span style='letter-spacing:-.3pt'>
+</span>выберет<span style='letter-spacing:-.3pt'> </span>свой<span
+style='letter-spacing:-.25pt'> </span>путь.<span style='letter-spacing:-.3pt'> </span>Первый<span
+style='letter-spacing:-.3pt'> </span>муравей<span style='letter-spacing:-.25pt'>
+</span>выбирает верхний путь, а второй – нижний. Так как нижний путь в два раза
+короче верхнего,<span style='letter-spacing:-.3pt'> </span>второй<span
+style='letter-spacing:-.3pt'> </span>муравей<span style='letter-spacing:-.3pt'>
+</span>достигнет<span style='letter-spacing:-.3pt'> </span>цели<span
+style='letter-spacing:-.3pt'> </span>за<span style='letter-spacing:-.25pt'> </span>время<span
+style='letter-spacing:-.3pt'> </span>T<span style='font-size:5.5pt;line-height:
+107%;position:relative;top:3.0pt'>1</span>.<span style='letter-spacing:-.3pt'> </span>Первый<span
+style='letter-spacing:-.3pt'> </span>муравей<span style='letter-spacing:-.3pt'>
+</span>в<span style='letter-spacing:-.3pt'> </span>этот<span style='letter-spacing:
+-.25pt'> </span><span style='letter-spacing:-.2pt'>мо</span>мент пройдет только
+половину пути (рис.<span style='letter-spacing:.2pt'> </span>2).</p>
+
+<p class=styletext>Когда<span style='letter-spacing:-.25pt'> </span>один<span
+style='letter-spacing:-.25pt'> </span>муравей<span style='letter-spacing:-.2pt'>
+</span>достигает<span style='letter-spacing:-.25pt'> </span>пищи,<span
+style='letter-spacing:-.2pt'> </span>он<span style='letter-spacing:-.25pt'> </span>берет<span
+style='letter-spacing:-.2pt'> </span>один<span style='letter-spacing:-.25pt'> </span>из<span
+style='letter-spacing:-.2pt'> </span>объектов<span style='letter-spacing:-.25pt'>
+</span>и<span style='letter-spacing:-.2pt'> </span>возвращается к муравейнику
+по тому же пути. За время T<span style='font-size:5.5pt;line-height:107%;
+position:relative;top:3.0pt'>2 </span>второй муравей вернулся в муравейник<span
+style='letter-spacing:.35pt'> </span>с<span style='letter-spacing:.4pt'> </span>пищей,<span
+style='letter-spacing:.35pt'> </span>а<span style='letter-spacing:.4pt'> </span>первый<span
+style='letter-spacing:.35pt'> </span>муравей<span style='letter-spacing:.4pt'> </span>достиг<span
+style='letter-spacing:.4pt'> </span>пищи<span style='letter-spacing:.35pt'> </span>(рис.<span
+style='letter-spacing:.4pt'> </span>3).</p>
+
+<p class=styletext>Вспомните,<span style='letter-spacing:-.35pt'> </span>что<span
+style='letter-spacing:-.35pt'> </span>при<span style='letter-spacing:-.3pt'> </span>перемещении<span
+style='letter-spacing:-.35pt'> </span>каждого<span style='letter-spacing:-.35pt'>
+</span>муравья<span style='letter-spacing:-.3pt'> </span>на<span
+style='letter-spacing:-.35pt'> </span>пути<span style='letter-spacing:-.3pt'> </span>остается<span
+style='letter-spacing:-.35pt'> </span>немного фермента.<span style='letter-spacing:
+-1.05pt'> </span>Для<span style='letter-spacing:-1.0pt'> </span>первого<span
+style='letter-spacing:-1.0pt'> </span>муравья<span style='letter-spacing:-1.0pt'>
+</span>за<span style='letter-spacing:-1.0pt'> </span>время<span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>T</span><span
+style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt;letter-spacing:
+-.15pt'>0</span><span style='letter-spacing:-.15pt'>–T</span><span
+style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt;letter-spacing:
+-.15pt'>2</span><span style='font-size:5.5pt;line-height:107%;position:relative;
+top:3.0pt'> </span>путь<span style='letter-spacing:-1.05pt'> </span>был<span
+style='letter-spacing:-1.0pt'> </span>покрыт<span style='letter-spacing:-1.05pt'>
+</span>ферментом<span style='letter-spacing:-1.05pt'> </span><span
+style='letter-spacing:-.1pt'>только </span>один<span style='letter-spacing:
+-.75pt'> </span>раз.<span style='letter-spacing:-.75pt'> </span>В<span
+style='letter-spacing:-.7pt'> </span>то<span style='letter-spacing:-.75pt'> </span>же<span
+style='letter-spacing:-.7pt'> </span>самое<span style='letter-spacing:-.75pt'> </span>время<span
+style='letter-spacing:-.7pt'> </span>второй<span style='letter-spacing:-.75pt'>
+</span>муравей<span style='letter-spacing:-.7pt'> </span>покрыл<span
+style='letter-spacing:-.75pt'> </span>путь<span style='letter-spacing:-.7pt'> </span>ферментом<span
+style='letter-spacing:-.75pt'> </span>дважды.<span style='letter-spacing:-.7pt'>
+</span>За <span style='letter-spacing:-.15pt'>время</span><span
+style='letter-spacing:-.7pt'> </span>T<span style='font-size:5.5pt;line-height:
+107%;position:relative;top:3.0pt'>4<span style='letter-spacing:.4pt'> </span></span>первый<span
+style='letter-spacing:-.65pt'> </span>муравей<span style='letter-spacing:-.65pt'>
+</span>вернулся<span style='letter-spacing:-.65pt'> </span>в<span
+style='letter-spacing:-.65pt'> </span>муравейник,<span style='letter-spacing:
+-.65pt'> </span>а<span style='letter-spacing:-.7pt'> </span>второй<span
+style='letter-spacing:-.65pt'> </span>муравей<span style='letter-spacing:-.65pt'>
+</span>уже<span style='letter-spacing:-.65pt'> </span>успел<span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.1pt'>еще </span>раз<span
+style='letter-spacing:-.3pt'> </span>сходить<span style='letter-spacing:-.3pt'>
+</span>к<span style='letter-spacing:-.25pt'> </span>еде<span style='letter-spacing:
+-.3pt'> </span>и<span style='letter-spacing:-.3pt'> </span>вернуться.<span
+style='letter-spacing:-.25pt'> </span>При<span style='letter-spacing:-.3pt'> </span>этом<span
+style='letter-spacing:-.3pt'> </span>концентрация<span style='letter-spacing:
+-.25pt'> </span>фермента<span style='letter-spacing:-.3pt'> </span>на<span
+style='letter-spacing:-.25pt'> </span>нижнем<span style='letter-spacing:-.3pt'>
+</span><span style='letter-spacing:-.25pt'>пути </span>будет<span
+style='letter-spacing:-.6pt'> </span>в<span style='letter-spacing:-.6pt'> </span>два<span
+style='letter-spacing:-.55pt'> </span>раза<span style='letter-spacing:-.6pt'> </span>выше,<span
+style='letter-spacing:-.55pt'> </span>чем<span style='letter-spacing:-.6pt'> </span>на<span
+style='letter-spacing:-.55pt'> </span>верхнем.<span style='letter-spacing:-.6pt'>
+</span>Поэтому<span style='letter-spacing:-.55pt'> </span>первый<span
+style='letter-spacing:-.6pt'> </span>муравей<span style='letter-spacing:-.55pt'>
+</span>в<span style='letter-spacing:-.6pt'> </span>следующий<span
+style='letter-spacing:-.55pt'> </span><span style='letter-spacing:-.1pt'>раз </span>выберет
+нижний путь, поскольку там концентрация фермента<span style='letter-spacing:
+-.75pt'> </span>выше.</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=453 height=568 id="Рисунок 2" src="ant.files/image002.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 2</p>
+
+<p class=styletext>В этом и состоит базовая идея алгоритма муравья –
+оптимизация путем непрямой связи между автономными агентами.</p>
+
+<p class=stylehead>Алгоритм муравья</p>
+
+<p class=styletext>Подробно рассмотрим алгоритм муравья, чтобы понять, как он
+работает при решении конкретной проблемы.</p>
+
+<p class=stylemhead><a name="_TOC_250181"></a>Граф</p>
+
+<p class=styletext>Предположим, что окружающая среда для муравьев представляет
+собой закрытую<span style='letter-spacing:-.7pt'> </span>двумерную<span
+style='letter-spacing:-.65pt'> </span>сеть.<span style='letter-spacing:-.65pt'>
+</span>Вспомните,<span style='letter-spacing:-.65pt'> </span>что<span
+style='letter-spacing:-.65pt'> </span>сеть<span style='letter-spacing:-.65pt'> </span>–<span
+style='letter-spacing:-.65pt'> </span>это<span style='letter-spacing:-.65pt'> </span>группа<span
+style='letter-spacing:-.65pt'> </span>узлов,<span style='letter-spacing:-.65pt'>
+</span>соединенных<span style='letter-spacing:-.65pt'> </span>посредством
+граней. Каждая грань имеет вес, который мы обозначим как расстояние между двумя
+узлами, соединенными ею. Граф двунаправленный, поэтому муравей может
+путешествовать по грани в любом направлении (рис.<span style='letter-spacing:
+1.65pt'> 4</span>).</p>
+
+<p class=MsoBodyText align=center style='margin-top:9.4pt;margin-right:31.0pt;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+text-indent:17.0pt;line-height:101%;page-break-after:avoid'><img width=536
+height=620 id="Рисунок 3" src="ant.files/image003.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 3</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=250 height=290 id="Рисунок 5" src="ant.files/image004.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 4</p>
+
+<p class=stylemhead>Муравей</p>
+
+<p class=styletext>Муравей<span style='letter-spacing:-1.5pt'> </span>–<span
+style='letter-spacing:-1.45pt'> </span>это<span style='letter-spacing:-1.5pt'> </span>программный<span
+style='letter-spacing:-1.45pt'> </span>агент,<span style='letter-spacing:-1.5pt'>
+</span>который<span style='letter-spacing:-1.45pt'> </span>является<span
+style='letter-spacing:-1.45pt'> </span>членом<span style='letter-spacing:-1.5pt'>
+</span>большой<span style='letter-spacing:-1.45pt'> </span><span
+style='letter-spacing:-.2pt'>колонии </span>и<span style='letter-spacing:-.75pt'>
+</span>используется<span style='letter-spacing:-.75pt'> </span>для<span
+style='letter-spacing:-.75pt'> </span>решения<span style='letter-spacing:-.75pt'>
+</span>какой-либо<span style='letter-spacing:-.75pt'> </span>проблемы.<span
+style='letter-spacing:-.75pt'> </span>Муравей<span style='letter-spacing:-.75pt'>
+</span>снабжается<span style='letter-spacing:-.75pt'> </span>набором простых<span
+style='letter-spacing:-1.15pt'> </span>правил,<span style='letter-spacing:-1.1pt'>
+</span>которые<span style='letter-spacing:-1.15pt'> </span>позволяют<span
+style='letter-spacing:-1.1pt'> </span>ему<span style='letter-spacing:-1.15pt'> </span>выбирать<span
+style='letter-spacing:-1.1pt'> </span>путь<span style='letter-spacing:-1.15pt'>
+</span>в<span style='letter-spacing:-1.1pt'> </span>графе.<span
+style='letter-spacing:-1.15pt'> </span>Он<span style='letter-spacing:-1.1pt'> </span>поддерживает
+<i>список<span style='letter-spacing:-.3pt'> </span>табу<span style='letter-spacing:
+-.3pt'> </span></i>(tabu<span style='letter-spacing:-.25pt'> </span>list),<span
+style='letter-spacing:-.3pt'> </span>то<span style='letter-spacing:-.25pt'> </span>есть<span
+style='letter-spacing:-.3pt'> </span>список<span style='letter-spacing:-.25pt'>
+</span>узлов,<span style='letter-spacing:-.3pt'> </span>которые<span
+style='letter-spacing:-.25pt'> </span>он<span style='letter-spacing:-.3pt'> </span>уже<span
+style='letter-spacing:-.3pt'> </span>посетил.<span style='letter-spacing:-.25pt'>
+</span>Таким<span style='letter-spacing:-.3pt'> </span>образом, муравей должен
+проходить через каждый узел только один раз. Путь <span style='letter-spacing:
+-.15pt'>между </span>двумя<span style='letter-spacing:-.35pt'> </span>узлами<span
+style='letter-spacing:-.3pt'> </span>графа,<span style='letter-spacing:-.3pt'> </span>по<span
+style='letter-spacing:-.35pt'> </span>которому<span style='letter-spacing:-.3pt'>
+</span>муравей<span style='letter-spacing:-.3pt'> </span>посетил<span
+style='letter-spacing:-.35pt'> </span>каждый<span style='letter-spacing:-.3pt'>
+</span>узел<span style='letter-spacing:-.3pt'> </span>только<span
+style='letter-spacing:-.35pt'> </span>один<span style='letter-spacing:-.3pt'> </span>раз,
+<span style='letter-spacing:-.15pt'>называется</span><span style='letter-spacing:
+-.75pt'> </span><i><span style='letter-spacing:-.15pt'>путем</span><span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.15pt'>Гамильтона</span><span
+style='letter-spacing:-.7pt'> </span></i><span style='letter-spacing:-.15pt'>(Hamiltonian</span><span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.15pt'>path),</span><span
+style='letter-spacing:.85pt'> </span>по<span style='letter-spacing:-.7pt'> </span><span
+style='letter-spacing:-.15pt'>имени</span><span style='letter-spacing:-.7pt'> </span><span
+style='letter-spacing:-.15pt'>математика</span><span style='letter-spacing:
+-.7pt'> </span><span style='letter-spacing:-.15pt'>сэра</span><span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.15pt'>Уиль</span>яма<span
+style='letter-spacing:-.55pt'> </span>Гамильтона<span style='letter-spacing:
+-.5pt'> </span>(Sir<span style='letter-spacing:-.55pt'> </span><span
+style='letter-spacing:-.2pt'>William</span><span style='letter-spacing:-.5pt'> </span>Hamilton).</p>
+
+<p class=styletext>Узлы<span style='letter-spacing:-.25pt'> </span>в<span
+style='letter-spacing:-.25pt'> </span>списке<span style='letter-spacing:-.2pt'>
+</span>«текущего<span style='letter-spacing:-.25pt'> </span>путешествия»<span
+style='letter-spacing:-.2pt'> </span>располагаются<span style='letter-spacing:
+-.25pt'> </span>в<span style='letter-spacing:-.2pt'> </span>том<span
+style='letter-spacing:-.25pt'> </span>порядке,<span style='letter-spacing:-.25pt'>
+</span>в<span style='letter-spacing:-.2pt'> </span><span style='letter-spacing:
+-.15pt'>кото</span>ром<span style='letter-spacing:-.5pt'> </span>муравей<span
+style='letter-spacing:-.45pt'> </span>посещал<span style='letter-spacing:-.45pt'>
+</span>их.<span style='letter-spacing:-.45pt'> </span>Позже<span
+style='letter-spacing:-.45pt'> </span>список<span style='letter-spacing:-.45pt'>
+</span>используется<span style='letter-spacing:-.45pt'> </span>для<span
+style='letter-spacing:-.45pt'> </span>определения<span style='letter-spacing:
+-.45pt'> </span>протяженности пути между<span style='letter-spacing:1.45pt'> </span>узлами.</p>
+
+<p class=styletext>Настоящий<span style='letter-spacing:-.25pt'> </span>муравей<span
+style='letter-spacing:-.25pt'> </span>во<span style='letter-spacing:-.25pt'> </span>время<span
+style='letter-spacing:-.25pt'> </span>перемещения<span style='letter-spacing:
+-.25pt'> </span>по<span style='letter-spacing:-.25pt'> </span>пути<span
+style='letter-spacing:-.25pt'> </span>будет<span style='letter-spacing:-.25pt'>
+</span>оставлять<span style='letter-spacing:-.25pt'> </span>за<span
+style='letter-spacing:-.25pt'> </span>собой фермент. В алгоритме муравья агент
+оставляет фермент на гранях сети после<span style='letter-spacing:-1.6pt'> </span><span
+style='letter-spacing:-.25pt'>за</span>вершения<span style='letter-spacing:
+-.6pt'> </span>путешествия.<span style='letter-spacing:-.6pt'> </span>О<span
+style='letter-spacing:-.6pt'> </span>том,<span style='letter-spacing:-.6pt'> </span>как<span
+style='letter-spacing:-.55pt'> </span>это<span style='letter-spacing:-.6pt'> </span>происходит,<span
+style='letter-spacing:-.6pt'> </span>рассказывается<span style='letter-spacing:
+-.6pt'> </span>в<span style='letter-spacing:-.55pt'> </span>разделе<span
+style='letter-spacing:-.6pt'> </span>«Путешествие<span style='letter-spacing:
+.55pt'> </span>муравья».</p>
+
+<p class=stylemhead><a name="_TOC_250179"></a>Начальная популяция</p>
+
+<p class=styletext>После создания популяция муравьев поровну распределяется по
+узлам сети. Необходимо равное разделение муравьев между узлами, чтобы все узлы
+имели одинаковые шансы стать отправной точкой. Если все муравьи начнут движение
+из одной точки, это будет означать, что данная точка является оптимальной <span
+style='letter-spacing:-.2pt'>для </span>старта, а на самом деле мы этого не
+знаем.</p>
+
+<p class=stylemhead><a name="_TOC_250178"></a>Движение муравья</p>
+
+<p class=styletext>Движение муравья основывается на одном и очень простом
+вероятностном уравнении.<span style='letter-spacing:-.85pt'> </span>Если<span
+style='letter-spacing:-.8pt'> </span>муравей<span style='letter-spacing:-.8pt'>
+</span>еще<span style='letter-spacing:-.85pt'> </span>не<span style='letter-spacing:
+-.8pt'> </span>закончил<span style='letter-spacing:-.8pt'> </span><i>путь<span
+style='letter-spacing:-.85pt'> </span></i>(path),<span style='letter-spacing:
+-.8pt'> </span>то<span style='letter-spacing:-.8pt'> </span>есть<span
+style='letter-spacing:-.85pt'> </span>не<span style='letter-spacing:-.8pt'> </span>посетил<span
+style='letter-spacing:-.8pt'> </span>все<span style='letter-spacing:-.85pt'> </span>узлы
+сети,<span style='letter-spacing:-.8pt'> </span>для<span style='letter-spacing:
+-.8pt'> </span>определения<span style='letter-spacing:-.8pt'> </span>следующей<span
+style='letter-spacing:-.8pt'> </span>грани<span style='letter-spacing:-.8pt'> </span>пути<span
+style='letter-spacing:-.8pt'> </span>используется<span style='letter-spacing:
+-.8pt'> </span>уравнение<span style='letter-spacing:-.75pt'> </span>4.1:</p>
+
+<p class=styletext><img width=239 height=72 id="Рисунок 9"
+src="ant.files/image005.png">  <span lang=EN-US>(1)</span></p>
+
+<p class=styletext>Здесь <span style='font-family:Symbol'>t</span>(r,u) –
+интенсивность фермента на грани между узлами r и u, <span style='font-family:
+Symbol'>t</span>(r,u) <span style='letter-spacing:-.55pt'>– </span>функция,
+которая представляет измерение обратного расстояния для грани, <span
+style='font-family:Symbol'>a</span><span style='font-family:"Times New Roman",serif'>
+</span>– вес фермента, а <span style='font-family:Symbol'>b</span><span
+style='font-family:"Times New Roman",serif'> </span>– коэффициент эвристики.
+Параметры <span style='font-family:Symbol'>a</span><span style='font-family:
+"Times New Roman",serif'> </span>и <span style='font-family:Symbol'>b</span><span
+style='font-family:"Times New Roman",serif'> </span>определяют относительную<span
+style='letter-spacing:-.8pt'> </span>значимость<span style='letter-spacing:
+-.75pt'> </span>двух<span style='letter-spacing:-.8pt'> </span>параметров,<span
+style='letter-spacing:-.75pt'> </span>а<span style='letter-spacing:-.8pt'> </span>также<span
+style='letter-spacing:-.75pt'> </span>их<span style='letter-spacing:-.8pt'> </span>влияние<span
+style='letter-spacing:-.75pt'> </span>на<span style='letter-spacing:-.75pt'> </span>уравнение.<span
+style='letter-spacing:-.8pt'> </span>Вспомните,<span style='letter-spacing:
+-.7pt'> </span>что<span style='letter-spacing:-.65pt'> </span>муравей<span
+style='letter-spacing:-.65pt'> </span>путешествует<span style='letter-spacing:
+-.65pt'> </span>только<span style='letter-spacing:-.7pt'> </span>по<span
+style='letter-spacing:-.65pt'> </span>узлам,<span style='letter-spacing:-.65pt'>
+</span>которые<span style='letter-spacing:-.65pt'> </span>еще<span
+style='letter-spacing:-.7pt'> </span>не<span style='letter-spacing:-.65pt'> </span>были<span
+style='letter-spacing:-.65pt'> </span>посещены (как<span style='letter-spacing:
+-.8pt'> </span>указано<span style='letter-spacing:-.75pt'> </span>списком<span
+style='letter-spacing:-.8pt'> </span>табу).<span style='letter-spacing:-.75pt'>
+</span>Поэтому<span style='letter-spacing:-.75pt'> </span>вероятность<span
+style='letter-spacing:-.8pt'> </span>рассчитывается<span style='letter-spacing:
+-.75pt'> </span>только<span style='letter-spacing:-.75pt'> </span>для<span
+style='letter-spacing:-.8pt'> </span>граней,<span style='letter-spacing:-.3pt'>
+</span>которые<span style='letter-spacing:-.25pt'> </span>ведут<span
+style='letter-spacing:-.25pt'> </span>к<span style='letter-spacing:-.25pt'> </span>еще<span
+style='letter-spacing:-.25pt'> </span>не<span style='letter-spacing:-.25pt'> </span>посещенным<span
+style='letter-spacing:-.25pt'> </span>узлам.<span style='letter-spacing:-.25pt'>
+</span>Переменная<span style='letter-spacing:-.25pt'> </span>k<span
+style='letter-spacing:-.25pt'> </span>представляет<span style='letter-spacing:
+-.25pt'> </span>грани, которые еще не были<span style='letter-spacing:2.0pt'> </span>посещены.</p>
+
+<p class=stylemhead><a name="_TOC_250177"></a>Путешествие муравья</p>
+
+<p class=styletext>Пройденный муравьем <span style='letter-spacing:-.15pt'>путь
+</span>отображается, когда муравей посетит <span style='letter-spacing:-.15pt'>все
+узлы</span><span style='letter-spacing:-1.5pt'> </span>диаграммы. Обратите
+внимание, <span style='letter-spacing:-.15pt'>что </span>циклы запрещены,
+поскольку в алгоритм<span style='letter-spacing:-1.65pt'> </span>включен список<span
+style='letter-spacing:.5pt'> </span>табу.<span style='letter-spacing:.55pt'> </span>После<span
+style='letter-spacing:.5pt'> </span>завершения<span style='letter-spacing:.55pt'>
+</span>длина<span style='letter-spacing:.5pt'> </span>пути<span
+style='letter-spacing:.55pt'> </span>может<span style='letter-spacing:.5pt'> </span>быть<span
+style='letter-spacing:.55pt'> </span>подсчитана<span style='letter-spacing:
+.5pt'> </span>–<span style='letter-spacing:.55pt'> </span>она<span
+style='letter-spacing:.5pt'> </span>равна</p>
+
+</div>
+
+<span style='font-size:11.0pt;line-height:101%;font-family:"Calibri",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection3>
+
+<p class=styletext>сумме<span style='letter-spacing:-1.1pt'> </span>всех<span
+style='letter-spacing:-1.05pt'> </span>граней,<span style='letter-spacing:-1.05pt'>
+</span>по<span style='letter-spacing:-1.05pt'> </span>которым<span
+style='letter-spacing:-1.05pt'> </span>путешествовал<span style='letter-spacing:
+-1.05pt'> </span>муравей.<span style='letter-spacing:-1.05pt'> </span>Уравнение<span
+style='letter-spacing:-1.05pt'> </span>4.2<span style='letter-spacing:-1.1pt'> </span>показывает
+количество<span style='letter-spacing:-.95pt'> </span>фермента,<span
+style='letter-spacing:-.95pt'> </span>который<span style='letter-spacing:-.95pt'>
+</span>был<span style='letter-spacing:-.95pt'> </span>оставлен<span
+style='letter-spacing:-.9pt'> </span>на<span style='letter-spacing:-.95pt'> </span>каждой<span
+style='letter-spacing:-.95pt'> </span>грани<span style='letter-spacing:-.95pt'>
+</span>пути<span style='letter-spacing:-.9pt'> </span>для<span
+style='letter-spacing:-.95pt'> </span>муравья<span style='letter-spacing:-.95pt'>
+</span>k. <span style='letter-spacing:-.15pt'>Переменная </span>Q <span
+style='letter-spacing:-.15pt'>является</span><span style='letter-spacing:-1.25pt'>
+</span><span style='letter-spacing:-.15pt'>константой.</span></p>
+
+<p class=styletext><img width=162 height=64 id="Рисунок 10"
+src="ant.files/image006.png"><span style='font-family:"Times New Roman",serif'> </span><span
+style='font-family:"Times New Roman",serif;letter-spacing:-1.2pt'> </span>(2)</p>
+
+<p class=styletext>Результат<span style='letter-spacing:-.95pt'> </span>уравнения<span
+style='letter-spacing:-.95pt'> </span>является<span style='letter-spacing:-.95pt'>
+</span>средством<span style='letter-spacing:-.9pt'> </span>измерения<span
+style='letter-spacing:-.95pt'> </span>пути,<span style='letter-spacing:-.95pt'>
+</span>–<span style='letter-spacing:-.9pt'> </span>короткий<span
+style='letter-spacing:-.95pt'> </span>путь<span style='letter-spacing:-.95pt'> </span>характеризуется
+высокой концентрацией фермента, а более длинный путь – <span style='letter-spacing:
+-.15pt'>более </span>низкой.<span style='letter-spacing:-.7pt'> </span>Затем<span
+style='letter-spacing:-.65pt'> </span>полученный<span style='letter-spacing:
+-.65pt'> </span>результат<span style='letter-spacing:-.65pt'> </span>используется<span
+style='letter-spacing:-.65pt'> </span>в<span style='letter-spacing:-.65pt'> </span>уравнении<span
+style='letter-spacing:-.65pt'> </span>4.3,<span style='letter-spacing:-.65pt'> </span>чтобы<span
+style='letter-spacing:-.65pt'> </span>увеличить<span style='letter-spacing:
+-.85pt'> </span>количество<span style='letter-spacing:-.8pt'> </span>фермента<span
+style='letter-spacing:-.8pt'> </span>вдоль<span style='letter-spacing:-.8pt'> </span>каждой<span
+style='letter-spacing:-.8pt'> </span>грани,<span style='letter-spacing:-.8pt'> </span>пройденного<span
+style='letter-spacing:-.8pt'> </span>муравьем<span style='letter-spacing:-.8pt'>
+</span>пути.</p>
+
+<p class=styletext><img width=261 height=40 id="Рисунок 11"
+src="ant.files/image007.png"><span style='font-family:"Times New Roman",serif;
+letter-spacing:-1.15pt'>  </span>(3)</p>
+
+<p class=styletext>Обратите внимание, что данное уравнение применяется ко всему
+пути, при этом<span style='letter-spacing:-1.0pt'> </span>каждая<span
+style='letter-spacing:-1.0pt'> </span>грань<span style='letter-spacing:-1.0pt'>
+</span>помечается<span style='letter-spacing:-1.0pt'> </span>ферментом<span
+style='letter-spacing:-1.0pt'> </span>пропорционально<span style='letter-spacing:
+-1.0pt'> </span>длине<span style='letter-spacing:-1.0pt'> </span>пути.<span
+style='letter-spacing:-1.0pt'> </span>Поэтому следует<span style='letter-spacing:
+-.9pt'> </span>дождаться,<span style='letter-spacing:-.85pt'> </span>пока<span
+style='letter-spacing:-.85pt'> </span>муравей<span style='letter-spacing:-.85pt'>
+</span>закончит<span style='letter-spacing:-.85pt'> </span>путешествие<span
+style='letter-spacing:-.85pt'> </span>и<span style='letter-spacing:-.85pt'> </span>только<span
+style='letter-spacing:-.85pt'> </span>потом<span style='letter-spacing:-.85pt'>
+</span>обновить уровни фермента, в противном случае истинная длина пути
+останется неизвестной. Константа <span style='font-family:Symbol'>r</span><span
+style='font-family:"Times New Roman",serif'> </span>– значение между 0 и<span
+style='letter-spacing:.85pt'> </span>1.</p>
+
+<p class=stylemhead><a name="_TOC_250176"></a>Испарение фермента</p>
+
+<p class=styletext>В начале пути у каждой грани есть шанс быть выбранной. Чтобы
+постепенно удалить<span style='letter-spacing:-.7pt'> </span>грани,<span
+style='letter-spacing:-.65pt'> </span>которые<span style='letter-spacing:-.7pt'>
+</span>входят<span style='letter-spacing:-.65pt'> </span>в<span
+style='letter-spacing:-.7pt'> </span>худшие<span style='letter-spacing:-.65pt'>
+</span>пути<span style='letter-spacing:-.7pt'> </span>в<span style='letter-spacing:
+-.65pt'> </span>сети,<span style='letter-spacing:-.65pt'> </span>ко<span
+style='letter-spacing:-.7pt'> </span>всем<span style='letter-spacing:-.65pt'> </span>граням<span
+style='letter-spacing:-.7pt'> </span>применяется процедура <i>испарения
+фермента </i>(Pheromone evaporation). Используя константу <span
+style='font-family:Symbol'>r</span><span style='font-family:"Times New Roman",serif'>
+</span>из уравнения 4.3, мы получаем уравнение<span style='letter-spacing:.15pt'>
+</span>4.4.</p>
+
+<p class=styletext><img width=197 height=43 id="Рисунок 12"
+src="ant.files/image008.png"> (4)</p>
+
+<p class=styletext>Поэтому для испарения фермента используется обратный
+коэффициент обновления пути.</p>
+
+<p class=stylemhead><a name="_TOC_250175"></a>Повторный запуск</p>
+
+<p class=styletext>После<span style='letter-spacing:-1.0pt'> </span>того<span
+style='letter-spacing:-1.0pt'> </span>как<span style='letter-spacing:-1.0pt'> </span>путь<span
+style='letter-spacing:-1.0pt'> </span>муравья<span style='letter-spacing:-.95pt'>
+</span>завершен,<span style='letter-spacing:-1.0pt'> </span>грани<span
+style='letter-spacing:-1.0pt'> </span>обновлены<span style='letter-spacing:
+-1.0pt'> </span>в<span style='letter-spacing:-1.0pt'> </span>соответствии<span
+style='letter-spacing:-.95pt'> </span>с<span style='letter-spacing:-1.0pt'> </span>длиной<span
+style='letter-spacing:-.45pt'> </span>пути<span style='letter-spacing:-.4pt'> </span>и<span
+style='letter-spacing:-.4pt'> </span>произошло<span style='letter-spacing:-.4pt'>
+</span>испарение<span style='letter-spacing:-.4pt'> </span>фермента<span
+style='letter-spacing:-.4pt'> </span>на<span style='letter-spacing:-.4pt'> </span>всех<span
+style='letter-spacing:-.4pt'> </span>гранях,<span style='letter-spacing:-.4pt'>
+</span>алгоритм<span style='letter-spacing:-.4pt'> </span>запускается повторно.
+Список табу очищается, и длина пути обнуляется. Муравьям разрешается
+перемещаться по сети, основывая выбор грани на уравнении<span style='letter-spacing:
+1.8pt'> </span>4.1</p>
+
+<p class=styletext>Этот процесс может выполняться для постоянного количества
+путей или до момента,<span style='letter-spacing:-.9pt'> </span>когда<span
+style='letter-spacing:-.85pt'> </span>на<span style='letter-spacing:-.9pt'> </span>протяжении<span
+style='letter-spacing:-.85pt'> </span>нескольких<span style='letter-spacing:
+-.9pt'> </span>запусков<span style='letter-spacing:-.85pt'> </span>не<span
+style='letter-spacing:-.9pt'> </span>было<span style='letter-spacing:-.85pt'> </span>отмечено<span
+style='letter-spacing:-.9pt'> </span>повторных изменений. Затем определяется
+лучший путь, который и является решением.</p>
+
+<p class=stylehead><a name="_TOC_250174"></a>Пример итерации</p>
+
+<p class=styletext>Давайте<span style='letter-spacing:-1.2pt'> </span>разберем<span
+style='letter-spacing:-1.15pt'> </span>функционирование<span style='letter-spacing:
+-1.15pt'> </span>алгоритма<span style='letter-spacing:-1.15pt'> </span>на<span
+style='letter-spacing:-1.15pt'> </span>простом<span style='letter-spacing:-1.15pt'>
+</span>примере,<span style='letter-spacing:-1.15pt'> </span>чтобы<span
+style='letter-spacing:-1.15pt'> </span>увидеть, <span style='letter-spacing:
+-.15pt'>как </span>работают уравнения. Вспомните (рис. <span style='letter-spacing:
+-.15pt'>1) </span>простой сценарий с двумя муравьями, которые выбирают <span
+style='letter-spacing:-.15pt'>два </span>разных <span style='letter-spacing:
+-.15pt'>пути для </span>достижения одной цели. На <span style='letter-spacing:
+-.15pt'>рис. </span>5 показан <span style='letter-spacing:-.15pt'>этот </span>пример
+с двумя гранями между двумя узлами (V<span style='font-size:5.5pt;line-height:
+107%;position:relative;top:3.0pt'>0 </span>и <span style='letter-spacing:-.15pt'>V</span><span
+style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt;letter-spacing:
+-.15pt'>1</span><span style='letter-spacing:-.15pt'>). </span>Каждая грань
+инициализируется и имеет одинаковые шансы на <span style='letter-spacing:-.15pt'>то,
+</span>чтобы <span style='letter-spacing:-.15pt'>быть</span><span
+style='letter-spacing:-1.25pt'> </span>выбранной</p>
+
+<p class=MsoNormal align=center style='text-align:center;text-indent:31.15pt;
+page-break-after:avoid'><img width=535 height=611 id="Рисунок 6"
+src="ant.files/image009.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 5</p>
+
+<p class=styletext>Два муравья находятся в узле V<span style='font-size:5.5pt;
+line-height:107%;position:relative;top:2.5pt'>0 </span>и помечаются как A<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:2.5pt'>0 </span>и
+A<span style='font-size:5.5pt;line-height:107%;position:relative;top:2.5pt'>1</span>.
+Так как вероятность<span style='letter-spacing:-.8pt'> </span>выбора<span
+style='letter-spacing:-.8pt'> </span>любого<span style='letter-spacing:-.8pt'> </span>пути<span
+style='letter-spacing:-.8pt'> </span>одинакова,<span style='letter-spacing:
+-.8pt'> </span>в<span style='letter-spacing:-.8pt'> </span>этом<span
+style='letter-spacing:-.8pt'> </span>цикле<span style='letter-spacing:-.8pt'> </span>мы<span
+style='letter-spacing:-.8pt'> </span>проигнорируем<span style='letter-spacing:
+-.8pt'> </span>уравнение выбора<span style='letter-spacing:-.45pt'> </span>пути.<span
+style='letter-spacing:-.45pt'> </span>На<span style='letter-spacing:-.4pt'> </span>рис.<span
+style='letter-spacing:-.45pt'> </span>6<span style='letter-spacing:-.4pt'> </span>каждый<span
+style='letter-spacing:-.45pt'> </span>муравей<span style='letter-spacing:-.4pt'>
+</span>выбирает<span style='letter-spacing:-.45pt'> </span>свой<span
+style='letter-spacing:-.4pt'> </span>путь<span style='letter-spacing:-.45pt'> </span>(муравей<span
+style='letter-spacing:-.4pt'> </span>A<span style='font-size:5.5pt;line-height:
+107%;position:relative;top:2.5pt'>0<span style='letter-spacing:.5pt'> </span></span>идет<span
+style='letter-spacing:-.5pt'> </span>по верхнему пути, а муравей A<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:2.5pt'>1 </span>–
+по<span style='letter-spacing:.95pt'> </span>нижнему).</p>
+
+<p class=styletext>В<span style='letter-spacing:-1.45pt'> </span>таблице<span
+style='letter-spacing:-1.45pt'> </span>на<span style='letter-spacing:-1.45pt'> </span>рис.<span
+style='letter-spacing:-1.45pt'> </span>6<span style='letter-spacing:-1.4pt'> </span>показано,<span
+style='letter-spacing:-1.45pt'> </span>что<span style='letter-spacing:-1.45pt'>
+</span>муравей<span style='letter-spacing:-1.45pt'> </span>A<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:2.5pt'>0<span
+style='letter-spacing:-.8pt'> </span></span>сделал<span style='letter-spacing:
+-1.45pt'> </span>20<span style='letter-spacing:-1.45pt'> </span>шагов,<span
+style='letter-spacing:-1.45pt'> </span>а<span style='letter-spacing:-1.4pt'> </span>муравей<span
+style='letter-spacing:-1.45pt'> </span>A<span style='font-size:5.5pt;
+line-height:107%;position:relative;top:2.5pt'>1<span style='letter-spacing:
+-.45pt'> </span></span>– только<span style='letter-spacing:-1.0pt'> </span>10.<span
+style='letter-spacing:-1.0pt'> </span>По<span style='letter-spacing:-1.0pt'> </span>уравнению<span
+style='letter-spacing:-1.0pt'> </span>2<span style='letter-spacing:-1.0pt'> </span>мы<span
+style='letter-spacing:-1.0pt'> </span>рассчитываем<span style='letter-spacing:
+-1.0pt'> </span>количество<span style='letter-spacing:-1.0pt'> </span>фермента,<span
+style='letter-spacing:-1.0pt'> </span>которое<span style='letter-spacing:-1.0pt'>
+</span>должно быть «нанесено».</p>
+
+<p class=styletext>Далее<span style='letter-spacing:-.4pt'> </span>по<span
+style='letter-spacing:-.4pt'> </span>уравнению<span style='letter-spacing:-.4pt'>
+</span>4.3<span style='letter-spacing:-.4pt'> </span>рассчитывается<span
+style='letter-spacing:-.4pt'> </span>количество<span style='letter-spacing:
+-.4pt'> </span>фермента,<span style='letter-spacing:-.4pt'> </span>которое<span
+style='letter-spacing:-.4pt'> </span>будет применено. Для муравья A<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>0 </span>результат<span
+style='letter-spacing:1.45pt'> </span>составляет:</p>
+
+<p class=styletext>= 0,1 + (0,5 <span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>0,6) = 0,4.</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=759 height=602 id="Рисунок 8" src="ant.files/image010.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 6</p>
+
+<p class=styletext>Для муравья A<span style='font-size:5.5pt;line-height:107%;
+position:relative;top:3.0pt'>1 </span>результат составляет:</p>
+
+<p class=styletext>= 0,1 + (1,0 <span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>0,6) = 0,7.</p>
+
+<p class=styletext>Далее<span style='letter-spacing:-.65pt'> </span>с<span
+style='letter-spacing:-.65pt'> </span>помощью<span style='letter-spacing:-.7pt'>
+</span>уравнения<span style='letter-spacing:-.65pt'> </span>4.4<span
+style='letter-spacing:-.7pt'> </span>определяется,<span style='letter-spacing:
+-.65pt'> </span>какая<span style='letter-spacing:-.7pt'> </span>часть<span
+style='letter-spacing:-.65pt'> </span>фермента<span style='letter-spacing:-.7pt'>
+</span>испарится и, соответственно, сколько останется. Результаты (для каждого
+пути) составляют:</p>
+
+<p class=styletext>= 0,4 <span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(1,0 – 0,6) = 0,16</p>
+
+<p class=styletext>= 0,7 <span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(1,0 – 0,6) = 0,28.</p>
+
+<p class=styletext>Эти значения представляют новое количество фермента для
+каждого пути (верхнего и нижнего, соответственно).  Теперь переместим муравьев
+обратно в<span style='letter-spacing:-.4pt'> </span>узел<span style='letter-spacing:
+-.35pt'> </span>V<span style='font-size:5.5pt;line-height:107%;position:relative;
+top:3.0pt'>0<span style='letter-spacing:-.2pt'> </span></span>и<span
+style='letter-spacing:-.4pt'> </span>воспользуемся<span style='letter-spacing:
+-.35pt'> </span>вероятностным<span style='letter-spacing:-.35pt'> </span>уравнением<span
+style='letter-spacing:-.35pt'> </span>выбора<span style='letter-spacing:-.35pt'>
+</span>пути<span style='letter-spacing:-.4pt'> </span>4.1,<span
+style='letter-spacing:-.35pt'> </span>чтобы<span style='letter-spacing:-.35pt'>
+</span>определить, какой путь должны выбрать муравьи.</p>
+
+<p class=styletext>Вероятность<span style='letter-spacing:-.6pt'> </span>того,<span
+style='letter-spacing:-.55pt'> </span>что<span style='letter-spacing:-.6pt'> </span>муравей<span
+style='letter-spacing:-.55pt'> </span>выберет<span style='letter-spacing:-.6pt'>
+</span>верхний<span style='letter-spacing:-.55pt'> </span>путь<span
+style='letter-spacing:-.55pt'> </span>(представленный<span style='letter-spacing:
+-.6pt'> </span>количеством фермента 0,16),<span style='letter-spacing:1.3pt'> </span>составляет:</p>
+
+<p class=styletext>(0,16)<span style='font-size:5.5pt;line-height:107%;
+position:relative;top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(0,5)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0 </span>/
+((0,16)<span style='font-size:5.5pt;line-height:107%;position:relative;
+top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(0,5)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0</span>)
++ ((0,28)<span style='font-size:5.5pt;line-height:107%;position:relative;
+top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(1,0)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0</span>)
+= 0,002048 / 0,024 = P(0,085).</p>
+
+</div>
+
+<span style='font-size:11.0pt;font-family:"Calibri",sans-serif'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=WordSection4>
+
+<p class=styletext>Вероятность<span style='letter-spacing:-.7pt'> </span>того,<span
+style='letter-spacing:-.65pt'> </span>что<span style='letter-spacing:-.7pt'> </span>муравей<span
+style='letter-spacing:-.65pt'> </span>выберет<span style='letter-spacing:-.7pt'>
+</span>нижний<span style='letter-spacing:-.65pt'> </span>путь<span
+style='letter-spacing:-.65pt'> </span>(представленный<span style='letter-spacing:
+-.7pt'> </span>количеством фермента 0,28),<span style='letter-spacing:1.3pt'> </span>составляет:</p>
+
+<p class=styletext>(0,28)<span style='font-size:5.5pt;line-height:107%;
+position:relative;top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(1,0)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0 </span>/
+((0,16)<span style='font-size:5.5pt;line-height:107%;position:relative;
+top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(0,5)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0</span>)
++ ((0,28)<span style='font-size:5.5pt;line-height:107%;position:relative;
+top:-3.5pt'>3,0 </span><span style='font-family:Symbol'>&acute;</span><span
+style='font-family:"Times New Roman",serif'> </span>(1,0)<span
+style='font-size:5.5pt;line-height:107%;position:relative;top:-3.5pt'>1,0</span>)
+= 0,021952 / 0,024 = P(0,915).</p>
+
+<p class=styletext>При<span style='letter-spacing:-.55pt'> </span>сопоставлении<span
+style='letter-spacing:-.55pt'> </span>двух<span style='letter-spacing:-.5pt'> </span>вероятностей<span
+style='letter-spacing:-.55pt'> </span>оба<span style='letter-spacing:-.5pt'> </span>муравья<span
+style='letter-spacing:-.55pt'> </span>выберут<span style='letter-spacing:-.5pt'>
+</span>нижний<span style='letter-spacing:-.55pt'> </span>путь,<span
+style='letter-spacing:-.55pt'> </span>который является наиболее<span
+style='letter-spacing:1.3pt'> </span>оптимальным.</p>
+
+<p class=stylehead>Пример задачи</p>
+
+<p class=styletext>В качестве примера рассмотрим <i><span style='font-family:
+PetersburgC-Italic'>задачу коммивояжера </span></i>(Traveling Salesman Problem – TSP). Она заключается в том, чтобы найти кратчайший
+путь между городами, при котором каждый город будет посещен всего один раз. То
+есть надо найти кратчайший Гамильтонов путь в графе, где в качестве узлов
+выступают города, а в каче стве граней – соединяющие их дороги. Математики впервые
+изучили задачу TSP в 1930_е гг., в частности, ею занимался Карл Менгер (Karl
+Menger) в Вене. Следует отметить, что похожие задачи исследовались еще в 19 в.
+ирландским математиком сэром Уильямом Роуэном Гамильтоном (Sir William Rowan
+Hamilton)</p>
+<div class="webgl-content">
+  <div class="footer">
+    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+  </div>
+	<center><div id="unityContainer" style="width: 960px; height: 600px"></div></center>
+</div>
+</td>
+<p class=styletext><span style='color:red'>&nbsp;</span></p>
+</td>
+<td width="15%" bgcolor="black"></td>
+</tr>
+
+</table>
+
+</center>
+
+</body>
+
+</html>

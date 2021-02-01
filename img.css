@@ -1,0 +1,42 @@
+.img_link { 
+  position: relative;
+  align-items: center; /* Подставьте другое значение и посмотрите результат */
+  width: 70%;
+  margin:0 auto;// устанаваливаем блок div по центру страницы
+}
+
+.img_link img { 
+  position:absolute; /* абсолютное позиционирование*/
+  left: 0; /* выравниваем картинки по левому верхнему углу div-а*/ 
+  top: 0; /* выравниваем картинки по левому верхнему углу div-а */  
+  box-shadow: 1px 1px 2px #e6e6e6;
+  box-shadow: 0 0px 7px #e6e6e6, 0 2px 2px #e6e6e6;
+  border: 3px solid #fff;
+  width: 300px; /* Ширина */
+  //height: 100%;  /* Высота */
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;  
+}
+
+.img_link img.light {
+  opacity:0;
+  filter:alpha(opacity=0);
+}
+
+.img_link:hover img.light {
+  opacity:1;
+  filter:alpha(opacity=100);
+  border: 3px solid #F7941E;
+  box-shadow: 0 0px 7px #F7941E, 0 2px 2px #F7941E;
+}
+
+.img_link:hover img.dark, .img_link img.dark:hover {
+  opacity:0;
+  filter:alpha(opacity=0);
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}

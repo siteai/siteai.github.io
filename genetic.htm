@@ -1,0 +1,1112 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+p.stylehead, li.stylehead, div.stylehead
+	{mso-style-name:style_head;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:20.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+p.styletext, li.styletext, div.styletext
+	{mso-style-name:style_text;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:107%;
+	font-size:14.0pt;
+	color:#EDEDED;
+	font-family:"Calibri",sans-serif;}
+p.stylemhead, li.stylemhead, div.stylemhead
+	{mso-style-name:style_mhead;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:107%;
+	font-size:16.0pt;
+	color:white;
+	font-family:"Calibri",sans-serif;
+	font-weight:bold;}
+-->
+</style>
+
+</head>
+
+<body lang=RU style='word-wrap:break-word' bgcolor="black">
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="15%"></td>
+<td width="15%" valign="top" align="left"><a href="index.html"><p class=stylehead style='text-align:left;'>Сайт AI</p></a></td>
+<td width="40%" valign="top" align="center"><p class=stylehead >Генетический Алгоритм</p></td>
+<td width="15%"></td>
+<td width="15%"></td>
+</tr>
+</table>
+
+<table width="100%" bgcolor="black">
+<tr>
+<td width="10%"></td>
+<td width="80%">
+
+<p class=styletext>Генетический<span style='letter-spacing:-.85pt'> </span>алгоритм,<span
+style='letter-spacing:-.8pt'> </span>разработанный<span style='letter-spacing:
+-.8pt'> </span>Джоном<span style='letter-spacing:-.85pt'> </span><span
+style='letter-spacing:-.2pt'>Холландом </span>(John<span style='letter-spacing:
+-.65pt'> </span>Holland),<span style='letter-spacing:-.65pt'> </span>является<span
+style='letter-spacing:-.65pt'> </span>поисковой<span style='letter-spacing:
+-.6pt'> </span>программой,<span style='letter-spacing:-.65pt'> </span>которая<span
+style='letter-spacing:-.65pt'> </span>работает<span style='letter-spacing:-.6pt'>
+</span>с<span style='letter-spacing:-.65pt'> </span>группой<span
+style='letter-spacing:-.65pt'> </span>закодированных решений заданной проблемы.
+Чтобы проиллюстрировать выполнение алгоритма,<span style='letter-spacing:-.55pt'>
+</span>мы<span style='letter-spacing:-.55pt'> </span>воспользуемся<span
+style='letter-spacing:-.55pt'> </span>расчетом<span style='letter-spacing:-.5pt'>
+</span>по<span style='letter-spacing:-.55pt'> </span>эволюционной<span
+style='letter-spacing:-.55pt'> </span>модели<span style='letter-spacing:-.5pt'>
+</span>для<span style='letter-spacing:-.55pt'> </span>выведения
+последовательности действий, которые представляют собой простой алгоритм. Джон<span
+style='letter-spacing:-.4pt'> </span>Коза<span style='letter-spacing:-.35pt'> </span>(John<span
+style='letter-spacing:-.35pt'> </span>Koza)<span style='letter-spacing:-.35pt'>
+</span>назвал<span style='letter-spacing:-.35pt'> </span>этот<span
+style='letter-spacing:-.35pt'> </span>процесс<span style='letter-spacing:-.35pt'>
+</span>генетическим<span style='letter-spacing:-.35pt'> </span>программированием.</p>
+
+<p class=stylehead><a name="_TOC_250144"></a>Биологическое побуждение</p>
+
+<p class=styletext><i>Генетический<span style='letter-spacing:-.65pt'> </span>алгоритм<span
+style='letter-spacing:-.5pt'> </span></i>(Genetic<span style='letter-spacing:
+-.6pt'> </span>algorithm)<span style='letter-spacing:-.55pt'> </span>представляет<span
+style='letter-spacing:-.6pt'> </span>собой<span style='letter-spacing:-.55pt'> </span>технику<span
+style='letter-spacing:-.6pt'> </span><span style='letter-spacing:-.25pt'>опти</span><span
+style='letter-spacing:-.15pt'>мизации,</span><span style='letter-spacing:-1.4pt'>
+</span><span style='letter-spacing:-.15pt'>которая</span><span
+style='letter-spacing:-1.4pt'> </span><span style='letter-spacing:-.15pt'>моделирует</span><span
+style='letter-spacing:-1.35pt'> </span><span style='letter-spacing:-.15pt'>феномен</span><span
+style='letter-spacing:-1.4pt'> </span><span style='letter-spacing:-.15pt'>естественной</span><span
+style='letter-spacing:-1.4pt'> </span><span style='letter-spacing:-.15pt'>эволюции</span><span
+style='letter-spacing:-1.35pt'> </span><span style='letter-spacing:-.15pt'>(впервые</span><span
+style='letter-spacing:-1.4pt'> </span><span style='letter-spacing:-.15pt'>открытый
+</span>Чарльзом<span style='letter-spacing:-.9pt'> </span>Дарвином).<span
+style='letter-spacing:-.9pt'> </span>При<span style='letter-spacing:-.9pt'> </span>естественной<span
+style='letter-spacing:-.9pt'> </span>эволюции<span style='letter-spacing:-.9pt'>
+</span>выживают<span style='letter-spacing:-.85pt'> </span>и<span
+style='letter-spacing:-.9pt'> </span>дают<span style='letter-spacing:-.9pt'> </span>самое<span
+style='letter-spacing:-.9pt'> </span><span style='letter-spacing:-.1pt'>много</span>численное<span
+style='letter-spacing:-1.25pt'> </span>потомство<span style='letter-spacing:
+-1.25pt'> </span>особи,<span style='letter-spacing:-1.25pt'> </span>наиболее<span
+style='letter-spacing:-1.2pt'> </span>адаптированные<span style='letter-spacing:
+-1.25pt'> </span>к<span style='letter-spacing:-1.25pt'> </span>сложным<span
+style='letter-spacing:-1.2pt'> </span>условиям<span style='letter-spacing:-1.25pt'>
+</span>окружающей среды. Степень адаптации, в свою очередь, зависит от набора
+хромосом <span style='letter-spacing:-.2pt'>конкретной</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>особи,</span><span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.2pt'>полученным</span><span
+style='letter-spacing:-.7pt'> </span>от<span style='letter-spacing:-.75pt'> </span><span
+style='letter-spacing:-.2pt'>родителей.</span><span style='letter-spacing:-.7pt'>
+</span><span style='letter-spacing:-.15pt'>Это</span><span style='letter-spacing:
+-.7pt'> </span><span style='letter-spacing:-.2pt'>основа</span><span
+style='letter-spacing:-.75pt'> </span><span style='letter-spacing:-.2pt'>выживания</span><span
+style='letter-spacing:-.7pt'> </span><span style='letter-spacing:-.2pt'>сильнейшего</span><span
+style='letter-spacing:-.7pt'> </span>– не<span style='letter-spacing:-.45pt'> </span>только<span
+style='letter-spacing:-.45pt'> </span>процесс<span style='letter-spacing:-.45pt'>
+</span>выживания,<span style='letter-spacing:-.45pt'> </span>но<span
+style='letter-spacing:-.4pt'> </span>и<span style='letter-spacing:-.45pt'> </span>участие<span
+style='letter-spacing:-.45pt'> </span>в<span style='letter-spacing:-.45pt'> </span>формировании<span
+style='letter-spacing:-.45pt'> </span>следующего<span style='letter-spacing:
+-.4pt'> </span><span style='letter-spacing:-.2pt'>поколе</span>ния. В природе
+выживание является определяющей и основной<span style='letter-spacing:-1.3pt'> </span>функцией.</p>
+
+<p class=stylemhead><a name="_TOC_250143"></a>Генетический алгоритм</p>
+
+<p class=styletext>Генетический<span style='letter-spacing:-1.0pt'> </span>алгоритм<span
+style='letter-spacing:-.95pt'> </span>не<span style='letter-spacing:-.95pt'> </span>пытается<span
+style='letter-spacing:-.95pt'> </span>оптимизировать<span style='letter-spacing:
+-.95pt'> </span>единственное<span style='letter-spacing:-.95pt'> </span>решение.
+Он работает с группой решений, которые кодируются, подобно хромосомам.<span
+style='letter-spacing:1.65pt'> </span>Отдельные гены хромосомы представляют собой
+уникальные<span style='letter-spacing:-.7pt'> </span>переменные<span
+style='letter-spacing:-.65pt'> д</span>ля<span style='letter-spacing:-.7pt'> </span>изучаемой<span
+style='letter-spacing:-.65pt'> </span><span style='letter-spacing:-.15pt'>пробле</span>мы
+(рис.<span style='letter-spacing:.9pt'> </span>1).</p>
+
+<p class=MsoBodyText align=center style='margin-top:3.65pt;margin-right:31.1pt;
+margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt;text-align:center;
+line-height:101%;page-break-after:avoid'><img width=353 height=283
+id="Рисунок 1" src="genetic.files/image001.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 1</p>
+
+<p class=styletext>Как видно на простом примере (рис. 1), за основу берутся
+параметры проблемы и создается хромосома, которая представляет собой <span
+style='letter-spacing:.1pt'>два </span>уникальных независимых параметра.
+Параметры <span style='letter-spacing:.15pt'>могут быть группой битов, </span><span
+style='letter-spacing:.2pt'>переменными с</span> плавающей точкой или простыми
+двузначными числами в двоичном<span style='letter-spacing:.15pt'> </span>коде.</p>
+
+<p class=styletext>При отборе «здоровых» хромосом из популяции и использовании
+генетических операторов (таких как рекомбинирование и мутация) в<span
+style='letter-spacing:-.9pt'> </span><span style='letter-spacing:-.25pt'>по</span>пуляции
+остаются только те хромосомы, <span style='letter-spacing:-.15pt'>кото</span>рые
+лучше всех приспособлены к окружающей среде,<span style='letter-spacing:-.45pt'>
+</span>то<span style='letter-spacing:-.45pt'> </span>есть<span
+style='letter-spacing:-.45pt'> </span>наиболее<span style='letter-spacing:-.45pt'>
+</span>полно<span style='letter-spacing:-.45pt'> </span>отвечают<span
+style='letter-spacing:-.45pt'> </span>задаче. Именно так работает теорема<span
+style='letter-spacing:1.1pt'> </span>Холланда.</p>
+
+<p class=styletext>Выполнение генетического алгоритма <span style='letter-spacing:
+-.25pt'>включает</span> три основных шага (причем для каждого <span
+style='letter-spacing:-.15pt'>шага</span><span style='letter-spacing:-1.25pt'> </span><span
+style='letter-spacing:-.15pt'>предусмотрен</span><span style='letter-spacing:
+-1.25pt'> </span><span style='letter-spacing:-.15pt'>большой</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.15pt'>разброс</span><span
+style='letter-spacing:-1.25pt'> </span><span style='letter-spacing:-.15pt'>возможных
+</span>вариантов). Эти шаги показаны на рис.<span style='letter-spacing:-.45pt'>
+</span>2.</p>
+
+<p class=styletext>Генетический алгоритм выполняется в <span style='letter-spacing:
+-.3pt'>три </span>этапа (если не учитывать начальное создание популяции). Во
+время оценки <span style='letter-spacing:.1pt'>определяется </span>здоровье<span
+style='letter-spacing:-1.5pt'> </span>популяции.<span style='letter-spacing:
+-1.45pt'> </span>Далее<span style='letter-spacing:-1.5pt'> </span>производится<span
+style='letter-spacing:-1.45pt'> </span>отбор подгруппы хромосом на основании предварительно
+заданного критерия. Наконец, выбранная подгруппа рекомбинируется, в результате
+чего получается новая популяция. Алгоритм выполняется заново с новой
+популяцией. <span style='letter-spacing:-.2pt'>Процесс</span><span
+style='letter-spacing:-.5pt'> </span>продолжается<span style='letter-spacing:
+-.45pt'> </span>до<span style='letter-spacing:-.5pt'> </span>тех<span
+style='letter-spacing:-.45pt'> </span>пор,<span style='letter-spacing:-.5pt'> </span>пока<span
+style='letter-spacing:-.45pt'> </span>не<span style='letter-spacing:-.45pt'> </span>будет<span
+style='letter-spacing:-.5pt'> </span><span style='letter-spacing:-.25pt'>достигнут</span><span
+style='letter-spacing:-1.0pt'> </span>определенный<span style='letter-spacing:
+-1.0pt'> </span>предел.<span style='letter-spacing:-1.0pt'> </span>Тогда<span
+style='letter-spacing:-1.0pt'> </span>работа<span style='letter-spacing:-1.0pt'>
+</span><span style='letter-spacing:-.25pt'>алгоритма</span> считается<span
+style='letter-spacing:.75pt'> </span>завершенной.</p>
+
+<p class=MsoBodyText align=center style='margin-top:8.05pt;margin-right:0cm;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+line-height:101%;page-break-after:avoid'><img width=307 height=630
+id="Рисунок 43" src="genetic.files/image002.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 2</p>
+
+<p class=stylemhead>Инициализация</p>
+
+<p class=styletext><i>Создание начальной популяции </i>(Initialization)
+позволяет сформировать <span style='letter-spacing:.1pt'>отправную</span><span
+style='letter-spacing:-1.0pt'> </span>точку<span style='letter-spacing:-.95pt'>
+</span>для<span style='letter-spacing:-.95pt'> </span>работы<span
+style='letter-spacing:-.95pt'> </span>алгоритма.<span style='letter-spacing:
+-1.0pt'> </span>Обычно<span style='letter-spacing:-.95pt'> </span>это<span
+style='letter-spacing:-.95pt'> </span>выполняется<span style='letter-spacing:
+-.95pt'> </span>путем<span style='letter-spacing:-1.0pt'> </span>произвольного
+создания хромосом, но также допускается добавлять в популяцию «здоровые»
+хромосомы (рис.<span style='letter-spacing:1.35pt'> </span>3).</p>
+
+<p class=MsoBodyText align=center style='margin-top:2.35pt;margin-right:30.95pt;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+text-indent:17.0pt;line-height:101%;page-break-after:avoid'><img width=798
+height=549 id="Рисунок 44" src="genetic.files/image003.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 3</p>
+
+<p class=stylemhead>Оценка</p>
+
+<p class=styletext>Этап <i>оценки </i>(Evaluation) дает возможность определить,
+как каждая хромосома<span style='letter-spacing:-.35pt'> </span>(решение)<span
+style='letter-spacing:-.35pt'> </span>справляется<span style='letter-spacing:
+-.3pt'> </span>с<span style='letter-spacing:-.35pt'> </span>данной<span
+style='letter-spacing:-.3pt'> </span>проблемой.<span style='letter-spacing:
+-.35pt'> </span>Алгоритм<span style='letter-spacing:-.35pt'> </span>декодирует<span
+style='letter-spacing:-.3pt'> </span>хромосому применительно<span
+style='letter-spacing:-1.2pt'> </span>к<span style='letter-spacing:-1.15pt'> </span>проблеме<span
+style='letter-spacing:-1.15pt'> </span>и<span style='letter-spacing:-1.2pt'> </span>проверяет<span
+style='letter-spacing:-1.15pt'> </span>результат<span style='letter-spacing:
+-1.15pt'> </span>решения<span style='letter-spacing:-1.15pt'> </span>проблемы<span
+style='letter-spacing:-1.2pt'> </span>с<span style='letter-spacing:-1.15pt'> </span>использованием
+новых параметров. Затем на основании результата рассчитывается<span
+style='letter-spacing:-1.4pt'> </span>«здоровье» хромосомы (рис.<span
+style='letter-spacing:1.3pt'> </span>4).</p>
+
+<p class=MsoBodyText align=center style='margin-top:2.4pt;margin-right:31.05pt;
+margin-bottom:0cm;margin-left:31.2pt;margin-bottom:.0001pt;text-align:center;
+text-indent:16.9pt;line-height:101%;page-break-after:avoid'><img width=879
+height=406 id="Рисунок 45" src="genetic.files/image004.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 4</p>
+
+<p class=stylemhead>Отбор</p>
+
+<p class=styletext><i>Отбор<span style='letter-spacing:-.85pt'> </span></i>(Selection)<span
+style='letter-spacing:-.85pt'> </span>является,<span style='letter-spacing:
+-.85pt'> </span>вероятно,<span style='letter-spacing:-.85pt'> </span>наиболее<span
+style='letter-spacing:-.85pt'> </span>важным<span style='letter-spacing:-.85pt'>
+</span>и<span style='letter-spacing:-.9pt'> </span>самым<span style='letter-spacing:
+-.85pt'> </span>трудным<span style='letter-spacing:-.85pt'> </span>для
+понимания этапом генетического алгоритма. На этом этапе хромосомы выбираются<span
+style='letter-spacing:-.25pt'> </span>для<span style='letter-spacing:-.2pt'> </span>дальнейшего<span
+style='letter-spacing:-.2pt'> </span>использования<span style='letter-spacing:
+-.25pt'> </span>в<span style='letter-spacing:-.2pt'> </span>другой<span
+style='letter-spacing:-.2pt'> </span>популяции.<span style='letter-spacing:
+-.2pt'> </span>Отбор<span style='letter-spacing:-.25pt'> </span>осуществляется<span
+style='letter-spacing:-.2pt'> </span>на<span style='letter-spacing:-.2pt'> </span>основании<span
+style='letter-spacing:-.15pt'> </span>здоровья<span style='letter-spacing:-.2pt'>
+</span>хромосом<span style='letter-spacing:-.2pt'> </span>(то<span
+style='letter-spacing:-.15pt'> </span>есть<span style='letter-spacing:-.2pt'> </span>того,<span
+style='letter-spacing:-.15pt'> </span>насколько<span style='letter-spacing:
+-.2pt'> </span>эффективно<span style='letter-spacing:-.2pt'> </span>они<span
+style='letter-spacing:-.15pt'> </span>решают данную проблему). Этот процесс
+является двусторонним, так как если включить в выбор только очень здоровые
+хромосомы, то решение становится слишком ограниченным по причине недостаточного
+разнообразия. Если выбор осуществляется произвольно, то нет гарантии, что
+здоровье последующих поколений<span style='letter-spacing:-.3pt'> </span>будет<span
+style='letter-spacing:-.3pt'> </span>улучшаться.<span style='letter-spacing:
+-.3pt'> </span>В<span style='letter-spacing:-.3pt'> </span>результате<span
+style='letter-spacing:-.3pt'> </span>выбирается<span style='letter-spacing:
+-.3pt'> </span>группа<span style='letter-spacing:-.3pt'> </span>хромосом,<span
+style='letter-spacing:-.3pt'> </span>которые<span style='letter-spacing:-.3pt'>
+</span><span style='letter-spacing:-.2pt'>бу</span>дут участвовать в
+рекомбинировании (или скрещивании). Процесс выбора<span style='letter-spacing:
+-.8pt'> </span>представлен на рис.<span style='letter-spacing:1.3pt'> </span>5.</p>
+
+<p class=styletext>Существует множество алгоритмов отбора. На рис. 5 показан
+алгоритм, известный<span style='letter-spacing:-.45pt'> </span>как<span
+style='letter-spacing:-.45pt'> </span>«Отбор<span style='letter-spacing:-.45pt'>
+</span>по<span style='letter-spacing:-.45pt'> </span>методу<span
+style='letter-spacing:-.45pt'> </span>рулетки»,<span style='letter-spacing:
+-.4pt'> </span>или<span style='letter-spacing:-.45pt'> </span><i>вероятностный<span
+style='letter-spacing:-.45pt'> </span>отбор</i>.<span style='letter-spacing:
+-.45pt'> </span>При<span style='letter-spacing:-.45pt'> </span>использовании<span
+style='letter-spacing:-.5pt'> </span>этого<span style='letter-spacing:-.5pt'> </span>метода<span
+style='letter-spacing:-.35pt'> </span>отбор<span style='letter-spacing:-.4pt'> </span>из<span
+style='letter-spacing:-.35pt'> </span>популяции<span style='letter-spacing:
+-.35pt'> </span>основывается<span style='letter-spacing:-.4pt'> </span>на<span
+style='letter-spacing:-.35pt'> </span>здоровье<span style='letter-spacing:-.35pt'>
+</span>хромосомы. Чем <span style='letter-spacing:.1pt'>лучше здоровье
+хромосомы, </span>тем <span style='letter-spacing:.1pt'>больше вероятность
+того, </span>что она<span style='letter-spacing:1.55pt'> </span>будет выбрана<span
+style='letter-spacing:-.35pt'> </span>(или<span style='letter-spacing:-.35pt'> </span>повторно<span
+style='letter-spacing:-.35pt'> </span>выбрана)<span style='letter-spacing:-.35pt'>
+</span>для<span style='letter-spacing:-.3pt'> </span>формирования<span
+style='letter-spacing:-.35pt'> </span>следующего<span style='letter-spacing:
+-.35pt'> </span>поколения.<span style='letter-spacing:-.35pt'> </span>Таким<span
+style='letter-spacing:-.85pt'> </span><span style='letter-spacing:-.2pt'>образом,</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>вероятность</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>выбора</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>пропорциональна</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>здоровью</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>хромосомы.</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.15pt'>На</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.2pt'>рис.</span><span
+style='letter-spacing:-1.1pt'> </span><span style='letter-spacing:-.25pt'>5 </span><span
+style='letter-spacing:-.2pt'>хромосома</span><span style='letter-spacing:-.4pt'>
+</span>2<span style='letter-spacing:-.4pt'> </span><span style='letter-spacing:
+-.15pt'>была</span><span style='letter-spacing:-.4pt'> </span><span
+style='letter-spacing:-.2pt'>выбрана</span><span style='letter-spacing:-.35pt'>
+</span><span style='letter-spacing:-.15pt'>для</span><span style='letter-spacing:
+-.4pt'> </span><span style='letter-spacing:-.2pt'>дальнейшего</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.2pt'>использования</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.15pt'>два</span><span
+style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.2pt'>раза,</span><span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.2pt'>хромосома</span><span
+style='letter-spacing:-.4pt'> </span>3<span style='letter-spacing:-.4pt'> </span><span
+style='letter-spacing:-.55pt'>– </span><span style='letter-spacing:-.2pt'>тоже</span><span
+style='letter-spacing:-1.1pt'> </span>два<span style='letter-spacing:-1.1pt'> </span>раза,<span
+style='letter-spacing:-1.1pt'> </span>а<span style='letter-spacing:-1.1pt'> </span>хромосома<span
+style='letter-spacing:-1.1pt'> </span>5<span style='letter-spacing:-1.1pt'> </span>–<span
+style='letter-spacing:-1.1pt'> </span>только<span style='letter-spacing:-1.1pt'>
+</span>один<span style='letter-spacing:-1.05pt'> </span>раз.<span
+style='letter-spacing:-1.1pt'> </span>Хромосомы<span style='letter-spacing:
+-1.1pt'> </span>1<span style='letter-spacing:-1.1pt'> </span>и<span
+style='letter-spacing:-1.1pt'> </span>4<span style='letter-spacing:-1.1pt'> </span>не<span
+style='letter-spacing:-1.1pt'> </span>были<span style='letter-spacing:-1.1pt'> </span>выбраны
+ни разу, поэтому они исчезают из последующей<span style='letter-spacing:-.9pt'>
+</span>популяции.</p>
+
+<p class=MsoBodyText align=center style='margin-top:0cm;margin-right:31.15pt;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+line-height:101%;page-break-after:avoid'><img width=888 height=398
+id="Рисунок 46" src="genetic.files/image005.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 5</p>
+
+<p class=stylemhead>Рекомбинирование</p>
+
+<p class=styletext>При <i>рекомбинировании </i>(Recombination) части хромосом
+перемещаются, может<span style='letter-spacing:-1.05pt'> </span>быть,<span
+style='letter-spacing:-1.05pt'> </span>даже<span style='letter-spacing:-1.05pt'>
+</span>изменяются,<span style='letter-spacing:-1.05pt'> </span>а<span
+style='letter-spacing:-1.05pt'> </span>получившиеся<span style='letter-spacing:
+-1.0pt'> </span>новые<span style='letter-spacing:-1.05pt'> </span>хромосомы<span
+style='letter-spacing:-1.05pt'> </span>возвращаются обратно в популяцию для
+формирования следующего поколения. Первая группа хромосом<span
+style='letter-spacing:-.5pt'> </span>обычно<span style='letter-spacing:-.45pt'>
+</span>называется<span style='letter-spacing:-.5pt'> </span>родителями,<span
+style='letter-spacing:-.45pt'> </span>а<span style='letter-spacing:-.45pt'> </span>вторая<span
+style='letter-spacing:-.5pt'> </span>–<span style='letter-spacing:-.45pt'> </span>детьми.<span
+style='letter-spacing:-.5pt'> </span>С<span style='letter-spacing:-.45pt'> </span>одинаковой<span
+style='letter-spacing:-.45pt'> </span>вероятностью<span style='letter-spacing:
+-.45pt'> </span>могут<span style='letter-spacing:-.45pt'> </span>применяться<span
+style='letter-spacing:-.45pt'> </span>один<span style='letter-spacing:-.45pt'> </span>или<span
+style='letter-spacing:-.45pt'> </span>несколько<span style='letter-spacing:
+-.45pt'> </span>генетических<span style='letter-spacing:-.45pt'> </span>операторов.<span
+style='letter-spacing:-.45pt'> </span>Доступные<span style='letter-spacing:
+-.7pt'> </span>операторы<span style='letter-spacing:-.65pt'> </span>включают<span
+style='letter-spacing:-.65pt'> </span>мутацию<span style='letter-spacing:-.7pt'>
+</span>и<span style='letter-spacing:-.65pt'> </span>перекрестное<span
+style='letter-spacing:-.65pt'> </span>скрещивание,<span style='letter-spacing:
+-.65pt'> </span>которые<span style='letter-spacing:-.7pt'> </span>являются
+аналогами одноименных генетических процессов. В следующем разделе
+рассматриваются<span style='letter-spacing:-1.45pt'> </span>примеры<span
+style='letter-spacing:-1.45pt'> </span>генетических<span style='letter-spacing:
+-1.4pt'> </span>операторов.<span style='letter-spacing:-1.45pt'> </span>Процесс<span
+style='letter-spacing:-1.4pt'> </span>рекомбинирования представлен на рис.<span
+style='letter-spacing:.8pt'> </span>6.</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=1058 height=400 id="Рисунок 47" src="genetic.files/image006.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 6</p>
+
+<p class=styletext>В<span style='letter-spacing:-.6pt'> </span>результате<span
+style='letter-spacing:-.55pt'> </span>рекомбинирования<span style='letter-spacing:
+-.55pt'> </span>образуется<span style='letter-spacing:-.6pt'> </span>новая<span
+style='letter-spacing:-.55pt'> </span>популяция<span style='letter-spacing:
+-.55pt'> </span>хромосом.<span style='letter-spacing:-.55pt'> </span>Процесс<span
+style='letter-spacing:-.3pt'> </span>повторяется<span style='letter-spacing:
+-.3pt'> </span>заново<span style='letter-spacing:-.25pt'> </span>с<span
+style='letter-spacing:-.3pt'> </span>этапа<span style='letter-spacing:-.25pt'> </span>оценки<span
+style='letter-spacing:-.3pt'> </span>до<span style='letter-spacing:-.25pt'> </span>тех<span
+style='letter-spacing:-.3pt'> </span>пор,<span style='letter-spacing:-.25pt'> </span>пока<span
+style='letter-spacing:-.3pt'> </span>проблема<span style='letter-spacing:-.3pt'>
+</span>не<span style='letter-spacing:-.25pt'> </span>будет<span
+style='letter-spacing:-.3pt'> </span><span style='letter-spacing:-.15pt'>реше</span>на<span
+style='letter-spacing:-1.0pt'> </span>или<span style='letter-spacing:-1.0pt'> </span>пока<span
+style='letter-spacing:-1.0pt'> </span>не<span style='letter-spacing:-1.0pt'> </span>будет<span
+style='letter-spacing:-1.0pt'> </span>выполнено<span style='letter-spacing:
+-1.0pt'> </span>любое<span style='letter-spacing:-1.0pt'> </span>другое<span
+style='letter-spacing:-1.0pt'> </span>условие<span style='letter-spacing:-1.0pt'>
+</span>завершения<span style='letter-spacing:-.95pt'> </span>алгоритма<span
+style='letter-spacing:-1.0pt'> </span>(например, максимально возможное
+количество<span style='letter-spacing:1.4pt'> </span>поколений).</p>
+
+<p class=stylehead><a name="_TOC_250138"></a>Генетические операторы</p>
+
+<p class=styletext>Существует<span style='letter-spacing:-1.1pt'> </span>огромное<span
+style='letter-spacing:-1.05pt'> </span>количество<span style='letter-spacing:
+-1.0pt'> </span><i>генетических<span style='letter-spacing:-1.05pt'> </span>операторов<span
+style='letter-spacing:-1.05pt'> </span></i>(Genetic<span style='letter-spacing:
+-1.05pt'> </span>operator), однако только несколько используется при решении
+общих задач.<span style='letter-spacing:-1.0pt'> </span>Перекрестное
+скрещивание<span style='letter-spacing:-.85pt'> </span>и<span style='letter-spacing:
+-.8pt'> </span>мутация,<span style='letter-spacing:-.8pt'> </span>о<span
+style='letter-spacing:-.8pt'> </span>которых<span style='letter-spacing:-.8pt'>
+</span>рассказывается<span style='letter-spacing:-.8pt'> </span>ниже,<span
+style='letter-spacing:-.8pt'> </span>являются<span style='letter-spacing:-.8pt'>
+</span>прямыми<span style='letter-spacing:-.8pt'> </span>аналогами естественных<span
+style='letter-spacing:.8pt'> </span>процессов.</p>
+
+<p class=stylemhead><a name="_TOC_250137"></a>Перекрестное скрещивание</p>
+
+<p class=styletext>Оператор <i>перекрестного скрещивания </i>(Crossover) берет
+две хромосомы, <span style='letter-spacing:-.15pt'>раз</span>деляет<span
+style='letter-spacing:-.9pt'> </span>их<span style='letter-spacing:-.85pt'> </span>в<span
+style='letter-spacing:-.85pt'> </span>произвольной<span style='letter-spacing:
+-.85pt'> </span>точке<span style='letter-spacing:-.85pt'> </span>(для<span
+style='letter-spacing:-.9pt'> </span>каждой<span style='letter-spacing:-.85pt'>
+</span>хромосомы),<span style='letter-spacing:-.85pt'> </span>а<span
+style='letter-spacing:-.85pt'> </span>затем<span style='letter-spacing:-.85pt'>
+</span>меняет<span style='letter-spacing:-.9pt'> </span>местами получившиеся<span
+style='letter-spacing:-.6pt'> </span>«хвосты».<span style='letter-spacing:-.55pt'>
+</span>При<span style='letter-spacing:-.55pt'> </span>этом<span
+style='letter-spacing:-.55pt'> </span>образуются<span style='letter-spacing:
+-.6pt'> </span>две<span style='letter-spacing:-.55pt'> </span>новые<span
+style='letter-spacing:-.55pt'> </span>хромосомы.<span style='letter-spacing:
+-.55pt'> </span>Разделение хромосомы<span style='letter-spacing:-1.4pt'> </span>в<span
+style='letter-spacing:-1.4pt'> </span>одной<span style='letter-spacing:-1.35pt'>
+</span>точке<span style='letter-spacing:-1.4pt'> </span>(получившее<span
+style='letter-spacing:-1.35pt'> </span>название<span style='letter-spacing:
+-1.4pt'> </span>перекрестного<span style='letter-spacing:-1.35pt'> </span>скрещивания<span
+style='letter-spacing:-1.4pt'> </span>в<span style='letter-spacing:-1.35pt'> </span>одной<span
+style='letter-spacing:-.3pt'> </span>точке)<span style='letter-spacing:-.3pt'> </span>является<span
+style='letter-spacing:-.3pt'> </span>не<span style='letter-spacing:-.25pt'> </span>единственной<span
+style='letter-spacing:-.3pt'> </span>возможностью<span style='letter-spacing:
+-.3pt'> </span>(рис.<span style='letter-spacing:-.25pt'> </span>7а).<span
+style='letter-spacing:-.3pt'> </span>Также<span style='letter-spacing:-.3pt'> </span>можно<span
+style='letter-spacing:-.3pt'> </span><span style='letter-spacing:-.25pt'>ис</span>пользовать
+разделение в нескольких точках (рис.<span style='letter-spacing:2.15pt'> </span>7б).</p>
+
+<p class=styletext>При перекрестном скрещивании в популяции не создается новый
+материал, выполняется просто ее изменение с целью создания новых хромосом. Это
+позволяет генетическому алгоритму выполнять поиск решения проблемы среди
+существующих решений. Оператор перекрестного скрещивания является самым важным
+и используется чаще всего. Второй оператор, мутация, предлагает возможность
+создания нового материала в популяции.</p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><img
+width=831 height=489 id="Рисунок 48" src="genetic.files/image007.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 7а</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=831
+height=487 id="Рисунок 50" src="genetic.files/image008.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 7б</p>
+
+<p class=stylemhead>Мутация</p>
+
+<p class=styletext>Оператор <i>мутации </i>(Mutation) вносит произвольное
+изменение в гены хромосомы (иногда даже несколько изменений в зависимости от
+частоты применения). Он позволяет создавать в популяции новый материал. Так как
+новые хромосомы просто перемешиваются с уже существующими, мутация предлагает
+возможность «перетряхнуть» популяцию и расширить область поиска решения (рис. 8).</p>
+
+<p class=MsoBodyText align=center style='margin-top:2.4pt;margin-right:30.9pt;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+text-indent:17.0pt;line-height:101%;page-break-after:avoid'><img width=589
+height=501 id="Рисунок 51" src="genetic.files/image009.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 8</p>
+
+<p class=stylehead>Пример выполнения генетического алгоритма</p>
+
+<p class=styletext>До<span style='letter-spacing:-.2pt'> </span>сих<span
+style='letter-spacing:-.2pt'> </span>пор<span style='letter-spacing:-.2pt'> </span>наше<span
+style='letter-spacing:-.2pt'> </span>обсуждение<span style='letter-spacing:
+-.2pt'> </span>было<span style='letter-spacing:-.2pt'> </span>теоретическим.<span
+style='letter-spacing:-.2pt'> </span>Теперь<span style='letter-spacing:-.2pt'> </span>рассмотрим<span
+style='letter-spacing:-.2pt'> </span>итерацию<span style='letter-spacing:-.3pt'>
+</span>алгоритма,<span style='letter-spacing:-.3pt'> </span>чтобы<span
+style='letter-spacing:-.3pt'> </span>понять<span style='letter-spacing:-.3pt'> </span>принцип<span
+style='letter-spacing:-.3pt'> </span>его<span style='letter-spacing:-.3pt'> </span>работы.<span
+style='letter-spacing:-.25pt'> </span>В<span style='letter-spacing:-.3pt'> </span>этом<span
+style='letter-spacing:-.3pt'> </span>примере<span style='letter-spacing:-.3pt'>
+</span>выполняется поиск параметров, которые позволяют максимизировать
+уравнение<span style='letter-spacing:.75pt'> </span>1:</p>
+
+<p class=styletext style='page-break-after:avoid'><img width=266 height=81
+id="Рисунок 54" src="genetic.files/image010.png"></p>
+
+<p class=styletext>Формула 1</p>
+
+<p class=styletext>Это уравнение графически представлено на рис. 9 (трехмерный
+график) и рис. 10 (контурный<span style='letter-spacing:1.75pt'> </span>график).</p>
+
+<p class=MsoBodyText align=center style='margin-top:7.25pt;margin-right:42.4pt;
+margin-bottom:0cm;margin-left:31.2pt;margin-bottom:.0001pt;text-align:center;
+text-indent:16.9pt;line-height:101%;page-break-after:avoid'><img width=517
+height=420 id="Рисунок 56" src="genetic.files/image011.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 9</p>
+
+<p class=MsoBodyText align=center style='margin-top:7.25pt;margin-right:42.4pt;
+margin-bottom:0cm;margin-left:31.2pt;margin-bottom:.0001pt;text-align:center;
+text-indent:16.9pt;line-height:101%;page-break-after:avoid'><img width=517
+height=400 id="Рисунок 57" src="genetic.files/image012.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Рисунок 10</p>
+
+<p class=styletext>Хромосомы в этом примере были построены из двух генов (или<span
+style='letter-spacing:-1.4pt'> </span>параметров), x и <span style='letter-spacing:
+-.6pt'>y. </span>Сначала необходимо создать фонд хромосом, к которым будет<span
+style='letter-spacing:-1.6pt'> </span>применяться генетический<span
+style='letter-spacing:-.45pt'> </span>алгоритм.<span style='letter-spacing:
+-.4pt'> </span>В<span style='letter-spacing:-.4pt'> </span>табл.<span
+style='letter-spacing:-.4pt'> </span>1<span style='letter-spacing:-.4pt'> </span>показана<span
+style='letter-spacing:-.4pt'> </span>начальная<span style='letter-spacing:-.4pt'>
+</span>популяция,<span style='letter-spacing:-.4pt'> </span>которая<span
+style='letter-spacing:-.45pt'> </span>была выбрана<span style='letter-spacing:
+.45pt'> </span>произвольно.</p>
+
+<p class=MsoBodyText align=center style='margin-top:4.95pt;margin-right:31.05pt;
+margin-bottom:0cm;margin-left:31.2pt;margin-bottom:.0001pt;text-align:center;
+text-indent:16.9pt;line-height:101%'><img width=1063 height=206 id="Рисунок 58"
+src="genetic.files/image013.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Таблица 1</p>
+
+<p class=styletext>Теперь,<span style='letter-spacing:-.7pt'> </span>когда<span
+style='letter-spacing:-.65pt'> </span>сформирована<span style='letter-spacing:
+-.65pt'> </span>начальная<span style='letter-spacing:-.65pt'> </span>популяция,<span
+style='letter-spacing:-.65pt'> </span>можно<span style='letter-spacing:-.65pt'>
+</span>приступать<span style='letter-spacing:-.65pt'> </span>к<span
+style='letter-spacing:-.65pt'> </span>оценке.<span style='letter-spacing:-.5pt'>
+</span>Чтобы<span style='letter-spacing:-.45pt'> </span>оценить<span
+style='letter-spacing:-.45pt'> </span>хромосомы<span style='letter-spacing:
+-.45pt'> </span>в<span style='letter-spacing:-.45pt'> </span>популяции,<span
+style='letter-spacing:-.5pt'> </span>следует<span style='letter-spacing:-.45pt'>
+</span>определить<span style='letter-spacing:-.45pt'> </span>здоровье<span
+style='letter-spacing:-.45pt'> </span><span style='letter-spacing:-.25pt'>каждой
+</span>хромосомы.<span style='letter-spacing:-1.5pt'> </span>В<span
+style='letter-spacing:-1.45pt'> </span>этом<span style='letter-spacing:-1.45pt'>
+</span>случае<span style='letter-spacing:-1.45pt'> </span>здоровье<span
+style='letter-spacing:-1.45pt'> </span>равно<span style='letter-spacing:-1.45pt'>
+</span>значению<span style='letter-spacing:-1.45pt'> </span>уравнения<span
+style='letter-spacing:-1.45pt'> </span>1<span style='letter-spacing:-1.45pt'> </span>для<span
+style='letter-spacing:-1.45pt'> </span><span style='letter-spacing:-.1pt'>соответству</span>ющих<span
+style='letter-spacing:-1.05pt'> </span>значений<span style='letter-spacing:
+-1.0pt'> </span>параметров.<span style='letter-spacing:-1.05pt'> </span>Чем<span
+style='letter-spacing:-1.0pt'> </span>больше<span style='letter-spacing:-1.05pt'>
+</span>значение<span style='letter-spacing:-1.0pt'> </span>уравнения,<span
+style='letter-spacing:-1.05pt'> </span>тем<span style='letter-spacing:-1.0pt'> </span>лучше<span
+style='letter-spacing:-1.05pt'> </span>здоровье хромосомы. В табл. 2 показаны
+значения здоровья для оцениваемых<span style='letter-spacing:-1.1pt'> </span>хромосом.</p>
+
+<p class=MsoBodyText align=center style='margin-top:8.15pt;margin-right:31.2pt;
+margin-bottom:0cm;margin-left:31.2pt;margin-bottom:.0001pt;text-align:center;
+text-indent:16.9pt;line-height:101%'><img width=1057 height=211 id="Рисунок 59"
+src="genetic.files/image014.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Таблица 2</p>
+
+<p class=styletext>Хромосома C<span style='font-size:5.5pt;line-height:106%;
+position:relative;top:3.0pt'>1 </span>очень маленькая, и поэтому вероятность ее
+выбора невелика. Необходимо<span style='letter-spacing:-.35pt'> </span>выбрать<span
+style='letter-spacing:-.3pt'> </span>две<span style='letter-spacing:-.35pt'> </span>пары<span
+style='letter-spacing:-.3pt'> </span>родителей<span style='letter-spacing:-.35pt'>
+</span>для<span style='letter-spacing:-.3pt'> </span>рекомбинирования.<span
+style='letter-spacing:-.35pt'> </span>Каждый<span style='letter-spacing:-.3pt'>
+</span><span style='letter-spacing:-.15pt'>роди</span>тель<span
+style='letter-spacing:-.7pt'> </span>при<span style='letter-spacing:-.7pt'> </span>перекрестном<span
+style='letter-spacing:-.7pt'> </span>скрещивании<span style='letter-spacing:
+-.7pt'> </span>будет<span style='letter-spacing:-.7pt'> </span>влиять<span
+style='letter-spacing:-.7pt'> </span>на<span style='letter-spacing:-.7pt'> </span>детей<span
+style='letter-spacing:-.7pt'> </span>в<span style='letter-spacing:-.7pt'> </span>следующем<span
+style='letter-spacing:-.7pt'> </span>поколении. На основании показателей
+здоровья алгоритм выбирает хромосомы C<span style='font-size:5.5pt;line-height:
+106%;position:relative;top:3.0pt'>3 </span>и C<span style='font-size:5.5pt;
+line-height:106%;position:relative;top:3.0pt'>2 </span>в<span style='letter-spacing:
+-1.55pt'> </span>качестве<span style='letter-spacing:-1.55pt'> </span>первой<span
+style='letter-spacing:-1.5pt'> </span>пары<span style='letter-spacing:-1.55pt'>
+</span>родителей,<span style='letter-spacing:-1.5pt'> </span>а<span
+style='letter-spacing:-1.55pt'> </span>хромосомы<span style='letter-spacing:
+-1.5pt'> </span>C<span style='font-size:5.5pt;line-height:106%;position:relative;
+top:3.0pt'>3<span style='letter-spacing:-.45pt'> </span></span>и<span
+style='letter-spacing:-1.55pt'> </span>C<span style='font-size:5.5pt;
+line-height:106%;position:relative;top:3.0pt'>0<span style='letter-spacing:
+-.5pt'> </span></span>–<span style='letter-spacing:-1.5pt'> </span>в<span
+style='letter-spacing:-1.55pt'> </span>качестве<span style='letter-spacing:
+-1.5pt'> </span>второй<span style='letter-spacing:-1.55pt'> </span>пары. Поскольку
+в хромосоме только два гена, нужно осуществить разделение на генном<span
+style='letter-spacing:-.9pt'> </span>уровне,<span style='letter-spacing:-.85pt'>
+</span>что<span style='letter-spacing:-.85pt'> </span>приводит<span
+style='letter-spacing:-.9pt'> </span>к<span style='letter-spacing:-.85pt'> </span>разделению<span
+style='letter-spacing:-.85pt'> </span>элементов<span style='letter-spacing:
+-.9pt'> </span>x<span style='letter-spacing:-.85pt'> </span>и<span
+style='letter-spacing:-.85pt'> </span>y<span style='letter-spacing:-.9pt'> </span>хромосомы.<span
+style='letter-spacing:-.85pt'> </span>В<span style='letter-spacing:-.85pt'> </span>табл.<span
+style='letter-spacing:-.9pt'> </span>3 показана<span style='letter-spacing:
+-.7pt'> </span>новая<span style='letter-spacing:-.65pt'> </span>популяция<span
+style='letter-spacing:-.7pt'> </span>(источники<span style='letter-spacing:
+-.65pt'> </span>генов<span style='letter-spacing:-.65pt'> </span>заключены<span
+style='letter-spacing:-.7pt'> </span>в<span style='letter-spacing:-.65pt'> </span>круглые<span
+style='letter-spacing:-.7pt'> </span>скобки),<span style='letter-spacing:-.65pt'>
+</span>а<span style='letter-spacing:-.65pt'> </span>также здоровье каждой новой<span
+style='letter-spacing:.55pt'> </span>хромосомы.</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=1063
+height=208 id="Рисунок 60" src="genetic.files/image015.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Таблица 3</p>
+
+<p class=styletext>Теперь сравним значения здоровья, представленные в табл. 2,
+со<span style='letter-spacing:-1.0pt'> </span>значениями здоровья новой
+популяции в табл. 3. Очевидно, что данные значения<span style='letter-spacing:
+-1.5pt'> </span>увеличились<span style='letter-spacing:-.4pt'> </span>(наибольшее<span
+style='letter-spacing:-.35pt'> </span>значение<span style='letter-spacing:-.4pt'>
+</span>в<span style='letter-spacing:-.35pt'> </span>t<span style='font-size:
+5.5pt;line-height:106%;position:relative;top:3.0pt'>0<span style='letter-spacing:
+-.2pt'> </span></span>было<span style='letter-spacing:-.35pt'> </span>равно<span
+style='letter-spacing:-.4pt'> </span>0,44,<span style='letter-spacing:-.35pt'> </span>а<span
+style='letter-spacing:-.4pt'> </span>наибольшее<span style='letter-spacing:
+-.35pt'> </span>значение<span style='letter-spacing:-.4pt'> </span>в<span
+style='letter-spacing:-.35pt'> </span>t<span style='font-size:5.5pt;line-height:
+106%;position:relative;top:3.0pt'>1<span style='letter-spacing:.7pt'> </span></span>составляет
+0,8). Это значит, что лучшее решение в новой популяции эффективнее, чем лучшее
+решение в предыдущей популяции. Среднее здоровье в первой<span
+style='letter-spacing:-1.6pt'> </span><span style='letter-spacing:-.15pt'>попу</span>ляции<span
+style='letter-spacing:-.5pt'> </span>равно<span style='letter-spacing:-.45pt'> </span>0,231,<span
+style='letter-spacing:-.5pt'> </span>а<span style='letter-spacing:-.45pt'> </span>среднее<span
+style='letter-spacing:-.5pt'> </span>здоровье<span style='letter-spacing:-.45pt'>
+</span>в<span style='letter-spacing:-.5pt'> </span>новой<span style='letter-spacing:
+-.45pt'> </span>популяции<span style='letter-spacing:-.5pt'> </span>составляет<span
+style='letter-spacing:-.45pt'> </span>0,39,<span style='letter-spacing:-.5pt'> </span>что<span
+style='letter-spacing:-.45pt'> </span>демонстрирует<span style='letter-spacing:
+-1.0pt'> </span>явное<span style='letter-spacing:-.95pt'> </span>улучшение<span
+style='letter-spacing:-.95pt'> </span>в<span style='letter-spacing:-.95pt'> </span>популяции<span
+style='letter-spacing:-1.0pt'> </span>при<span style='letter-spacing:-.95pt'> </span>использовании<span
+style='letter-spacing:-.95pt'> </span>генетического<span style='letter-spacing:
+-.95pt'> </span><span style='letter-spacing:-.2pt'>ал</span>горитма.</p>
+
+<p class=styletext>В<span style='letter-spacing:-1.0pt'> </span>этом<span
+style='letter-spacing:-1.0pt'> </span>примере<span style='letter-spacing:-1.0pt'>
+</span>не<span style='letter-spacing:-1.0pt'> </span>применялся<span
+style='letter-spacing:-.95pt'> </span>оператор<span style='letter-spacing:-1.0pt'>
+</span>мутации.<span style='letter-spacing:-1.0pt'> </span>Для<span
+style='letter-spacing:-1.0pt'> </span>решения<span style='letter-spacing:-1.0pt'>
+</span>подобной<span style='letter-spacing:-.95pt'> </span>проблемы можно
+использовать мутацию, как небольшие произвольные изменения значений генов
+(например, прибавление или вычитание небольшого значения, скажем,<span
+style='letter-spacing:.5pt'> </span>0,1).</p>
+
+<p class=stylehead>Настройка параметров и процессов</p>
+
+<p class=styletext>Можно не только изменять множество параметров генетического<span
+style='letter-spacing:-.75pt'> </span>алгоритма (например, метод отбора или
+рекомбинирования), но и управлять коэффициентами<span style='letter-spacing:
+-.5pt'> </span>применения<span style='letter-spacing:-.5pt'> </span>генетических<span
+style='letter-spacing:-.45pt'> </span>операторов.<span style='letter-spacing:
+-.5pt'> </span>Получается,<span style='letter-spacing:-.45pt'> </span>что<span
+style='letter-spacing:-.5pt'> </span>не<span style='letter-spacing:-.5pt'> </span>существует<span
+style='letter-spacing:-.45pt'> </span>оптимального<span style='letter-spacing:
+-.75pt'> </span>набора<span style='letter-spacing:-.7pt'> </span>методов<span
+style='letter-spacing:-.7pt'> </span>и<span style='letter-spacing:-.7pt'> </span>параметров,<span
+style='letter-spacing:-.7pt'> </span>который<span style='letter-spacing:-.7pt'>
+</span>сумел<span style='letter-spacing:-.7pt'> </span>бы<span
+style='letter-spacing:-.7pt'> </span>решить<span style='letter-spacing:-.7pt'> </span>любую<span
+style='letter-spacing:-.7pt'> </span>задачу. Каждая задача должна
+рассматриваться отдельно, чтобы решить ее быстрее<span style='letter-spacing:
+-.85pt'> </span>или более эффективным способом (а в некоторых случаях хотя бы
+решить). В <span style='letter-spacing:-.2pt'>этом </span>разделе описываются
+способы настройки параметров генетического алгоритма для решения определенной<span
+style='letter-spacing:1.15pt'> </span>задачи.</p>
+
+<p class=stylemhead><a name="_TOC_250124"></a>Метод отбора</p>
+
+<p class=styletext>Ранее<span style='letter-spacing:-.75pt'> </span>рассматривался<span
+style='letter-spacing:-.7pt'> </span>метод<span style='letter-spacing:-.7pt'> </span>вероятностного<span
+style='letter-spacing:-.7pt'> </span>выбора:<span style='letter-spacing:-.75pt'>
+</span>чем<span style='letter-spacing:-.7pt'> </span>выше<span
+style='letter-spacing:-.7pt'> </span>здоровье<span style='letter-spacing:-.7pt'>
+</span>хромосомы,<span style='letter-spacing:-.3pt'> </span>тем<span
+style='letter-spacing:-.25pt'> </span>больше<span style='letter-spacing:-.3pt'>
+</span>вероятность,<span style='letter-spacing:-.25pt'> </span>что<span
+style='letter-spacing:-.25pt'> </span>она<span style='letter-spacing:-.3pt'> </span>будет<span
+style='letter-spacing:-.25pt'> </span>выбрана<span style='letter-spacing:-.3pt'>
+</span>для<span style='letter-spacing:-.25pt'> </span>формирования<span
+style='letter-spacing:-.25pt'> </span><span style='letter-spacing:-.15pt'>пос</span>ледующего
+поколения. Однако трудность вероятностного выбора состоит в <span
+style='letter-spacing:-.2pt'>том, </span>что<span style='letter-spacing:-.7pt'>
+</span>может<span style='letter-spacing:-.7pt'> </span>отсеиваться<span
+style='letter-spacing:-.7pt'> </span>даже<span style='letter-spacing:-.7pt'> </span>здоровая<span
+style='letter-spacing:-.7pt'> </span>хромосома.<span style='letter-spacing:
+-.7pt'> </span>Чтобы<span style='letter-spacing:-.65pt'> </span>гарантировать<span
+style='letter-spacing:-.7pt'> </span>рекомбинирование самых здоровых хромосом,
+можно использовать <i>метод элиты</i>, который заключается в автоматическом
+переносе некоторого количества<span style='letter-spacing:-1.5pt'> </span>(например,
+10%) самых здоровых хромосом в следующее<span style='letter-spacing:1.85pt'> </span>поколение.</p>
+
+<p class=styletext>Существует<span style='letter-spacing:-.5pt'> </span>еще<span
+style='letter-spacing:-.45pt'> </span>один<span style='letter-spacing:-.45pt'> </span>интересный<span
+style='letter-spacing:-.5pt'> </span>механизм<span style='letter-spacing:-.45pt'>
+</span>выбора,<span style='letter-spacing:-.45pt'> </span>который<span
+style='letter-spacing:-.45pt'> </span>называется<span style='letter-spacing:
+-.5pt'> </span><i>методом турнира</i>. Из популяции выбираются две или
+несколько хромосом, которые затем соревнуются за право попасть в следующее
+поколение. Побеждает та хромосома,<span style='letter-spacing:-.3pt'> </span>здоровье<span
+style='letter-spacing:-.3pt'> </span>которой<span style='letter-spacing:-.25pt'>
+</span>выше.<span style='letter-spacing:-.3pt'> </span>Турнир<span
+style='letter-spacing:-.3pt'> </span>повторяется<span style='letter-spacing:
+-.25pt'> </span>два<span style='letter-spacing:-.3pt'> </span>раза,<span
+style='letter-spacing:-.25pt'> </span>и<span style='letter-spacing:-.3pt'> </span>в<span
+style='letter-spacing:-.3pt'> </span>результате выбираются два родителя,
+которые переходят в следующее<span style='letter-spacing:.8pt'> </span>поколение.</p>
+
+<p class=stylemhead><a name="_TOC_250123"></a>Размер популяции</p>
+
+<p class=styletext>Размер популяции является весьма важным элементом
+генетического алгоритма.<span style='letter-spacing:-1.15pt'> </span>Если<span
+style='letter-spacing:-1.15pt'> </span>популяция<span style='letter-spacing:
+-1.15pt'> </span>слишком<span style='letter-spacing:-1.15pt'> </span>мала,<span
+style='letter-spacing:-1.15pt'> </span>генетического<span style='letter-spacing:
+-1.1pt'> </span>материала<span style='letter-spacing:-1.15pt'> </span>может<span
+style='letter-spacing:-1.15pt'> </span>не<span style='letter-spacing:-1.15pt'> </span>хватить
+для<span style='letter-spacing:-.65pt'> </span>решения<span style='letter-spacing:
+-.65pt'> </span>данной<span style='letter-spacing:-.65pt'> </span>проблемы.<span
+style='letter-spacing:-.65pt'> </span>Размер<span style='letter-spacing:-.65pt'>
+</span>популяции<span style='letter-spacing:-.6pt'> </span>также<span
+style='letter-spacing:-.65pt'> </span>влияет<span style='letter-spacing:-.65pt'>
+</span>на<span style='letter-spacing:-.65pt'> </span>коэффициент применения
+операторов мутации и перекрестного<span style='letter-spacing:1.25pt'> </span>скрещивания.</p>
+
+<p class=stylemhead><a name="_TOC_250122"></a>Генетические операторы</p>
+
+<p class=styletext>В предыдущих разделах были рассмотрены операторы мутации и<span
+style='letter-spacing:-.95pt'> </span>перекрестного скрещивания. Существуют и
+другие операторы, с помощью которых можно решить данную проблему. Достаточно
+успешно показал себя оператор <i>инверсии </i>(inversion), который переставляет
+группу генов в<span style='letter-spacing:1.75pt'> </span>хромосоме.</p>
+
+</div>
+
+<span style='font-size:14.0pt;line-height:106%;font-family:"Calibri",sans-serif;
+color:#EDEDED'><br clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<p class=stylemhead><a name="_TOC_250121"></a>Другие механизмы</p>
+
+<p class=styletext>Создание популяции является интересной методикой, которая
+позволяет генетическому<span style='letter-spacing:-.95pt'> </span>алгоритму<span
+style='letter-spacing:-.95pt'> </span>найти<span style='letter-spacing:-.95pt'>
+</span>подход<span style='letter-spacing:-.95pt'> </span>к<span
+style='letter-spacing:-.95pt'> </span>решению<span style='letter-spacing:-.95pt'>
+</span>проблемы.<span style='letter-spacing:-.95pt'> </span>Вместо<span
+style='letter-spacing:-.95pt'> </span>того<span style='letter-spacing:-.95pt'> </span>чтобы<span
+style='letter-spacing:-.95pt'> </span>инициализировать популяцию со случайным
+набором хромосом, разработчик добавляет хромосомы, которые изначально
+представляют хорошие решения проблемы. <span style='letter-spacing:-.1pt'>Это </span>может<span
+style='letter-spacing:-.35pt'> </span>привести<span style='letter-spacing:-.3pt'>
+</span>к<span style='letter-spacing:-.3pt'> </span>быстрому<span
+style='letter-spacing:-.3pt'> </span>схождению<span style='letter-spacing:-.3pt'>
+</span>популяции<span style='letter-spacing:-.3pt'> </span>(то<span
+style='letter-spacing:-.3pt'> </span>есть<span style='letter-spacing:-.3pt'> </span>потере<span
+style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.1pt'>разнообразия
+</span>в генетическом фонде), поэтому при использовании подобной методики
+следует <span style='letter-spacing:-.1pt'>со</span>блюдать повышенную<span
+style='letter-spacing:.4pt'> </span>осторожность.</p>
+
+<p class=styletext>Не менее интересно экспериментировать со схемами
+скрещивания, которые берут<span style='letter-spacing:-.75pt'> </span>свое<span
+style='letter-spacing:-.75pt'> </span>начало<span style='letter-spacing:-.75pt'>
+</span>в<span style='letter-spacing:-.7pt'> </span>садоводстве<span
+style='letter-spacing:-.75pt'> </span>и<span style='letter-spacing:-.75pt'> </span>разведении<span
+style='letter-spacing:-.75pt'> </span>домашних<span style='letter-spacing:-.7pt'>
+</span>животных.<span style='letter-spacing:-.75pt'> </span>Р.<span
+style='letter-spacing:-.75pt'> </span>Хольштейн (R.<span style='letter-spacing:
+.45pt'> </span>Hollstein)<span style='letter-spacing:.45pt'> </span>исследовал<span
+style='letter-spacing:.45pt'> </span>множество<span style='letter-spacing:.45pt'>
+</span>методов<span style='letter-spacing:.45pt'> </span>селекции<span
+style='letter-spacing:.45pt'> </span>(табл.<span style='letter-spacing:.45pt'> 4</span>).</p>
+
+<p class=MsoBodyText align=center style='margin-top:.3pt;margin-right:31.0pt;
+margin-bottom:0cm;margin-left:31.15pt;margin-bottom:.0001pt;text-align:center;
+text-indent:17.0pt;line-height:101%;page-break-after:avoid'><img width=1061
+height=381 id="Рисунок 65" src="genetic.files/image016.png"></p>
+
+<p class=styletext align=center style='text-align:center'>Таблица 4</p>
+
+<p class=styletext>Последняя<span style='letter-spacing:-.3pt'> </span>опция<span
+style='letter-spacing:-.3pt'> </span>–<span style='letter-spacing:-.3pt'> </span>это<span
+style='letter-spacing:-.3pt'> </span>самостоятельная<span style='letter-spacing:
+-.3pt'> </span>адаптация<span style='letter-spacing:-.3pt'> </span>генетических<span
+style='letter-spacing:-.25pt'> </span>операторов и/или коэффициентов их
+применения. Томас Бэк (Thomas Back) наблюдал интересные<span style='letter-spacing:
+-1.0pt'> </span>результаты<span style='letter-spacing:-.95pt'> </span>при<span
+style='letter-spacing:-1.0pt'> </span>оценке<span style='letter-spacing:-.95pt'>
+</span>коэффициентов<span style='letter-spacing:-1.0pt'> </span>мутации<span
+style='letter-spacing:-.95pt'> </span>и<span style='letter-spacing:-1.0pt'> </span>перекрестного<span
+style='letter-spacing:-.95pt'> </span>скрещивания хромосомы. Эта методика
+позволяет генетическому алгоритму не только найти верное решение поставленной
+задачи, но и применить правильные коэффициенты использования генетических<span
+style='letter-spacing:1.2pt'> </span>операторов.</p>
+
+<p class=stylemhead>Вероятности</p>
+
+<p class=styletext>Вероятности<span style='letter-spacing:-1.05pt'> </span>применения<span
+style='letter-spacing:-1.0pt'> </span>генетических<span style='letter-spacing:
+-1.0pt'> </span>операторов<span style='letter-spacing:-1.0pt'> </span>имеют<span
+style='letter-spacing:-1.0pt'> </span>большое<span style='letter-spacing:-1.0pt'>
+</span>значение. Например, если оператор мутации имеет слишком большую
+вероятность <span style='letter-spacing:-.15pt'>приме</span>нения, это приводит
+к разрушению полезного генетического материала популяции и переключению на
+обычный поиск в произвольном порядке. Если коэффициенты слишком малы, поиск
+решения данной проблемы может занять намного больше времени, чем<span
+style='letter-spacing:1.1pt'> </span>нужно.</p>
+
+<p class=styletext>Если не используется самостоятельная адаптация (по Томасу
+Бэку), то правильные<span style='letter-spacing:-1.45pt'> </span>коэффициенты<span
+style='letter-spacing:-1.4pt'> </span>обычно<span style='letter-spacing:-1.4pt'>
+</span>находят<span style='letter-spacing:-1.4pt'> </span>путем<span
+style='letter-spacing:-1.45pt'> </span>эксперимента.<span style='letter-spacing:
+-1.4pt'> </span>Хорошая<span style='letter-spacing:-1.4pt'> </span>отправная
+точка<span style='letter-spacing:1.0pt'> </span>–<span style='letter-spacing:
+1.0pt'> </span>это<span style='letter-spacing:1.0pt'> </span>установка<span
+style='letter-spacing:1.0pt'> </span>коэффициента<span style='letter-spacing:
+1.0pt'> </span>таким<span style='letter-spacing:1.05pt'> </span>образом,<span
+style='letter-spacing:1.0pt'> </span>чтобы<span style='letter-spacing:1.0pt'> </span>к<span
+style='letter-spacing:1.0pt'> </span>70%<span style='letter-spacing:1.0pt'> </span>выбранных
+родителей<span style='letter-spacing:-1.15pt'> </span>применялось<span
+style='letter-spacing:-1.15pt'> </span>перекрестное<span style='letter-spacing:
+-1.15pt'> </span>скрещивание,<span style='letter-spacing:-1.1pt'> </span>а<span
+style='letter-spacing:-1.15pt'> </span>в<span style='letter-spacing:-1.15pt'> </span>другом<span
+style='letter-spacing:-1.1pt'> </span>случае<span style='letter-spacing:-1.15pt'>
+</span>производилась<span style='letter-spacing:.4pt'> </span>мутация.</p>
+
+</div>
+
+<span style='font-size:11.0pt;line-height:106%;font-family:"Calibri",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection3>
+
+<p class=styletext>В<span style='letter-spacing:-.2pt'> </span>зависимости<span
+style='letter-spacing:-.15pt'> </span>от<span style='letter-spacing:-.15pt'> </span>того,<span
+style='letter-spacing:-.2pt'> </span>какой<span style='letter-spacing:-.15pt'> </span>метод<span
+style='letter-spacing:-.15pt'> </span>кодировки<span style='letter-spacing:
+-.15pt'> </span>был<span style='letter-spacing:-.2pt'> </span>выбран<span
+style='letter-spacing:-.15pt'> </span>для<span style='letter-spacing:-.15pt'> </span>задачи,<span
+style='letter-spacing:-.2pt'> </span>некоторые генетические операторы могут
+стать деструктивными. Поэтому для правильного<span style='letter-spacing:-.6pt'>
+</span>использования<span style='letter-spacing:-.55pt'> </span>генетических<span
+style='letter-spacing:-.55pt'> </span>операторов<span style='letter-spacing:
+-.55pt'> </span>необходимо<span style='letter-spacing:-.6pt'> </span>хорошее<span
+style='letter-spacing:-.55pt'> </span>понимание кодировки и эффектов использования
+генетических<span style='letter-spacing:1.3pt'> </span>операторов.</p>
+
+<p class=stylehead><a name="_TOC_250119">Недостатки генетического<span
+style='letter-spacing:3.05pt'> </span></a>алгоритма</p>
+
+<p class=styletext>Генетический<span style='letter-spacing:-.55pt'> </span>алгоритм<span
+style='letter-spacing:-.55pt'> </span>не<span style='letter-spacing:-.55pt'> </span>лишен<span
+style='letter-spacing:-.55pt'> </span>определенных<span style='letter-spacing:
+-.55pt'> </span>недостатков.<span style='letter-spacing:-.5pt'> </span>В<span
+style='letter-spacing:-.55pt'> </span>этом<span style='letter-spacing:-.55pt'> </span>разделе
+мы<span style='letter-spacing:-1.0pt'> </span>обсудим<span style='letter-spacing:
+-.95pt'> </span>некоторые<span style='letter-spacing:-1.0pt'> </span>аспекты,<span
+style='letter-spacing:-.95pt'> </span>которые<span style='letter-spacing:-.95pt'>
+</span>следует<span style='letter-spacing:-1.0pt'> </span>учитывать<span
+style='letter-spacing:-.95pt'> </span>при<span style='letter-spacing:-.95pt'> </span>его<span
+style='letter-spacing:-1.0pt'> </span>применении.</p>
+
+<p class=stylemhead><a name="_TOC_250118"></a>Преждевременное схождение</p>
+
+<p class=styletext>Проблема<span style='letter-spacing:-1.05pt'> </span>преждевременного<span
+style='letter-spacing:-1.0pt'> </span>схождения<span style='letter-spacing:
+-1.05pt'> </span>связана<span style='letter-spacing:-1.0pt'> </span>с<span
+style='letter-spacing:-1.0pt'> </span>недостаточным<span style='letter-spacing:
+-1.05pt'> </span>разнообразием хромосом в популяции. Если большинство хромосом
+в популяции схожи между<span style='letter-spacing:-.7pt'> </span>собой,<span
+style='letter-spacing:-.65pt'> </span>то<span style='letter-spacing:-.65pt'> </span>для<span
+style='letter-spacing:-.65pt'> </span>селекции<span style='letter-spacing:-.65pt'>
+</span>доступно<span style='letter-spacing:-.7pt'> </span>меньше<span
+style='letter-spacing:-.65pt'> </span>рабочего<span style='letter-spacing:-.65pt'>
+</span>материала,<span style='letter-spacing:-.65pt'> </span>и<span
+style='letter-spacing:-.65pt'> </span>коэффициент увеличения здоровья
+снижается. Вы можете обнаружить эффект<span style='letter-spacing:-.6pt'> </span>преждевременного<span
+style='letter-spacing:-1.0pt'> </span>схождения,<span style='letter-spacing:
+-.95pt'> </span>сравнив<span style='letter-spacing:-.95pt'> </span>среднее<span
+style='letter-spacing:-.95pt'> </span>здоровье<span style='letter-spacing:-.95pt'>
+</span>популяции<span style='letter-spacing:-.95pt'> </span>с<span
+style='letter-spacing:-.95pt'> </span>максимальным<span style='letter-spacing:
+-1.0pt'> </span>здоровьем. Если они слишком схожи, это значит, что произошло
+преждевременное схождение<span style='letter-spacing:.5pt'> </span>популяции.</p>
+
+<p class=styletext>Самой распространенной причиной преждевременного схождения
+является слишком<span style='letter-spacing:-.7pt'> </span>маленький<span
+style='letter-spacing:-.65pt'> </span>размер<span style='letter-spacing:-.65pt'>
+</span>популяции.<span style='letter-spacing:-.65pt'> </span>При<span
+style='letter-spacing:-.65pt'> </span>увеличении<span style='letter-spacing:
+-.65pt'> </span>размера<span style='letter-spacing:-.65pt'> </span>популяции<span
+style='letter-spacing:-.65pt'> </span>проблема легко решается. Другой причиной
+может быть алгоритм отбора, который вы<span style='letter-spacing:-1.1pt'> </span>применяете.<span
+style='letter-spacing:-1.05pt'> </span>При<span style='letter-spacing:-1.1pt'> </span>использовании<span
+style='letter-spacing:-1.05pt'> </span>метода<span style='letter-spacing:-1.05pt'>
+</span>элиты<span style='letter-spacing:-1.1pt'> </span>выбираются<span
+style='letter-spacing:-1.05pt'> </span>только<span style='letter-spacing:-1.05pt'>
+</span>хромосомы с самым высоким здоровьем, что приводит к сильному уменьшению
+размера популяции по сравнению с начальным. Если популяция слишком рано сошлась,
+и<span style='letter-spacing:-.65pt'> </span>решение<span style='letter-spacing:
+-.65pt'> </span>не<span style='letter-spacing:-.65pt'> </span>было<span
+style='letter-spacing:-.6pt'> </span>найдено,<span style='letter-spacing:-.65pt'>
+</span>вам<span style='letter-spacing:-.65pt'> </span>следует<span
+style='letter-spacing:-.6pt'> </span>перезапустить<span style='letter-spacing:
+-.65pt'> </span>алгоритм.<span style='letter-spacing:-.65pt'> </span>При<span
+style='letter-spacing:-.6pt'> </span>перезапуске в популяцию будет введен новый
+материал, в котором может не быть<span style='letter-spacing:-1.45pt'> </span>небольшого
+количества доминирующих<span style='letter-spacing:1.4pt'> </span>хромосом.</p>
+
+<p class=stylemhead><a name="_TOC_250117"></a>Эпистазис</p>
+
+<p class=styletext><i>Эпистазисом<span style='letter-spacing:-1.15pt'> </span></i>называется<span
+style='letter-spacing:-1.2pt'> </span>внутренняя<span style='letter-spacing:
+-1.15pt'> </span>зависимость<span style='letter-spacing:-1.2pt'> </span>между<span
+style='letter-spacing:-1.2pt'> </span>переменными<span style='letter-spacing:
+-1.15pt'> </span>(генами),<span style='letter-spacing:-.55pt'> </span>закодированными<span
+style='letter-spacing:-.55pt'> </span>в<span style='letter-spacing:-.5pt'> </span>хромосоме.<span
+style='letter-spacing:-.55pt'> </span>Если<span style='letter-spacing:-.55pt'> </span>ни<span
+style='letter-spacing:-.5pt'> </span>один<span style='letter-spacing:-.55pt'> </span>ген<span
+style='letter-spacing:-.5pt'> </span>не<span style='letter-spacing:-.55pt'> </span>связан<span
+style='letter-spacing:-.55pt'> </span>с<span style='letter-spacing:-.5pt'> </span>другими<span
+style='letter-spacing:-.55pt'> </span>генами в хромосоме, считается, что
+эпистазис очень мал или не существует. Если гены зависят друг от друга,
+эпистазис высок и может создать проблемы для алгоритмов<span style='letter-spacing:
+.5pt'> </span>рекомбинирования.</p>
+
+<p class=styletext>Обычное<span style='letter-spacing:-1.1pt'> </span>решение<span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>этой</span><span
+style='letter-spacing:-1.05pt'> </span>проблемы<span style='letter-spacing:
+-1.1pt'> </span>состоит<span style='letter-spacing:-1.05pt'> </span>в<span
+style='letter-spacing:-1.05pt'> </span><span style='letter-spacing:-.15pt'>том,</span><span
+style='letter-spacing:-1.05pt'> </span>чтобы<span style='letter-spacing:-1.1pt'>
+</span>сохранять<span style='letter-spacing:-1.05pt'> </span><span
+style='letter-spacing:-.15pt'>гены</span><span style='letter-spacing:-1.05pt'> </span>(переменные),<span
+style='letter-spacing:-.4pt'> </span>которые<span style='letter-spacing:-.35pt'>
+</span>близко<span style='letter-spacing:-.35pt'> </span>связаны<span
+style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.15pt'>друг</span><span
+style='letter-spacing:-.35pt'> </span>с<span style='letter-spacing:-.35pt'> </span>другом<span
+style='letter-spacing:-.4pt'> </span>в<span style='letter-spacing:-.35pt'> </span>хромосоме.<span
+style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.15pt'>При</span><span
+style='letter-spacing:-.4pt'> </span>группировании<span style='letter-spacing:
+-.35pt'> </span>зависимых<span style='letter-spacing:-1.05pt'> </span>генов<span
+style='letter-spacing:-1.0pt'> </span>существенно<span style='letter-spacing:
+-1.0pt'> </span>снижается<span style='letter-spacing:-1.0pt'> </span>вероятность<span
+style='letter-spacing:-1.0pt'> </span>того,<span style='letter-spacing:-1.0pt'>
+</span><span style='letter-spacing:-.15pt'>что</span><span style='letter-spacing:
+-1.05pt'> </span><span style='letter-spacing:-.15pt'>они</span><span
+style='letter-spacing:-1.0pt'> </span>будут<span style='letter-spacing:-1.0pt'>
+</span>разрушены<span style='letter-spacing:-1.0pt'> </span>при применении
+генетических операторов, например, перекрестного<span style='letter-spacing:
+-.95pt'> </span>скрещивания.</p>
+
+<p class=stylemhead>Теорема «не бывает бесплатных обедов»</p>
+
+<p class=styletext>Теорема «не бывает бесплатных обедов» основывается на идее о
+том, что не существует<span style='letter-spacing:-1.05pt'> </span>совершенного<span
+style='letter-spacing:-1.05pt'> </span>метода<span style='letter-spacing:-1.05pt'>
+</span>оптимизации.<span style='letter-spacing:-1.05pt'> </span>Нельзя<span
+style='letter-spacing:-1.05pt'> </span>решить<span style='letter-spacing:-1.05pt'>
+</span>задачу<span style='letter-spacing:-1.05pt'> </span>с<span
+style='letter-spacing:-1.05pt'> </span>помощью любой кодировки, метода селекции
+и набора вероятностей, из всех имеющихся возможностей необходимо выбрать
+оптимальный способ с учетом<span style='letter-spacing:-.75pt'> </span>особенностей
+поставленной<span style='letter-spacing:.5pt'> </span>задачи.</p>
+
+<p class=MsoBodyText style='margin-top:.35pt'><span style='font-size:8.5pt'>&nbsp;</span></p>
+
+<p class=stylehead><a name="_TOC_250115"></a>Другие области применения</p>
+
+<p class=styletext>Генетический<span style='letter-spacing:-.05pt'> </span>алгоритм<span
+style='letter-spacing:-.05pt'> </span>используется<span style='letter-spacing:
+-.05pt'> </span><span style='letter-spacing:.2pt'>для</span><span
+style='letter-spacing:-.05pt'> </span>решения<span style='letter-spacing:-.05pt'>
+</span>многих<span style='letter-spacing:-.05pt'> </span><span
+style='letter-spacing:.2pt'>задач</span><span style='letter-spacing:-.05pt'> </span><span
+style='letter-spacing:.2pt'>оптими</span>зации. <span style='letter-spacing:
+.2pt'>Так как </span>эффективность генетического алгоритма <span
+style='letter-spacing:.15pt'>во </span>многом <span style='letter-spacing:.2pt'>зависит
+</span><span style='letter-spacing:.15pt'>от</span><span style='letter-spacing:
+-.25pt'> </span>представления<span style='letter-spacing:-.25pt'> </span>решения,<span
+style='letter-spacing:-.25pt'> </span>вы<span style='letter-spacing:-.25pt'> </span>можете<span
+style='letter-spacing:-.25pt'> </span>оптимизировать<span style='letter-spacing:
+-.25pt'> </span>как<span style='letter-spacing:-.25pt'> </span>числовые,<span
+style='letter-spacing:-.25pt'> </span>так<span style='letter-spacing:-.25pt'> </span>и<span
+style='letter-spacing:-.25pt'> </span>символические задачи. Например, помимо
+простой функциональной <span style='letter-spacing:.2pt'>оптимизации можно </span>работать
+с такими символическими задачами, <span style='letter-spacing:.2pt'>как </span>задачи
+<span style='letter-spacing:.3pt'>Ханойс</span><span style='letter-spacing:
+.2pt'>ких</span><span style='letter-spacing:1.05pt'> </span><span
+style='letter-spacing:.3pt'>Башен.</span></p>
+
+<p class=styletext>Генетические алгоритмы применяются для решения следующих
+проблем:</p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:106%'>&nbsp-создание
+дизайна с помощью<span style='letter-spacing:1.5pt'> </span>компьютера;</span></p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:106%'>&nbsp-составление
+порядка решения<span style='letter-spacing:1.15pt'> </span>задач;</span></p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:106%'>&nbsp-экономические
+задачи и задачи теории<span style='letter-spacing:1.85pt'> </span>игр;</span></p>
+
+<p class=styletext><span style='font-size:10.0pt;line-height:106%'>&nbsp-другие
+задачи<span style='letter-spacing:1.1pt'> </span>оптимизации.</span></p>
+
+<p class=styletext>В<span style='letter-spacing:-.65pt'> </span>качестве<span
+style='letter-spacing:-.65pt'> </span>составной<span style='letter-spacing:
+-.65pt'> </span>части<span style='letter-spacing:-.6pt'> </span>генетический<span
+style='letter-spacing:-.65pt'> </span>алгоритм<span style='letter-spacing:-.65pt'>
+</span>применялся<span style='letter-spacing:-.65pt'> </span>в<span
+style='letter-spacing:-.6pt'> </span>разработке, которая<span style='letter-spacing:
+-.4pt'> </span>предназначена<span style='letter-spacing:-.35pt'> </span>для<span
+style='letter-spacing:-.4pt'> </span>вычисления<span style='letter-spacing:
+-.35pt'> </span>абсолютного<span style='letter-spacing:-.4pt'> </span>положения<span
+style='letter-spacing:-.35pt'> </span>в<span style='letter-spacing:-.35pt'> </span>пространстве
+при<span style='letter-spacing:-.35pt'> </span>работе<span style='letter-spacing:
+-.3pt'> </span>с<span style='letter-spacing:-.35pt'> </span>телескопом.<span
+style='letter-spacing:-.3pt'> </span>Таким<span style='letter-spacing:-.35pt'> </span>образом<span
+style='letter-spacing:-.3pt'> </span>было<span style='letter-spacing:-.35pt'> </span>найдено<span
+style='letter-spacing:-.3pt'> </span>соответствие<span style='letter-spacing:
+-.35pt'> </span>между<span style='letter-spacing:-.3pt'> </span>зведными
+четырехугольниками в каталоге и звездами в поле обзора телескопа, что позволило
+определить курс космического<span style='letter-spacing:1.5pt'> </span>корабля.</p>
+
+<p class=MsoBodyText style='margin-top:.4pt'><span style='font-size:8.5pt'>&nbsp;</span></p>
+
+<p class=stylehead><a name="_TOC_250114"></a>Итоги</p>
+
+<p class=styletext>В этой главе рассматривался генетический алгоритм. После
+обзора принципов<span style='letter-spacing:-.25pt'> </span>работы<span
+style='letter-spacing:-.2pt'> </span>алгоритма<span style='letter-spacing:-.2pt'>
+</span>подробно<span style='letter-spacing:-.2pt'> </span>описывалось<span
+style='letter-spacing:-.2pt'> </span>его<span style='letter-spacing:-.2pt'> </span>выполнение<span
+style='letter-spacing:-.2pt'> </span>–<span style='letter-spacing:-.25pt'> </span>инициализация,
+оценка здоровья, селекция и рекомбинирование. Затем был представлен исходный<span
+style='letter-spacing:-.3pt'> </span>код,<span style='letter-spacing:-.25pt'> </span>который<span
+style='letter-spacing:-.25pt'> </span>применяет<span style='letter-spacing:
+-.25pt'> </span>алгоритм<span style='letter-spacing:-.25pt'> </span>для<span
+style='letter-spacing:-.25pt'> </span>вычисления<span style='letter-spacing:
+-.25pt'> </span>последовательности<span style='letter-spacing:-.25pt'> </span>инструкций,<span
+style='letter-spacing:-.55pt'> </span>и<span style='letter-spacing:-.55pt'> </span>с<span
+style='letter-spacing:-.55pt'> </span>помощью<span style='letter-spacing:-.55pt'>
+</span>этой<span style='letter-spacing:-.55pt'> </span>программы<span
+style='letter-spacing:-.55pt'> </span>было<span style='letter-spacing:-.5pt'> </span>найдено<span
+style='letter-spacing:-.55pt'> </span>решение<span style='letter-spacing:-.55pt'>
+</span>нескольких<span style='letter-spacing:-.55pt'> </span>уравнений.
+Поскольку алгоритму ничего не известно о самих уравнениях, то только при<span
+style='letter-spacing:-.35pt'> </span>правильном<span style='letter-spacing:
+-.35pt'> </span>решении<span style='letter-spacing:-.35pt'> </span>он<span
+style='letter-spacing:-.35pt'> </span>способен<span style='letter-spacing:-.35pt'>
+</span>предлагать<span style='letter-spacing:-.35pt'> </span>альтернативные<span
+style='letter-spacing:-.35pt'> </span>варианты<span style='letter-spacing:-.35pt'>
+</span>решения<span style='letter-spacing:-.75pt'> </span>проблемы<span
+style='letter-spacing:-.75pt'> </span>(с<span style='letter-spacing:-.7pt'> </span>заданным<span
+style='letter-spacing:-.75pt'> </span>набором<span style='letter-spacing:-.7pt'>
+</span>инструкций),<span style='letter-spacing:-.75pt'> </span>которые<span
+style='letter-spacing:-.7pt'> </span>демонстрируют<span style='letter-spacing:
+-.75pt'> </span>оптимизацию<span style='letter-spacing:-1.3pt'> </span>заданного<span
+style='letter-spacing:-1.3pt'> </span>алгоритма.<span style='letter-spacing:
+-1.3pt'> </span>В<span style='letter-spacing:-1.3pt'> </span>заключение<span
+style='letter-spacing:-1.3pt'> </span>рассказывалось,<span style='letter-spacing:
+-1.3pt'> </span>какие<span style='letter-spacing:-1.3pt'> </span>параметры
+генетического алгоритма можно настраивать, а также ряд трудностей, которые возникают
+при работе с данным<span style='letter-spacing:1.8pt'> </span>алгоритмом.</p>
+
+<p class=styletext><span style='color:red'>&nbsp;</span></p>
+</td>
+<td width="10%" bgcolor="black"></td>
+</tr>
+
+</table>
+
+</center>
+
+</body>
+
+</html>
