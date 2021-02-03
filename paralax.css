@@ -83,8 +83,8 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
+  font-size: 200%;
+  letter-spacing: 5px;
 }
 .style_head span {
   background: -webkit-linear-gradient(white, #38495a);
@@ -99,8 +99,8 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 30px;
-  letter-spacing: 10px;
+  font-size: 150%;
+  letter-spacing: 5px;
 }
 .style_ai span {
   background: -webkit-linear-gradient(white, #38495a);
@@ -115,8 +115,8 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 30px;
-  letter-spacing: 10px;
+  font-size: 50px;
+  letter-spacing: 5px;
 }
 .style_sign span {
   background: -webkit-linear-gradient(white, #38495a);

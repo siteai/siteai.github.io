@@ -557,69 +557,80 @@ style='letter-spacing:-1.0pt'> </span>повторяется<span style='letter-
 средняя ошибка на входе не будет признана достаточно<span style='letter-spacing:
 1.3pt'> </span>малой:</p>
 
-<p class=styletext><span style='font-size:10.0pt;line-height:107%'>    1. Берется<span
-style='letter-spacing:-.7pt'> </span>пример<span style='letter-spacing:-.65pt'>
-</span>входного<span style='letter-spacing:-.7pt'> </span>сигнала<span
-style='letter-spacing:-.65pt'> </span>E<span style='letter-spacing:-.65pt'> </span>с<span
-style='letter-spacing:-.7pt'> </span>соответствующим<span style='letter-spacing:
--.65pt'> </span>правильным<span style='letter-spacing:-.65pt'> </span>значением
-выхода<span style='letter-spacing:.6pt'> </span>C.</span></p>
+<p class=styletext>1. Берется<span style='letter-spacing:-.7pt'> </span>пример<span
+style='letter-spacing:-.65pt'> </span>входного<span style='letter-spacing:-.7pt'>
+</span>сигнала<span style='letter-spacing:-.65pt'> </span>E<span
+style='letter-spacing:-.65pt'> </span>с<span style='letter-spacing:-.7pt'> </span>соответствующим<span
+style='letter-spacing:-.65pt'> </span>правильным<span style='letter-spacing:
+-.65pt'> </span>значением выхода<span style='letter-spacing:.6pt'> </span>C.<span
+style='font-size:20.0pt;line-height:106%'><o:p></o:p></span></p>
 
-<p class=styletext><span style='font-size:10.0pt;line-height:107%'>               2.
-Рассчитывается<span style='letter-spacing:-.3pt'> </span>прямое<span
+<p class=styletext>2. Рассчитывается<span style='letter-spacing:-.3pt'> </span>прямое<span
 style='letter-spacing:-.3pt'> </span>распространение<span style='letter-spacing:
 -.3pt'> </span>E<span style='letter-spacing:-.3pt'> </span>через<span
 style='letter-spacing:-.3pt'> </span>сеть<span style='letter-spacing:-.3pt'> </span>(определяются<span
-style='letter-spacing:-.3pt'> </span>весовые суммы S</span><span
-style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>i </span><span
-style='font-size:10.0pt;line-height:107%'>и активаторы u</span><span
-style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>i </span><span
-style='font-size:10.0pt;line-height:107%'>для каждой<span style='letter-spacing:
-.65pt'> </span>ячейки).</span></p>
+style='letter-spacing:-.3pt'> </span>весовые суммы <span class=SpellE>S<span
+style='font-size:8.0pt;line-height:106%'><span style='position:relative;
+top:3pt'>i</span></span><span style='font-size:8.0pt;line-height:106%'><span
+style='mso-spacerun:yes'> </span></span></span>и активаторы <span class=SpellE>u<span
+style='font-size:8.0pt;line-height:106%'><span style='position:relative;
+top:3pt'>i</span></span><span style='font-size:8.0pt;line-height:106%'><span
+style='mso-spacerun:yes'> </span></span></span>для каждой<span
+style='letter-spacing:.65pt'> </span>ячейки).<span style='font-size:20.0pt;
+line-height:106%'><o:p></o:p></span></p>
 
-<p class=styletext><span style='font-size:10.0pt;line-height:107%'>3. Начиная<span
-style='letter-spacing:.55pt'> </span>с<span style='letter-spacing:.55pt'> </span>выходов,<span
-style='letter-spacing:.55pt'> </span>выполняется<span style='letter-spacing:
-.55pt'> </span>обратное<span style='letter-spacing:.55pt'> </span>движение<span
-style='letter-spacing:.55pt'> </span>через<span style='letter-spacing:.55pt'> </span>ячейки<span
-style='letter-spacing:.55pt'> </span>выход</span>ного и промежуточного слоя,
-при этом программа рассчитывает значения ошибок (уравнения 3 и 4):</p>
+<p class=styletext>3. Начиная<span style='letter-spacing:.55pt'> </span>с<span
+style='letter-spacing:.55pt'> </span>выходов,<span style='letter-spacing:.55pt'>
+</span>выполняется<span style='letter-spacing:.55pt'> </span>обратное<span
+style='letter-spacing:.55pt'> </span>движение<span style='letter-spacing:.55pt'>
+</span>через<span style='letter-spacing:.55pt'> </span>ячейки<span
+style='letter-spacing:.55pt'> </span>выходного и промежуточного слоя, при этом
+программа рассчитывает значения ошибок (уравнения 3 и 4):</p>
 
 <p class=styletext><span style='font-family:Symbol'>d</span><span
-style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>0  </span>=
-(C<span style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>i 
-</span>– u<span style='font-size:5.5pt;line-height:107%;position:relative;
-top:3.0pt'>5</span>)u<span style='font-size:5.5pt;line-height:107%;position:
-relative;top:3.0pt'>5</span>(1 – u<span style='font-size:5.5pt;line-height:
-107%;position:relative;top:3.0pt'>5</span>) для<span style='letter-spacing:
--.35pt'> </span>выходной<span style='letter-spacing:.05pt'> </span>ячейки          (3)</p>
+style='position:relative;top:3pt'><span class=GramE><span style='font-size:
+5.5pt;line-height:106%'>0&nbsp; </span></span>=</span><span
+style='mso-spacerun:yes'> </span>(<span class=SpellE>C<span style='font-size:
+5.5pt;line-height:106%'><span style='position:relative;top:3pt'>i</span></span><span
+style='font-size:5.5pt;line-height:106%'>&nbsp; </span></span>– u<span
+style='position:relative;top:3pt'><span style='font-size:5.5pt;line-height:
+106%'>5</span></span>)u<span style='position:relative;top:3pt'><span
+style='font-size:5.5pt;line-height:106%'>5</span></span>(1 – u<span
+style='position:relative;top:3pt'><span style='font-size:5.5pt;line-height:
+106%'>5</span></span>) для<span style='letter-spacing:-.35pt'> </span>выходной<span
+style='letter-spacing:.05pt'> </span>ячейки&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(3)</p>
 
-<p class=styletext><span style='font-size:10.0pt;line-height:107%;font-family:
-Symbol'>d</span><span style='font-size:5.5pt;line-height:107%;position:relative;
-top:3.0pt'>i </span><span style='font-size:10.0pt;line-height:107%'>= (</span><span
-style='font-size:10.0pt;line-height:107%;font-family:Symbol'>S</span><span
-style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>m:m&gt;i  </span><span
-style='font-size:10.0pt;line-height:107%'>w</span><span style='font-size:5.5pt;
-line-height:107%;position:relative;top:3.0pt'>m,j </span><span
-style='font-size:10.0pt;line-height:107%;font-family:Symbol'>d</span><span
-style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>0</span><span
-style='font-size:10.0pt;line-height:107%'>)u</span><span style='font-size:5.5pt;
-line-height:107%;position:relative;top:3.0pt'>i</span><span style='font-size:
-10.0pt;line-height:107%'>(1 – u</span><span style='font-size:5.5pt;line-height:
-107%;position:relative;top:3.0pt'>i</span><span style='font-size:10.0pt;
-line-height:107%'>) для всех<span style='letter-spacing:-1.15pt'> </span>скрытых<span
-style='letter-spacing:-.2pt'> </span>ячеек (4)</span></p>
+<p class=styletext><span style='font-family:Symbol'>d</span><span
+style='position:relative;top:3pt'><span style='font-size:8.0pt;line-height:
+106%'>i </span></span>= (<span style='font-family:Symbol'>S</span><span
+style='position:relative;top:3pt'><span class=SpellE><span style='font-size:
+8.0pt;line-height:106%'>m:<span class=GramE>m</span></span></span><span
+class=GramE><span style='font-size:8.0pt;line-height:106%'>&gt;i</span></span><span
+style='font-size:8.0pt;line-height:106%'>&nbsp; </span></span><span
+class=SpellE>w<span style='font-size:8.0pt;line-height:106%'><span
+style='position:relative;top:3pt'>m,j</span></span><span style='font-size:8.0pt;
+line-height:106%'><span style='mso-spacerun:yes'> </span></span></span><span
+style='font-family:Symbol'>d</span><span style='position:relative;top:3pt'><span
+style='font-size:8.0pt;line-height:106%'>0</span></span>)<span class=SpellE>u<span
+style='font-size:8.0pt;line-height:106%'><span style='position:relative;
+top:3pt'>i</span></span></span>(1 – <span class=SpellE>u<span style='font-size:
+8.0pt;line-height:106%'><span style='position:relative;top:3pt'>i</span></span></span>)
+для всех<span style='letter-spacing:-1.15pt'> </span>скрытых<span
+style='letter-spacing:-.2pt'> </span>ячеек (4)<span style='font-size:20.0pt;
+line-height:106%'><o:p></o:p></span></p>
 
 <p class=styletext>(Обратите внимание, что m обозначает все ячейки, связанные
 со скрытым узлом, w – заданный вектор веса, а u – активация).</p>
 
-<p class=styletext><span style='font-size:10.0pt;line-height:107%'>5. Наконец,<span
-style='letter-spacing:-.55pt'> </span>веса<span style='letter-spacing:-.5pt'> </span>в<span
-style='letter-spacing:-.55pt'> </span>сети<span style='letter-spacing:-.55pt'> </span>обновляются<span
-style='letter-spacing:-.5pt'> </span>следующим<span style='letter-spacing:-.55pt'>
-</span>образом<span style='letter-spacing:-.5pt'> </span>(уравнение<span
-style='letter-spacing:-.55pt'> </span>5<span style='letter-spacing:-.5pt'> </span>и<span
-style='letter-spacing:-.55pt'> </span>6):</span></p>
+<p class=styletext>5. Наконец,<span style='letter-spacing:-.55pt'> </span>веса<span
+style='letter-spacing:-.5pt'> </span>в<span style='letter-spacing:-.55pt'> </span>сети<span
+style='letter-spacing:-.55pt'> </span>обновляются<span style='letter-spacing:
+-.5pt'> </span>следующим<span style='letter-spacing:-.55pt'> </span>образом<span
+style='letter-spacing:-.5pt'> </span>(уравнение<span style='letter-spacing:
+-.55pt'> </span>5<span style='letter-spacing:-.5pt'> </span>и<span
+style='letter-spacing:-.55pt'> </span>6):<span style='font-size:20.0pt;
+line-height:106%'><o:p></o:p></span></p>
 
 <p class=styletext><span style='font-size:10.0pt;line-height:107%'>w*</span><span
 style='font-size:5.5pt;line-height:107%;position:relative;top:3.0pt'>i,j </span><span
@@ -1416,17 +1427,7 @@ height=886 id="Рисунок 159" src="neural_network.files/image010.png"></p>
 выходная ячейка с большей суммой весов является «победителем» группы и
 допускается к действию. В рассматриваемом приложении каждая ячейка представляет
 определенное поведение, которое доступно для персонажа в игре. В качестве
-примеров поведения</p>
-
-</div>
-
-<span style='font-size:14.0pt;line-height:107%;font-family:"Calibri",sans-serif;
-color:#EDEDED'><br clear=all style='page-break-before:always'>
-</span>
-
-<div class=WordSection9>
-
-<p class=styletext>можно назвать такие действия, как выстрелить из оружия,
+примеров поведения можно назвать такие действия, как выстрелить из оружия,
 убежать, уклониться и<span style='letter-spacing:-.6pt'> </span>др.<span
 style='letter-spacing:-.55pt'> </span>Срабатывание<span style='letter-spacing:
 -.55pt'> </span>ячейки<span style='letter-spacing:-.55pt'> </span>в<span
