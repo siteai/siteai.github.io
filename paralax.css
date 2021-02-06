@@ -83,7 +83,7 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 200%;
+  font-size: 45px;
   letter-spacing: 5px;
 }
 .style_head span {
@@ -99,7 +99,7 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 150%;
+  font-size: 30px;
   letter-spacing: 5px;
 }
 .style_ai span {
@@ -115,7 +115,7 @@ html {
   color: #FFF;
   font-family: "lato", sans-serif;
   font-weight: 300;
-  font-size: 50px;
+  font-size: 25;
   letter-spacing: 5px;
 }
 .style_sign span {
